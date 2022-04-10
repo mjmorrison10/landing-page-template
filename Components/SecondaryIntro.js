@@ -33,6 +33,7 @@ function SecondaryIntro() {
 
   const containerStyles = {
     pt: 8,
+    pb: 14,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

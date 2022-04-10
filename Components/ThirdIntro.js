@@ -27,15 +27,14 @@ function ThirdIntro() {
   };
 
   const containerStyles = {
-    pt: "8%",
+    py: "8%",
   };
 
   const headingTypoStyles = {
     textAlign: "center",
     color: "info.main",
     fontWeight: "bold",
-    textTransform: 'capitalize',
-
+    textTransform: "capitalize",
   };
 
   const iconButtonBoxStyles = {

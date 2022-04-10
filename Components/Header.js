@@ -62,7 +62,7 @@ const appBarStyles = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "transparent",
+  backgroundColor: "darkBg.main",
 };
 
 const appBarCompStyles = {

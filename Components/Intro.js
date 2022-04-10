@@ -15,6 +15,7 @@ import {
 import { clipPathBottom, customColors } from "../public/Settings/BaseSettings";
 import MorrisonDevOpsIcon from "./MorrisonDevOpsIcon";
 import { DoubleArrow } from "@mui/icons-material";
+import GetStartedBtn from "./GetStartedBtn";
 
 // import { makeStyles } from "@material-ui/core/styles";
 
@@ -49,7 +50,7 @@ const sectionStyles = {
   justifyContent: "space-between",
   alignItems: "center",
   zIndex: 20,
-  position: 'relative',
+  position: "relative",
 };
 
 const containerStyles = {
@@ -161,6 +162,7 @@ function Intro() {
           </Typography>
         </Box>
 
+        {/* <GetStartedBtn /> */}
         <Box sx={freeAccessStyles}>
           {SkeletonComp}
           <Typography variant="body1" sx={freeAccessTypoStyles}>
@@ -173,7 +175,10 @@ function Intro() {
           <Typography variant="body2" sx={subFreeAccessTypoStyles}>
             {content.subFreeAccess}
           </Typography>
-          <Box component={"form"} sx={formStyles}>
+
+          <GetStartedBtn />
+
+          {/* <Box component={"form"} sx={formStyles}>
             <TextField
               sx={textFieldStyles()}
               color="info"
@@ -212,7 +217,8 @@ function Intro() {
             <Button variant="contained" color="darkBgPrimary" sx={{ flex: 1 }}>
               Submit
             </Button>
-          </Box>
+          </Box> */}
+
           {SkeletonComp}
         </Box>
       </Container>
