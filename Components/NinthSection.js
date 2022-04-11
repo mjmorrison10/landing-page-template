@@ -38,13 +38,14 @@ function NinthSection() {
 
   const sectionStyles = {
     minHeight: "80vh",
-    // clipPath: clipPathBottom3,
+    clipPath: clipPathBottom3,
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
     position: "relative",
     zIndex: 10,
     bgcolor: bgColor,
+
   };
 
   const containerStyles = {
@@ -137,14 +138,16 @@ function NinthSection() {
               {content.heading01}
             </Typography>
 
-            <Typography
-              variant="h6"
-              component="h3"
-              gutterBottom
-              sx={subHeadingTypoStyles}
-            >
-              {content.subheader01}
-            </Typography>
+            <div>
+              <Typography
+                variant="h6"
+                component="h3"
+                gutterBottom
+                sx={subHeadingTypoStyles}
+              >
+                {content.subheader01}
+              </Typography>
+            </div>
 
             <Typography sx={bodyStyles}>{content.body01}</Typography>
           </Grid>
@@ -164,14 +167,16 @@ function NinthSection() {
             >
               {content.heading02}
             </Typography>
-            <Typography
-              variant="h6"
-              component="h3"
-              gutterBottom
-              sx={subHeadingTypoStyles}
-            >
-              {content.subheader02}
-            </Typography>
+            <div>
+              <Typography
+                variant="h6"
+                component="h3"
+                gutterBottom
+                sx={subHeadingTypoStyles}
+              >
+                {content.subheader02}
+              </Typography>
+            </div>
             <Typography sx={bodyStyles}>{content.body02}</Typography>
           </Grid>
 
@@ -184,14 +189,16 @@ function NinthSection() {
             >
               {content.heading03}
             </Typography>
-            <Typography
-              variant="h6"
-              component="h3"
-              gutterBottom
-              sx={subHeadingTypoStyles}
-            >
-              {content.subheader03}
-            </Typography>
+            <div>
+              <Typography
+                variant="h6"
+                component="h3"
+                gutterBottom
+                sx={subHeadingTypoStyles}
+              >
+                {content.subheader03}
+              </Typography>
+            </div>
             <Typography sx={bodyStyles}>{content.body03}</Typography>
           </Grid>
           <Grid item xs={6} sx={imageStyles}>
@@ -209,14 +216,16 @@ function NinthSection() {
               sx={headingTypoStyles}
             >
               {content.heading04}
-              <Typography
-                variant="h6"
-                component="h3"
-                gutterBottom
-                sx={subHeadingTypoStyles}
-              >
-                {content.subheader04}
-              </Typography>
+              <div>
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  gutterBottom
+                  sx={subHeadingTypoStyles}
+                >
+                  {content.subheader04}
+                </Typography>
+              </div>
             </Typography>
             <Typography sx={bodyStyles}>{content.body04}</Typography>
           </Grid>
@@ -230,14 +239,16 @@ function NinthSection() {
             >
               {content.heading05}
             </Typography>
-            <Typography
-              variant="h6"
-              component="h3"
-              gutterBottom
-              sx={subHeadingTypoStyles}
-            >
-              {content.subheader05}
-            </Typography>
+            <div>
+              <Typography
+                variant="h6"
+                component="h3"
+                gutterBottom
+                sx={subHeadingTypoStyles}
+              >
+                {content.subheader05}
+              </Typography>
+            </div>
             <Typography sx={bodyStyles}>{content.body05}</Typography>
           </Grid>
           <Grid item xs={6} sx={imageStyles}>
@@ -256,14 +267,16 @@ function NinthSection() {
             >
               {content.heading06}
             </Typography>
-            <Typography
-              variant="h6"
-              component="h3"
-              gutterBottom
-              sx={subHeadingTypoStyles}
-            >
-              {content.subheader06}
-            </Typography>
+            <div>
+              <Typography
+                variant="h6"
+                component="h3"
+                gutterBottom
+                sx={subHeadingTypoStyles}
+              >
+                {content.subheader06}
+              </Typography>
+            </div>
             <Typography sx={bodyStyles}>{content.body06}</Typography>
           </Grid>
         </Grid>
@@ -271,7 +284,6 @@ function NinthSection() {
         <Box sx={iconButtonBoxStyles}>
           <IconButton sx={arrowIconStyles}>
             <DoubleArrow />
-            {/* <MorrisonDevOpsIcon color="blue" sx={iconRootStyles} /> */}
           </IconButton>
         </Box>
       </Box>

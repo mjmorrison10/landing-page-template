@@ -2,9 +2,17 @@ import { PriorityHighOutlined } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import React from "react";
 
-function GetStartedBtn({ label = "Get Started Now!", clr = "secondary" }) {
+
+function GetStartedBtn(
+  props
+  // { label = "Get Started Now!", clr = "secondary" }
+) {
+  const label = props.label ? props.label : "Get Started Now!";
+  const clr = props.clr ? props.clr : "secondary";
+
   return (
     <Button
+      {...props}
       variant="contained"
       color={clr}
       startIcon={<PriorityHighOutlined />}

@@ -12,12 +12,13 @@ import SixthSection from "../Components/SixthSection";
 import SeventhSection from "../Components/SeventhSection";
 import EightSection from "../Components/EightSection";
 import NinthSection from "../Components/NinthSection";
+import TenthSection from "../Components/TenthSection";
+import EleventhSection from "../Components/EleventhSection";
+import TwelvethSection from "../Components/TwelvethSection";
+import ThirteenthSection from "../Components/ThirteenthSection";
+import Footer from "../Components/Footer";
 
-const mainStyles = {
-  position: "absolute",
-  top: 0,
-  width: "100%",
-};
+const mainStyles = {};
 
 export default function Home() {
   return (
@@ -40,10 +41,13 @@ export default function Home() {
         <SeventhSection />
         <EightSection />
         <NinthSection />
+        <TenthSection />
+        <EleventhSection />
+        <TwelvethSection />
+        <ThirteenthSection />
       </Box>
-      <Box height={"300vh"}></Box>
 
-      <footer></footer>
+      <Footer />
     </div>
   );
 }

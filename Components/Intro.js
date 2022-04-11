@@ -1,21 +1,11 @@
 import { Box } from "@mui/system";
 import React from "react";
-import { purple } from "@mui/material/colors";
-import {
-  Button,
-  Container,
-  Icon,
-  IconButton,
-  Input,
-  Skeleton,
-  SvgIcon,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Container, IconButton, Typography } from "@mui/material";
 import { clipPathBottom, customColors } from "../public/Settings/BaseSettings";
-import MorrisonDevOpsIcon from "./MorrisonDevOpsIcon";
+import MorrisonDevOpsIcon from "./icons/MorrisonDevOpsIcon";
 import { DoubleArrow } from "@mui/icons-material";
 import GetStartedBtn from "./GetStartedBtn";
+import SkeletonComp from "./SkeletonComp";
 
 // import { makeStyles } from "@material-ui/core/styles";
 
@@ -117,15 +107,6 @@ const textFieldStyles = (props) => {
   };
 };
 
-const SkeletonComp = (
-  <Box sx={{ width: "100%" }}>
-    <Skeleton
-      animation={"wave"}
-      sx={{ bgcolor: "secondary.light", height: 3 }}
-    />
-  </Box>
-);
-
 const morrisonDevOpsIconStyles = {
   height: 250,
   width: 250,
@@ -164,7 +145,7 @@ function Intro() {
 
         {/* <GetStartedBtn /> */}
         <Box sx={freeAccessStyles}>
-          {SkeletonComp}
+          <SkeletonComp />
           <Typography variant="body1" sx={freeAccessTypoStyles}>
             {content.freeAccess1}{" "}
             <Box component="span" sx={freeAccessSpanStyles}>
@@ -219,7 +200,7 @@ function Intro() {
             </Button>
           </Box> */}
 
-          {SkeletonComp}
+          <SkeletonComp />
         </Box>
       </Container>
 
