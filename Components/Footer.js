@@ -7,6 +7,8 @@ function Footer() {
     bgcolor: "darkBg.main",
     color: "darkBgPrimary.main",
   };
+
+  
   return (
     <Box component="footer" sx={footerStyles}>
       footer
