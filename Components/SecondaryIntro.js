@@ -70,7 +70,7 @@ function SecondaryIntro() {
         <Typography component="h2" variant="h2" sx={headingStyles}>
           {content.heading}
         </Typography>
-        <Typography component="div" variant="h1" sx={quoteStyles}>
+        <Typography component="div" variant="h3" sx={quoteStyles}>
           {content.quote}
         </Typography>
       </Container>

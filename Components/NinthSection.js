@@ -60,11 +60,11 @@ function NinthSection() {
       flexDirection: "column",
       alignItems: "flex-start",
       justifyContent: "center",
-      px: "10% !important",
+      px: {xs: 0, md: "10% !important"},
 
       "&::before": {
         content: '""',
-        display: "block",
+        display: {xs: "none", md: "block"},
         position: "absolute",
         bgcolor: bgColor,
 
@@ -128,7 +128,9 @@ function NinthSection() {
     <Box component="section" sx={sectionStyles}>
       <Box sx={containerStyles}>
         <Grid container spacing={2}>
-          <Grid item xs={6} sx={contentStyles("right")}>
+
+          
+          <Grid item xs={12} md={6} sx={contentStyles("right")}>
             <Typography
               variant="h5"
               component="h2"
@@ -150,15 +152,17 @@ function NinthSection() {
             </div>
 
             <Typography sx={bodyStyles}>{content.body01}</Typography>
+
           </Grid>
-          <Grid item xs={6} sx={imageStyles}>
+
+          <Grid item xs={12} md={6} sx={imageStyles}>
             Image
           </Grid>
 
-          <Grid item xs={6} sx={imageStyles}>
+          <Grid item xs={12} md={6} sx={imageStyles}>
             Image
           </Grid>
-          <Grid item xs={6} sx={contentStyles("left")}>
+          <Grid item xs={12} md={6} sx={contentStyles("left")}>
             <Typography
               variant="h5"
               component="h2"
@@ -180,7 +184,7 @@ function NinthSection() {
             <Typography sx={bodyStyles}>{content.body02}</Typography>
           </Grid>
 
-          <Grid item xs={6} sx={contentStyles("right")}>
+          <Grid item xs={12} md={6} sx={contentStyles("right")}>
             <Typography
               variant="h5"
               component="h2"
@@ -201,14 +205,14 @@ function NinthSection() {
             </div>
             <Typography sx={bodyStyles}>{content.body03}</Typography>
           </Grid>
-          <Grid item xs={6} sx={imageStyles}>
+          <Grid item xs={12} md={6} sx={imageStyles}>
             Image
           </Grid>
 
-          <Grid item xs={6} sx={imageStyles}>
+          <Grid item xs={12} md={6} sx={imageStyles}>
             Image
           </Grid>
-          <Grid item xs={6} sx={contentStyles("left")}>
+          <Grid item xs={12} md={6} sx={contentStyles("left")}>
             <Typography
               variant="h5"
               component="h2"
@@ -230,7 +234,7 @@ function NinthSection() {
             <Typography sx={bodyStyles}>{content.body04}</Typography>
           </Grid>
 
-          <Grid item xs={6} sx={contentStyles("right")}>
+          <Grid item xs={12} md={6} sx={contentStyles("right")}>
             <Typography
               variant="h5"
               component="h2"
@@ -251,14 +255,14 @@ function NinthSection() {
             </div>
             <Typography sx={bodyStyles}>{content.body05}</Typography>
           </Grid>
-          <Grid item xs={6} sx={imageStyles}>
+          <Grid item xs={12} md={6} sx={imageStyles}>
             Image
           </Grid>
 
-          <Grid item xs={6} sx={imageStyles}>
+          <Grid item xs={12} md={6} sx={imageStyles}>
             Image
           </Grid>
-          <Grid item xs={6} sx={contentStyles("left")}>
+          <Grid item xs={12} md={6} sx={contentStyles("left")}>
             <Typography
               variant="h5"
               component="h2"
@@ -279,6 +283,7 @@ function NinthSection() {
             </div>
             <Typography sx={bodyStyles}>{content.body06}</Typography>
           </Grid>
+
         </Grid>
 
         <Box sx={iconButtonBoxStyles}>

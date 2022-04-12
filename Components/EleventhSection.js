@@ -1,5 +1,5 @@
 import { DoubleArrow } from "@mui/icons-material";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
 import {
   clipPathBottom,
@@ -28,6 +28,7 @@ function EleventhSection() {
   };
 
   const sectionStyles = {
+    
     display: "flex",
     // alignItems: "center",
     justifyContent: "center",
@@ -49,7 +50,7 @@ function EleventhSection() {
   const containerStyles = {
     bgcolor: "blue",
     height: "100%",
-    width: "100%",
+    minWidth: "100%",
   };
 
   const topSectionStyles = {
@@ -58,7 +59,7 @@ function EleventhSection() {
   };
 
   let firstBoxStyles = {
-    flex: 1,
+    // flex: 1,
     minHeight: "50vh",
     display: "flex",
     alignItems: "center",
@@ -90,7 +91,7 @@ function EleventhSection() {
   const skeletonBoxStyles = {
     display: "flex",
     flexDirection: "column",
-    alignItems: 'center',
+    alignItems: "center",
     gap: 1,
   };
 
@@ -117,8 +118,8 @@ function EleventhSection() {
   return (
     <Box sx={sectionStyles}>
       <Box sx={containerStyles}>
-        <Box sx={topSectionStyles}>
-          <Box sx={firstBoxStyles}>
+        <Grid container sx={topSectionStyles}>
+          <Grid item xs={12} md={6} sx={firstBoxStyles}>
             <Typography variant="h4" component="h2" sx={header01}>
               {content.header01a}
             </Typography>
@@ -135,9 +136,9 @@ function EleventhSection() {
               {content.header03a}
             </Typography>
             <GetStartedBtn label={content.btn01a} sx={btn01} />
-          </Box>
+          </Grid>
 
-          <Box sx={secondBoxStyles}>
+          <Grid item xs={12} md={6} sx={secondBoxStyles}>
             <Box {...skeletonBoxStyles}>
               <SkeletonComp height={8} width="80%" />
               <Typography variant="h4" component="h2" sx={header01}>
@@ -153,18 +154,18 @@ function EleventhSection() {
               {content.header03b}
             </Typography>
             <GetStartedBtn label={content.btn01b} sx={btn01} />
-          </Box>
-        </Box>
+          </Grid>
 
-        <Box sx={thirdBoxStyles}>
-          <Typography variant="h2" component="h2" sx={header01}>
-            {content.header01c}
-          </Typography>
-          <Typography variant="h3" component="h3" sx={header03}>
-            {content.header02c}
-          </Typography>
-          <GetStartedBtn label={content.btn01c} sx={btn02} />
-        </Box>
+          <Grid item xs={12} sx={thirdBoxStyles}>
+            <Typography variant="h2" component="h2" sx={header01}>
+              {content.header01c}
+            </Typography>
+            <Typography variant="h3" component="h3" sx={header03}>
+              {content.header02c}
+            </Typography>
+            <GetStartedBtn label={content.btn01c} sx={btn02} />
+          </Grid>
+        </Grid>
       </Box>
 
       <Box sx={iconButtonBoxStyles}>

@@ -4,11 +4,16 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import Header from "../Components/Header";
-import { createTheme, ThemeProvider, useTheme } from "@mui/material/styles";
+import {
+  createTheme,
+  ThemeProvider,
+  useTheme,
+  responsiveFontSizes,
+} from "@mui/material/styles";
 import { blue, blueGrey, grey, lightGreen, orange } from "@mui/material/colors";
 import { Container } from "@mui/material";
 
-const theme = createTheme({
+let theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
@@ -106,6 +111,8 @@ const theme = createTheme({
     },
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 function MyApp({ Component, pageProps }) {
   return (

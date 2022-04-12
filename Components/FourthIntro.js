@@ -66,7 +66,7 @@ function FourthIntro() {
         <Typography component="h2" variant="h2" sx={subheader}>
           {content.text2}
         </Typography>
-        <Typography component="div" variant="h1" sx={quote}>
+        <Typography component="div" variant="h3" sx={quote}>
           {content.text3}
         </Typography>
       </Container>

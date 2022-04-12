@@ -55,7 +55,7 @@ function ThirdIntro() {
     <Box component="section" sx={sectionStyles}>
       <Container sx={containerStyles}>
         <Grid container spacing={2}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Typography
               variant="h5"
               component="h2"
@@ -66,7 +66,7 @@ function ThirdIntro() {
             </Typography>
             <Typography>{content.body01}</Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Typography
               variant="h5"
               component="h2"
@@ -77,7 +77,7 @@ function ThirdIntro() {
             </Typography>
             <Typography>{content.body02}</Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Typography
               variant="h5"
               component="h2"
@@ -88,7 +88,7 @@ function ThirdIntro() {
             </Typography>
             <Typography>{content.body03}</Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Typography
               variant="h5"
               component="h2"

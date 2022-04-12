@@ -75,7 +75,7 @@ function FifthSection() {
     <Box component="section" sx={sectionStyles}>
       <Container sx={containerStyles}>
         <Grid container spacing={2} columnSpacing={10}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Typography
               variant="h5"
               component="h2"
@@ -86,14 +86,14 @@ function FifthSection() {
             </Typography>
             <Typography>{content.body01}</Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Box sx={imageStyles}>image</Box>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Box sx={imageStyles}>image</Box>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Typography
               variant="h5"
               component="h2"
@@ -105,7 +105,7 @@ function FifthSection() {
             <Typography>{content.body02}</Typography>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Typography
               variant="h5"
               component="h2"
@@ -116,14 +116,14 @@ function FifthSection() {
             </Typography>
             <Typography>{content.body03}</Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Box sx={imageStyles}>image</Box>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Box sx={imageStyles}>image</Box>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Typography
               variant="h5"
               component="h2"

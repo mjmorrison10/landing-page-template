@@ -18,7 +18,10 @@ import TwelvethSection from "../Components/TwelvethSection";
 import ThirteenthSection from "../Components/ThirteenthSection";
 import Footer from "../Components/Footer";
 
-const mainStyles = {};
+const mainStyles = {
+  maxWidth: '100vw',
+  width: '100%',
+};
 
 export default function Home() {
   return (

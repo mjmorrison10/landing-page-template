@@ -34,7 +34,7 @@ const sectionStyles = {
   backgroundColor: "darkBg.main",
   clipPath: clipPathBottom,
   // pb: "6%",
-  pt: 15,
+  pt: { xs: 10, sm: 5, md: 0 },
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
@@ -51,7 +51,7 @@ const containerStyles = {
   justifyContent: "center",
   textAlign: "center",
   // gap: 10,
-  mb: 10,
+  mb: {xs: 30, sm: 15, md: 10},
 };
 
 const freeAccessStyles = {
@@ -70,12 +70,14 @@ const introTypoStyles = {
   color: "infoRev.light",
   textTransform: "capitalize",
 };
+
 const headerTypoStyles = {
   color: "infoRev.main",
   fontWeight: "bold",
   letterSpacing: 5,
   textTransform: "uppercase",
 };
+
 const freeAccessTypoStyles = {
   color: "infoRev.main",
   textTransform: "uppercase",

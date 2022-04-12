@@ -235,7 +235,7 @@ export default function TestimonialsComp(props) {
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    maxWidth: "90vw",
+                    maxWidth: "85vw",
                   }}
                 >
                   <Typography
