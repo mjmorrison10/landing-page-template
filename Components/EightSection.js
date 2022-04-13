@@ -35,7 +35,7 @@ function EightSection() {
   };
 
   return (
-    <Box component="section" sx={sectionStyles}>
+    <Box component="section" sx={sectionStyles} id="Six Motivations">
       <Typography variant="h3" component="h2" sx={header}>
         {content.header}
       </Typography>

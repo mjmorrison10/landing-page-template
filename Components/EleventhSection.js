@@ -16,19 +16,21 @@ function EleventhSection() {
     header02a: `That's where ${companyName.main} comes in`,
     header03a: `We know exactly how to attract fitness clients!!`,
     btn01a: `Let's work together`,
+    image01: `images/businessPeople.jpg`,
 
     header01b: `I care about your success! We will work together and dominate the world!`,
     header02b: `Give us a try for free.`,
     header03b: `We'll work directly with you to retain a client. If successful, all we ask is a testimonial!`,
     btn01b: `Join the experience`,
+    image02: `images/businessHandShake.jpg`,
 
     header01c: `Apply today`,
     header02c: `Fill out the form below to figure out if we're a good fit!`,
     btn02c: `Start application`,
+    image03: `images/cloudSkies.jpg`,
   };
 
   const sectionStyles = {
-    
     display: "flex",
     // alignItems: "center",
     justifyContent: "center",
@@ -47,19 +49,14 @@ function EleventhSection() {
     clipPath: clipPathBottom,
   };
 
-  const containerStyles = {
-    bgcolor: "blue",
-    height: "100%",
-    minWidth: "100%",
-  };
-
   const topSectionStyles = {
+    color: "darkBgPrimary.light",
     display: "flex",
     width: "100%",
+    clipPath: clipPathBottom,
   };
 
   let firstBoxStyles = {
-    // flex: 1,
     minHeight: "50vh",
     display: "flex",
     alignItems: "center",
@@ -67,11 +64,40 @@ function EleventhSection() {
     flexDirection: "column",
     gap: 1,
     textAlign: "center",
+    backgroundImage: `url(${content.image01})`,
+    backgroundPosition: "1% 1%",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    boxShadow: `inset 0 0 0 1000px rgba(0,0,0,.5)`,
   };
-
-  let secondBoxStyles = firstBoxStyles;
-
-  let thirdBoxStyles = firstBoxStyles;
+  
+  let secondBoxStyles = {
+    minHeight: "50vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-around",
+    flexDirection: "column",
+    gap: 1,
+    textAlign: "center",
+    backgroundImage: `url(${content.image02})`,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    boxShadow: `inset 0 0 0 1000px rgba(0,0,0,.6)`,
+  };
+  let thirdBoxStyles = {
+    minHeight: "60vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    gap: 2,
+    textAlign: "center",
+    backgroundImage: `url(${content.image03})`,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  };
 
   const header01 = {
     maxWidth: "35ch",
@@ -116,64 +142,64 @@ function EleventhSection() {
   };
 
   return (
-    <Box sx={sectionStyles}>
-      <Box sx={containerStyles}>
-        <Grid container sx={topSectionStyles}>
-          <Grid item xs={12} md={6} sx={firstBoxStyles}>
-            <Typography variant="h4" component="h2" sx={header01}>
-              {content.header01a}
-            </Typography>
+    // <Box sx={sectionStyles}>
+    // {/* <Box sx={containerStyles}> */}
+    <Grid container sx={topSectionStyles}>
+      <Grid item xs={12} md={6} sx={firstBoxStyles}>
+        <Typography variant="h4" component="h2" sx={header01}>
+          {content.header01a}
+        </Typography>
 
-            <Box {...skeletonBoxStyles}>
-              <SkeletonComp height={6} width="80%" />
-              <Typography variant="h4" component="h3" sx={header02}>
-                {content.header02a}
-              </Typography>
-              <SkeletonComp height={6} width="80%" />
-            </Box>
+        <Box {...skeletonBoxStyles}>
+          <SkeletonComp height={6} width="80%" />
+          <Typography variant="h4" component="h3" sx={header02}>
+            {content.header02a}
+          </Typography>
+          <SkeletonComp height={6} width="80%" />
+        </Box>
 
-            <Typography variant="h6" component="p" sx={header03}>
-              {content.header03a}
-            </Typography>
-            <GetStartedBtn label={content.btn01a} sx={btn01} />
-          </Grid>
+        <Typography variant="h6" component="p" sx={header03}>
+          {content.header03a}
+        </Typography>
+        <GetStartedBtn label={content.btn01a} sx={btn01} />
+      </Grid>
 
-          <Grid item xs={12} md={6} sx={secondBoxStyles}>
-            <Box {...skeletonBoxStyles}>
-              <SkeletonComp height={8} width="80%" />
-              <Typography variant="h4" component="h2" sx={header01}>
-                {content.header01b}
-              </Typography>
-              <SkeletonComp height={8} width="80%" />
-            </Box>
+      <Grid item xs={12} md={6} sx={secondBoxStyles}>
+        <Box {...skeletonBoxStyles}>
+          <SkeletonComp height={8} width="80%" />
+          <Typography variant="h4" component="h2" sx={header01}>
+            {content.header01b}
+          </Typography>
+          <SkeletonComp height={8} width="80%" />
+        </Box>
 
-            <Typography variant="h4" component="h3" sx={header02}>
-              {content.header02b}
-            </Typography>
-            <Typography variant="h6" component="p" sx={header03}>
-              {content.header03b}
-            </Typography>
-            <GetStartedBtn label={content.btn01b} sx={btn01} />
-          </Grid>
+        <Typography variant="h4" component="h3" sx={header02}>
+          {content.header02b}
+        </Typography>
+        <Typography variant="h6" component="p" sx={header03}>
+          {content.header03b}
+        </Typography>
+        <GetStartedBtn label={content.btn01b} sx={btn01} />
+      </Grid>
 
-          <Grid item xs={12} sx={thirdBoxStyles}>
-            <Typography variant="h2" component="h2" sx={header01}>
-              {content.header01c}
-            </Typography>
-            <Typography variant="h3" component="h3" sx={header03}>
-              {content.header02c}
-            </Typography>
-            <GetStartedBtn label={content.btn01c} sx={btn02} />
-          </Grid>
-        </Grid>
-      </Box>
+      <Grid item xs={12} sx={thirdBoxStyles} id="Apply">
+        <Typography variant="h2" component="h2" sx={header01}>
+          {content.header01c}
+        </Typography>
+        <Typography variant="h3" component="h3" sx={header03}>
+          {content.header02c}
+        </Typography>
+        <GetStartedBtn label={content.btn01c} sx={btn02} />
+      </Grid>
+    </Grid>
+    // {/* </Box> */}
 
-      <Box sx={iconButtonBoxStyles}>
-        <IconButton sx={arrowIconStyles}>
-          <DoubleArrow />
-        </IconButton>
-      </Box>
-    </Box>
+    // {/* <Box sx={iconButtonBoxStyles}>
+    //   <IconButton sx={arrowIconStyles}>
+    //     <DoubleArrow />
+    //   </IconButton>
+    // </Box> */}
+    // </Box>
   );
 }
 

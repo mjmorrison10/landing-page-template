@@ -21,7 +21,7 @@ function TenthSection() {
     position: "relative",
     zIndex: 9,
 
-    mt: -10,
+    mt: {xs: -20, md: -10},
     py: 15,
   };
 

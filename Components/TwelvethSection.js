@@ -25,7 +25,7 @@ function TwelvethSection() {
   };
 
   return (
-    <Box sx={sectionStyles}>
+    <Box sx={sectionStyles} id="My Work">
       <Typography variant="h2" component="h1" sx={headerStyles}>
         {content.header01}{" "}
         <Box sx={spanStyles} component="span">

@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/styles.css";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -12,6 +13,7 @@ import {
 } from "@mui/material/styles";
 import { blue, blueGrey, grey, lightGreen, orange } from "@mui/material/colors";
 import { Container } from "@mui/material";
+
 
 let theme = createTheme({
   components: {
@@ -98,9 +100,9 @@ let theme = createTheme({
       light: `hsla(239, 85%, 17%, 1)`,
       main: `hsla(239, 85%, 12%, 1)`,
       dark: `hsla(239, 85%, 7%, 1)`,
+      contrastText: `hsla(239, 85%, 85%, 1)`,
       opacity90: `hsla(239, 85%, 6%, 0.9)`,
       opacity50: `hsla(239, 85%, 6%, 0.5)`,
-      contrastText: "hsl(239, 85%, 6%)",
       secondary: `hsla(180, 85%, 15%, 1)`,
     },
     infoRev: {

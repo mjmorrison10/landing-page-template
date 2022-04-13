@@ -14,8 +14,8 @@ function SixthSection() {
   const sectionStyles = {
     bgcolor: "darkBg.secondary",
     minHeight: "75vh",
-    mt: -20,
-    pt: "10%",
+    mt: -15,
+    pt: 15,
     clipPath: clipPathBottom2,
     zIndex: 9,
     position: "relative",
@@ -23,11 +23,13 @@ function SixthSection() {
     flexDirection: "column",
     alignItems: "center",
 
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
   };
 
   const containerStyles = {
-    py: 10,
+    // py: 10,
+    pt: {xs: 20, md: 10},
+    pb: { xs: 20, md: 15 },
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -54,7 +56,7 @@ function SixthSection() {
   };
 
   return (
-    <Box component="section" sx={sectionStyles}>
+    <Box component="section" sx={sectionStyles} id="Digital Marketing">
       <Container sx={containerStyles}>
         <Typography component="h1" variant="h4" sx={header}>
           {content.text1a}{" "}

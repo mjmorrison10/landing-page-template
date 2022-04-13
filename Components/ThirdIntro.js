@@ -1,7 +1,12 @@
 import { DoubleArrow } from "@mui/icons-material";
 import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
-import { clipPathBottom2, companyName } from "../public/Settings/BaseSettings";
+import {
+  clipPathBottom2,
+  clipPathBottom3,
+  clipPathBottom4,
+  companyName,
+} from "../public/Settings/BaseSettings";
 
 function ThirdIntro() {
   const content = {
@@ -17,7 +22,8 @@ function ThirdIntro() {
 
   const sectionStyles = {
     minHeight: "80vh",
-    clipPath: clipPathBottom2,
+    clipPath: clipPathBottom4,
+
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",

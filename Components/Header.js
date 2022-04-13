@@ -19,6 +19,13 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import MorrisonDevOpsIcon from "./icons/MorrisonDevOpsIcon";
 import { customColors } from "../public/Settings/BaseSettings";
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@mui/material";
 
 // Hide App Bar on Scroll
 function HideOnScroll(props) {
@@ -55,7 +62,16 @@ const content = {
   businessName: `Morrison DevOps`,
   businessOwner: `Michael Morrison`,
   logo: `logo`,
-  pages: ["About", "Experience", "Community", "Blog", "Events", "FAQ", "Apply"],
+  pages: [
+    "Get Started",
+    "Services",
+    "Systems",
+    "Blog",
+    "Digital Marketing",
+    "Six Motivations",
+    "Apply",
+    "My Work",
+  ],
 };
 
 const appBarStyles = {
@@ -103,6 +119,27 @@ export default function Header(props) {
     setAnchorElUser(null);
   };
 
+  const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const dialogContentStyles = {
+    display: 'flex',
+    gap: 1,
+    flexDirection: 'column',
+    bgcolor: 'darkBg.light',
+  }
+
   const AppBarComp = () => {
     return (
       <Box
@@ -131,41 +168,35 @@ export default function Header(props) {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              onClick={handleClickOpen}
             >
               <MenuIcon />
             </IconButton>
 
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
+            <Dialog
+              open={open}
+              TransitionComponent={Transition}
               keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
+              onClose={handleClose}
+              aria-describedby="Navigation Menu"
             >
-              {content.pages.map((page) => (
-                <MenuItem
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={menuItemStyles}
-                >
-                  <Typography textAlign="center" width={"100%"}>
+              <DialogContent sx={dialogContentStyles}>
+                {content.pages.map((page) => (
+                  <Button
+                  color="darkBg"
+                  variant="contained"
+                    href={
+                      page === "Blog"
+                        ? "https://mjmorrison10.wordpress.com"
+                        : `#${page}`
+                    }
+                    onClick={handleClose}
+                  >
                     {page}
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+                  </Button>
+                ))}
+              </DialogContent>
+            </Dialog>
           </Box>
 
           {/* Business Name | Responsive Design */}
@@ -208,6 +239,11 @@ export default function Header(props) {
                       variant="outlined"
                       key={page}
                       size={"small"}
+                      href={
+                        page === "Blog"
+                          ? "https://mjmorrison10.wordpress.com"
+                          : `#${page}`
+                      }
                       onClick={handleCloseNavMenu}
                       sx={{ my: 2, display: "block" }}
                     >
@@ -262,6 +298,11 @@ export default function Header(props) {
                       color="infoRev"
                       variant="outlined"
                       key={page}
+                      href={
+                        page === "Blog"
+                          ? "https://mjmorrison10.wordpress.com"
+                          : `#${page}`
+                      }
                       onClick={handleCloseNavMenu}
                       size={"small"}
                       sx={{

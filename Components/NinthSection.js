@@ -4,67 +4,101 @@ import React from "react";
 import {
   clipPathBottom2,
   clipPathBottom3,
+  clipPathBottom5,
   companyName,
 } from "../public/Settings/BaseSettings";
 
 function NinthSection() {
   const content = {
-    heading01: `grow your passive income`,
-    subheader01: `subheader`,
-    body01: `body`,
+    heading01: `Want to grow your business?`,
+    subheader01: `We make it quick and easy to get your website up, so you can focus on what you do best`,
+    body01: `Get your web app done quickly and with a beautiful, modern design. In order to grow your client base, you need a website that convertss online leads. With our agency, that's exactly what we'll be able to do for you! Let us help you get more clients and spread good health practices around the world!`,
+    image01: `images/businessScale.jpg`,
 
-    heading02: `Heading2`,
-    subheader02: `subheader`,
-    body02: `body`,
+    heading02: `We do all of the work for you so you can focus on what you love -- Fitness`,
+    subheader02: `I'm right in the gym with you, so I know what your potential clients want.`,
+    body02: `I will design a high-converting website to keep more paying clients, and provide the best possible personal training to grow your business. Don't do all this work by yourself. I'll design a website that captures more leads, design workouts for quicker results, and offer personal training for better retention rates. It's all about YOUR business success.`,
+    image02: `images/gymEnjoyment.jpg`,
 
-    heading03: `Heading3`,
-    subheader03: `subheader`,
-    body03: `body`,
+    heading03: `We can save you time and money!`,
+    subheader03: `Do you find yourself spending too much time trying to write a catchy headline or email? We can help.`,
+    body03: `Hire us today to give you the high conversion results that your business needs!`,
+    image03: `images/happyHiking.jpg`,
 
-    heading04: `Heading4`,
-    subheader04: `subheader`,
-    body04: `body`,
+    heading04: `We are selective in whom we work with.`,
+    subheader04: `We believe the fastest way to success is by giving as much value as possible!`,
+    body04: `If you feel you cannot afford our services, we may still be able to help you out! We'll help you bring in additional income.`,
+    image04: `images/handshake.jpg`,
 
-    heading05: `Heading5`,
-    subheader05: `subheader`,
-    body05: `body`,
+    heading05: `You deserve a better network. Join me and have access to a platform of entrepreneurs, and let us help you grow your business!`,
+    subheader05: `All you need to do is set up a call with us and we'll tackle life's problems together!`,
+    body05: `Want to learn what we can do for you? All you have to do is reach out, and we'll start a conversation at no cost to you. Let's get started!`,
+    image05: `images/network.jpg`,
 
-    heading06: `Heading6`,
-    subheader06: `subheader`,
-    body06: `body`,
+    heading06: `I believe in you. I know anything is possible and that you have the talent, connections, and drive to become whatever you want. Let's work together to find your path.`,
+    subheader06: `Do you want to dominate the world but don't know where to start? I can help you make it happen. Let me help you avoid giving up on one of your most ambitious goals.`,
+    body06: `I will help by crafting a high converting sales funnel page- that will lead your potential customers directly through to completing their purchase with no doubts or hesitation. I will create an aggressive digital marketing strategy- with a plan that we both agree on, so that no stone is left unturned when it comes to meeting objectives.`,
+    image06: `images/boxing.jpg`,
   };
 
   const bgColor = "darkBgPrimary.main";
 
   const sectionStyles = {
     minHeight: "80vh",
-    clipPath: clipPathBottom3,
+    clipPath: clipPathBottom5,
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
     position: "relative",
-    zIndex: 10,
+    zIndex: 60,
     bgcolor: bgColor,
-
   };
 
   const containerStyles = {
     // pb: "6.25%",
   };
 
-  const contentStyles = (direction) => {
+  const gridContainerStyles = {
+    display: "grid",
+    gridTemplateColumns: { xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)" },
+    // gridTemplateRows: "repeat(4, 1fr)",
+    gridTemplateAreas: {
+      xs: ` "section01"
+    "image01"
+    "section02"
+    "image02"
+    "section03"
+    "image03"
+    "section04"
+    "image04"
+    "section05"
+    "image05"
+    "section06"
+    "image06"`,
+      md: `"section01 image01"
+    "image02 section02"
+    "section03 image03"
+    "image04 section04"
+    "section05 image05"
+    "image06 section06"`,
+    },
+  };
+
+  const contentStyles = (direction, area) => {
     return {
+      gridArea: area,
       position: "relative",
       minHeight: 500,
       display: "flex",
       flexDirection: "column",
-      alignItems: "flex-start",
+      textAlign: { xs: "center", md: "inherit" },
+      alignItems: { xs: "center", md: "flex-start" },
       justifyContent: "center",
-      px: {xs: 0, md: "10% !important"},
+      px: { xs: 0, md: "10% !important" },
 
       "&::before": {
         content: '""',
-        display: {xs: "none", md: "block"},
+        display: { xs: "none", md: "block" },
         position: "absolute",
         bgcolor: bgColor,
 
@@ -82,8 +116,12 @@ function NinthSection() {
     };
   };
 
-  const imageStyles = {
-    bgcolor: "blue",
+  const imageStyles = (area) => {
+    return {
+      gridArea: area,
+      bgcolor: "blue",
+      minHeight: 500,
+    };
   };
 
   const headingTypoStyles = {
@@ -91,6 +129,7 @@ function NinthSection() {
     color: "info.dark",
     fontWeight: "bold",
     textTransform: "capitalize",
+    maxWidth: "35ch",
   };
 
   const subHeadingTypoStyles = {
@@ -98,10 +137,19 @@ function NinthSection() {
     color: "info.light",
     fontWeight: "bold",
     textTransform: "capitalize",
+    maxWidth: "45ch",
   };
 
   const bodyStyles = {
     color: "darkBg.light",
+    maxWidth: "65ch",
+  };
+
+  const imgStyles = {
+    height: "100%",
+    width: "100%",
+    objectFit: "cover",
+    objectPosition: "center",
   };
 
   const iconButtonBoxStyles = {
@@ -124,13 +172,17 @@ function NinthSection() {
     // left: "50%",
   };
 
+  // const gridItemContainerStyles = () => {
+  //   return {
+  //     direction: { md: "column" },
+  //   };
+  // };
+
   return (
     <Box component="section" sx={sectionStyles}>
       <Box sx={containerStyles}>
-        <Grid container spacing={2}>
-
-          
-          <Grid item xs={12} md={6} sx={contentStyles("right")}>
+        <Grid container sx={gridContainerStyles}>
+          <Grid item sx={contentStyles("right", "section01")}>
             <Typography
               variant="h5"
               component="h2"
@@ -139,7 +191,6 @@ function NinthSection() {
             >
               {content.heading01}
             </Typography>
-
             <div>
               <Typography
                 variant="h6"
@@ -150,19 +201,18 @@ function NinthSection() {
                 {content.subheader01}
               </Typography>
             </div>
-
             <Typography sx={bodyStyles}>{content.body01}</Typography>
-
+          </Grid>
+          <Grid item sx={imageStyles("image01")}>
+            <Box
+              component="img"
+              src={content.image01}
+              alt={content.heading01}
+              sx={imgStyles}
+            ></Box>
           </Grid>
 
-          <Grid item xs={12} md={6} sx={imageStyles}>
-            Image
-          </Grid>
-
-          <Grid item xs={12} md={6} sx={imageStyles}>
-            Image
-          </Grid>
-          <Grid item xs={12} md={6} sx={contentStyles("left")}>
+          <Grid item sx={contentStyles("left", "section02")}>
             <Typography
               variant="h5"
               component="h2"
@@ -183,8 +233,16 @@ function NinthSection() {
             </div>
             <Typography sx={bodyStyles}>{content.body02}</Typography>
           </Grid>
+          <Grid item sx={imageStyles("image02")}>
+            <Box
+              component="img"
+              src={content.image02}
+              alt={content.heading02}
+              sx={imgStyles}
+            ></Box>
+          </Grid>
 
-          <Grid item xs={12} md={6} sx={contentStyles("right")}>
+          <Grid item sx={contentStyles("right", "section03")}>
             <Typography
               variant="h5"
               component="h2"
@@ -205,14 +263,16 @@ function NinthSection() {
             </div>
             <Typography sx={bodyStyles}>{content.body03}</Typography>
           </Grid>
-          <Grid item xs={12} md={6} sx={imageStyles}>
-            Image
+          <Grid item sx={imageStyles("image03")}>
+            <Box
+              component="img"
+              src={content.image03}
+              alt={content.heading03}
+              sx={imgStyles}
+            ></Box>
           </Grid>
 
-          <Grid item xs={12} md={6} sx={imageStyles}>
-            Image
-          </Grid>
-          <Grid item xs={12} md={6} sx={contentStyles("left")}>
+          <Grid item sx={contentStyles("left", "section04")}>
             <Typography
               variant="h5"
               component="h2"
@@ -233,8 +293,16 @@ function NinthSection() {
             </Typography>
             <Typography sx={bodyStyles}>{content.body04}</Typography>
           </Grid>
+          <Grid item sx={imageStyles("image04")}>
+            <Box
+              component="img"
+              src={content.image04}
+              alt={content.heading04}
+              sx={imgStyles}
+            ></Box>
+          </Grid>
 
-          <Grid item xs={12} md={6} sx={contentStyles("right")}>
+          <Grid item sx={contentStyles("right", "section05")}>
             <Typography
               variant="h5"
               component="h2"
@@ -255,14 +323,16 @@ function NinthSection() {
             </div>
             <Typography sx={bodyStyles}>{content.body05}</Typography>
           </Grid>
-          <Grid item xs={12} md={6} sx={imageStyles}>
-            Image
+          <Grid item sx={imageStyles("image05")}>
+            <Box
+              component="img"
+              src={content.image05}
+              alt={content.heading05}
+              sx={imgStyles}
+            ></Box>
           </Grid>
 
-          <Grid item xs={12} md={6} sx={imageStyles}>
-            Image
-          </Grid>
-          <Grid item xs={12} md={6} sx={contentStyles("left")}>
+          <Grid item sx={contentStyles("left", "section06")}>
             <Typography
               variant="h5"
               component="h2"
@@ -283,7 +353,14 @@ function NinthSection() {
             </div>
             <Typography sx={bodyStyles}>{content.body06}</Typography>
           </Grid>
-
+          <Grid item sx={imageStyles("image06")}>
+            <Box
+              component="img"
+              src={content.image06}
+              alt={content.heading06}
+              sx={imgStyles}
+            ></Box>
+          </Grid>
         </Grid>
 
         <Box sx={iconButtonBoxStyles}>

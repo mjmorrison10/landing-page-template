@@ -1,25 +1,31 @@
 import { DoubleArrow } from "@mui/icons-material";
 import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
-import { clipPathBottom2, companyName } from "../public/Settings/BaseSettings";
+import {
+  clipPathBottom2,
+  clipPathBottom3,
+  clipPathBottom4,
+  clipPathBottom4a,
+  companyName,
+} from "../public/Settings/BaseSettings";
 
 function FifthSection() {
   const content = {
     heading01: `free yourself from your business`,
     body01: `It's easy to think you have to do everything in business, but ${companyName.full} has access to dozens of tools and strategies to help ease your workload and give you the freedom to focus on helping others achieve their fitness potential.`,
-    image01: ``,
-
+    image01: `images/dinnerParty.jpg`,
+    
     heading02: `Better Systems, Tools, and Network`,
     body02: `${companyName.main} has access to a unique network and each week members share the systems and tools that they used to accomplish their goals. With over 15k very powerful members, we know how to help your business thrive in an online marketplace.`,
-    image02: ``,
-
+    image02: `images/globalNetwork.jpg`,
+    
     heading03: `High Converting Templates at Your Disposal`,
     body03: `Over thousands of A/B testing, and years worth of our best work, we have the best templates and tools for creating high converting websites and generate leads. Focus on your passion and allow us to take your digital marketing to the next level!`,
-    image03: ``,
-
+    image03: `images/increaseSales.jpg`,
+    
     heading04: `Focus on fitness above all else`,
     body04: `We know that you love helping others achieve their full potential by coaching passionate individuals on their fitness journey. With ${companyName.main}, you can focus your attention on bringing value to your clients, while we handle your digital needs!`,
-    image04: ``,
+    image04: `images/personalTrainer.jpg`,
 
     // heading05: ``,
     // body05: ``,
@@ -28,7 +34,7 @@ function FifthSection() {
 
   const sectionStyles = {
     minHeight: "80vh",
-    clipPath: clipPathBottom2,
+    clipPath: clipPathBottom4a,
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
@@ -38,23 +44,38 @@ function FifthSection() {
   };
 
   const containerStyles = {
-    py: "8%",
+    py: { xs: 20, md: 10 },
   };
 
   const headingTypoStyles = {
     textAlign: "center",
     color: "info.main",
     fontWeight: "bold",
-    textTransform: 'capitalize',
+    textTransform: "capitalize",
   };
 
-  const imageStyles = {
+  const contentContainerStyles = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+
+  const imageContainerStyles = {
     bgcolor: "blue",
     height: "100%",
     width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    minHeight: 250,
+  };
+
+  const imgStyles = {
+    height: "100%",
+    width: "100%",
+    objectFit: "cover",
+    objectPosition: "center",
   };
 
   const iconButtonBoxStyles = {
@@ -75,7 +96,7 @@ function FifthSection() {
     <Box component="section" sx={sectionStyles}>
       <Container sx={containerStyles}>
         <Grid container spacing={2} columnSpacing={10}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={contentContainerStyles}>
             <Typography
               variant="h5"
               component="h2"
@@ -87,13 +108,27 @@ function FifthSection() {
             <Typography>{content.body01}</Typography>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box sx={imageStyles}>image</Box>
+            <Box sx={imageContainerStyles}>
+              <Box
+                component="img"
+                src={content.image01}
+                alt={content.heading01}
+                sx={imgStyles}
+              ></Box>
+            </Box>
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <Box sx={imageStyles}>image</Box>
+            <Box sx={imageContainerStyles}>
+              <Box
+                component="img"
+                src={content.image02}
+                alt={content.heading02}
+                sx={imgStyles}
+              ></Box>
+            </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={contentContainerStyles}>
             <Typography
               variant="h5"
               component="h2"
@@ -105,7 +140,7 @@ function FifthSection() {
             <Typography>{content.body02}</Typography>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={contentContainerStyles}>
             <Typography
               variant="h5"
               component="h2"
@@ -117,13 +152,27 @@ function FifthSection() {
             <Typography>{content.body03}</Typography>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box sx={imageStyles}>image</Box>
+            <Box sx={imageContainerStyles}>
+              <Box
+                component="img"
+                src={content.image03}
+                alt={content.heading03}
+                sx={imgStyles}
+              ></Box>
+            </Box>
           </Grid>
 
           <Grid item xs={12} md={6}>
-            <Box sx={imageStyles}>image</Box>
+            <Box sx={imageContainerStyles}>
+              <Box
+                component="img"
+                src={content.image04}
+                alt={content.heading04}
+                sx={imgStyles}
+              ></Box>
+            </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={contentContainerStyles}>
             <Typography
               variant="h5"
               component="h2"

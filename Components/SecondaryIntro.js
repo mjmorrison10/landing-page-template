@@ -4,6 +4,7 @@ import React from "react";
 import {
   clipPathBottom,
   clipPathBottom2,
+  clipPathBottom3,
   companyName,
 } from "../public/Settings/BaseSettings";
 
@@ -20,8 +21,9 @@ function SecondaryIntro() {
     bgcolor: "darkBg.secondary",
     minHeight: "75vh",
     mt: -12,
-    pt: '8%',
+    pt: "8%",
     clipPath: clipPathBottom2,
+
     zIndex: 19,
     position: "relative",
     display: "flex",
@@ -58,7 +60,7 @@ function SecondaryIntro() {
   };
 
   return (
-    <Box component="section" sx={sectionStyles}>
+    <Box component="section" sx={sectionStyles} id="Services">
       <Container sx={containerStyles}>
         <Typography component="h1" variant="h3" sx={titleStyles}>
           {content.title1}{" "}

@@ -15,7 +15,7 @@ function FourthIntro() {
     bgcolor: "darkBg.secondary",
     minHeight: "75vh",
     mt: -15,
-    pt: "10%",
+    pt: {xs: 10, md: 15,},
     clipPath: clipPathBottom2,
     zIndex: 9,
     position: "relative",
@@ -54,7 +54,7 @@ function FourthIntro() {
   };
 
   return (
-    <Box component="section" sx={sectionStyles}>
+    <Box component="section" sx={sectionStyles} id="Systems">
       <Container sx={containerStyles}>
         <Typography component="h1" variant="h4" sx={header}>
           {content.text1a}{" "}

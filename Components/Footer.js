@@ -11,7 +11,6 @@ function Footer() {
   
   return (
     <Box component="footer" sx={footerStyles}>
-      footer
     </Box>
   );
 }
