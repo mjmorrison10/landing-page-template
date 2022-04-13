@@ -60,7 +60,7 @@ function EleventhSection() {
     minHeight: "50vh",
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "center",
     flexDirection: "column",
     gap: 1,
     textAlign: "center",
@@ -69,13 +69,14 @@ function EleventhSection() {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     boxShadow: `inset 0 0 0 1000px rgba(0,0,0,.5)`,
+    py: 1,
   };
-  
+
   let secondBoxStyles = {
     minHeight: "50vh",
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "center",
     flexDirection: "column",
     gap: 1,
     textAlign: "center",
@@ -84,6 +85,7 @@ function EleventhSection() {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     boxShadow: `inset 0 0 0 1000px rgba(0,0,0,.6)`,
+    py: 1,
   };
   let thirdBoxStyles = {
     minHeight: "60vh",
@@ -97,6 +99,8 @@ function EleventhSection() {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    py: 1,
+    pb: 5,
   };
 
   const header01 = {
@@ -144,7 +148,7 @@ function EleventhSection() {
   return (
     // <Box sx={sectionStyles}>
     // {/* <Box sx={containerStyles}> */}
-    <Grid container sx={topSectionStyles}>
+    <Grid container sx={topSectionStyles} id="Apply Content">
       <Grid item xs={12} md={6} sx={firstBoxStyles}>
         <Typography variant="h4" component="h2" sx={header01}>
           {content.header01a}

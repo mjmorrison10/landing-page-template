@@ -14,15 +14,15 @@ function FifthSection() {
     heading01: `free yourself from your business`,
     body01: `It's easy to think you have to do everything in business, but ${companyName.full} has access to dozens of tools and strategies to help ease your workload and give you the freedom to focus on helping others achieve their fitness potential.`,
     image01: `images/dinnerParty.jpg`,
-    
+
     heading02: `Better Systems, Tools, and Network`,
     body02: `${companyName.main} has access to a unique network and each week members share the systems and tools that they used to accomplish their goals. With over 15k very powerful members, we know how to help your business thrive in an online marketplace.`,
     image02: `images/globalNetwork.jpg`,
-    
+
     heading03: `High Converting Templates at Your Disposal`,
     body03: `Over thousands of A/B testing, and years worth of our best work, we have the best templates and tools for creating high converting websites and generate leads. Focus on your passion and allow us to take your digital marketing to the next level!`,
     image03: `images/increaseSales.jpg`,
-    
+
     heading04: `Focus on fitness above all else`,
     body04: `We know that you love helping others achieve their full potential by coaching passionate individuals on their fitness journey. With ${companyName.main}, you can focus your attention on bringing value to your clients, while we handle your digital needs!`,
     image04: `images/personalTrainer.jpg`,
@@ -33,17 +33,22 @@ function FifthSection() {
   };
 
   const sectionStyles = {
-    minHeight: "80vh",
     clipPath: clipPathBottom4a,
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     position: "relative",
     zIndex: 18,
     bgcolor: "white",
+    gap: 10,
+    mb: -20,
   };
 
   const containerStyles = {
+    flexGrow: 1,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     py: { xs: 20, md: 10 },
   };
 
@@ -55,11 +60,11 @@ function FifthSection() {
   };
 
   const contentContainerStyles = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  };
 
   const imageContainerStyles = {
     bgcolor: "blue",
@@ -93,7 +98,7 @@ function FifthSection() {
   };
 
   return (
-    <Box component="section" sx={sectionStyles}>
+    <Box component="section" sx={sectionStyles} id="SystemsContent">
       <Container sx={containerStyles}>
         <Grid container spacing={2} columnSpacing={10}>
           <Grid item xs={12} md={6} sx={contentContainerStyles}>
@@ -196,7 +201,7 @@ function FifthSection() {
       </Container>
 
       <Box sx={iconButtonBoxStyles}>
-        <IconButton sx={arrowIconStyles}>
+        <IconButton sx={arrowIconStyles} href="#Digital Marketing">
           <DoubleArrow color={"info"} />
           {/* <MorrisonDevOpsIcon color="blue" sx={iconRootStyles} /> */}
         </IconButton>

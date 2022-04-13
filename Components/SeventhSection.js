@@ -48,10 +48,15 @@ function SeventhSection() {
     position: "relative",
     zIndex: 18,
     bgcolor: "white",
+
   };
 
   const containerStyles = {
     pt: "8%",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexGrow: 1,
   };
 
   const headingTypoStyles = {
@@ -79,7 +84,7 @@ function SeventhSection() {
   };
 
   return (
-    <Box component="section" sx={sectionStyles}>
+    <Box component="section" sx={sectionStyles} id="Digital Marketing Content">
       <Container sx={containerStyles}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
@@ -135,7 +140,7 @@ function SeventhSection() {
       </Container>
 
       <Box sx={iconButtonBoxStyles}>
-        <IconButton sx={arrowIconStyles}>
+        <IconButton sx={arrowIconStyles} href="#Six Motivations">
           <DoubleArrow color={"info"} />
           {/* <MorrisonDevOpsIcon color="blue" sx={iconRootStyles} /> */}
         </IconButton>

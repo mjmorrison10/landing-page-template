@@ -38,26 +38,26 @@ const sectionStyles = {
   color: "darkBgPrimary.light",
   backgroundColor: "darkBg.main",
   clipPath: clipPathBottom,
-
   // pb: "6%",
-  pt: { xs: 20, sm: 5, md: 0 },
+  pt: { xs: 20, sm: 15, md: 10 },
+
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-between",
+  justifyContent: "flex-end",
   alignItems: "center",
   zIndex: 20,
   position: "relative",
 };
 
 const containerStyles = {
-  height: "100vh",
+  // height: "100vh",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
   textAlign: "center",
-  // gap: 10,
-  mb: { xs: 30, sm: 15, md: 10 },
+  gap: 10,
+  pb: { xs: 30, sm: 15, md: 15 },
 };
 
 const freeAccessStyles = {
@@ -136,7 +136,7 @@ const arrowIconStyles = {
 
 function Intro() {
   return (
-    <Box sx={sectionStyles}  id="Get Started">
+    <Box sx={sectionStyles} id="Get Started">
       <Container maxWidth="lg" sx={containerStyles}>
         <MorrisonDevOpsIcon
           color={customColors.icon.blue200}
@@ -213,7 +213,7 @@ function Intro() {
       </Container>
 
       <Box sx={iconButtonBoxStyles}>
-        <IconButton sx={arrowIconStyles}>
+        <IconButton sx={arrowIconStyles} href="#Services">
           <DoubleArrow color={"infoRev"} />
           {/* <MorrisonDevOpsIcon color="blue" sx={iconRootStyles} /> */}
         </IconButton>

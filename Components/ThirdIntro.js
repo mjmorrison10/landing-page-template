@@ -28,7 +28,7 @@ function ThirdIntro() {
     body03: `${companyName.main} uses state of the art tools to analyze your website and determine where and how your website can be improved upon! The higher you rank in searches, the more significant your sales conversion will be! We'll work every month to update your website with new up-to-date information.`,
     heading04: `Content Management Systems`,
     body04: `Trust your website in our hands, and we will develop a high converting website using WordPress (other CMS available). Easily set up your website in a day, while maintaining full control over how your website looks and additional upgrades. WordPress makes it easy to blog, and share your blog to other platforms. All without needing to contact your web master (${companyName.full}) `,
-    
+
     icon01: <FirstIcon color="purple" sx={{ height: 100, width: 100 }} />,
     icon02: <SecondIcon color="purple" sx={{ height: 100, width: 100 }} />,
     icon03: <ThirdIcon color="purple" sx={{ height: 100, width: 100 }} />,
@@ -42,19 +42,20 @@ function ThirdIntro() {
   };
 
   const sectionStyles = {
-    minHeight: "80vh",
+    // minHeight: "80vh",
     clipPath: clipPathBottom4,
-
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     position: "relative",
     zIndex: 18,
+    gap: 10,
+    pt: 10,
     bgcolor: "white",
   };
 
   const containerStyles = {
-    py: "8%",
+    // py: 10,
   };
 
   const headingTypoStyles = {
@@ -62,8 +63,8 @@ function ThirdIntro() {
     color: "info.main",
     fontWeight: "bold",
     textTransform: "capitalize",
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     gap: 1,
   };
 
@@ -82,7 +83,7 @@ function ThirdIntro() {
   };
 
   return (
-    <Box component="section" sx={sectionStyles}>
+    <Box component="section" sx={sectionStyles} id="ServiceContent">
       <Container sx={containerStyles}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
@@ -138,7 +139,7 @@ function ThirdIntro() {
       </Container>
 
       <Box sx={iconButtonBoxStyles}>
-        <IconButton sx={arrowIconStyles}>
+        <IconButton sx={arrowIconStyles} href="#Systems">
           <DoubleArrow color={"info"} />
           {/* <MorrisonDevOpsIcon color="blue" sx={iconRootStyles} /> */}
         </IconButton>

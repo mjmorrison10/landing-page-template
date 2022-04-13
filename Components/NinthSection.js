@@ -52,7 +52,7 @@ function NinthSection() {
     position: "relative",
     zIndex: 60,
     bgcolor: bgColor,
-    p: { xs: 1, md: 0 },
+    px: { xs: 1, md: 0 },
   };
 
   const containerStyles = {
@@ -126,7 +126,7 @@ function NinthSection() {
   };
 
   const headingTypoStyles = {
-    textAlign: "center",
+    // textAlign: "center",
     color: "info.dark",
     fontWeight: "bold",
     textTransform: "capitalize",
@@ -166,7 +166,7 @@ function NinthSection() {
 
   const arrowIconStyles = {
     // bgcolor: 'blue',
-    color: "darkBg.light",
+    color: "infoRev.dark",
     transform: "rotate(90deg)",
     // position: "absolute",
     // bottom: 5,
@@ -365,7 +365,7 @@ function NinthSection() {
         </Grid>
 
         <Box sx={iconButtonBoxStyles}>
-          <IconButton sx={arrowIconStyles}>
+          <IconButton sx={arrowIconStyles} href="#Apply Content">
             <DoubleArrow />
           </IconButton>
         </Box>

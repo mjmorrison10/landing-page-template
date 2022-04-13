@@ -24,13 +24,14 @@ function ThirteenthSection() {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
+    bgcolor: "darkBg.secondary",
+    color: "darkBgSecondary.main",
     py: 10,
   };
 
   const headerStyles = {
     textAlign: "center",
     fontWeight: "bold",
-    color: "darkBg.light",
     maxWidth: "30ch",
   };
 
@@ -39,10 +40,12 @@ function ThirteenthSection() {
   const iconBtnStyles = (icon) => {
     let color;
 
-    if (icon === "ig") color = "red";
-    if (icon === "fb") color = "info.dark";
-    if (icon === "twit") color = "cyan";
-    if (icon === "email") color = "darkBg.light";
+
+    if (icon === "ig") color = "darkBgSecondary.main";
+    if (icon === "fb") color = "darkBgSecondary.dark";
+    if (icon === "twit") color = "darkBgSecondary.light";
+    if (icon === "email") color = "darkBgSecondary.dark";
+    if (icon === "gh") color = "darkBgSecondary.main";
     return {
       color: color,
     };

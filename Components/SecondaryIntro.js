@@ -19,9 +19,10 @@ function SecondaryIntro() {
 
   const sectionStyles = {
     bgcolor: "darkBg.secondary",
-    minHeight: "75vh",
+    // minHeight: "75vh",
     mt: -12,
-    pt: "8%",
+    pt: 20,
+    // pt: "8%",
     clipPath: clipPathBottom2,
 
     zIndex: 19,
@@ -29,13 +30,13 @@ function SecondaryIntro() {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
+    gap: 10,
   };
 
   const containerStyles = {
-    pt: 8,
-    pb: 14,
+    // pt: 8,
+    // pb: 14,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -78,7 +79,7 @@ function SecondaryIntro() {
       </Container>
 
       <Box sx={iconButtonBoxStyles}>
-        <IconButton sx={arrowIconStyles}>
+        <IconButton sx={arrowIconStyles} href="#ServiceContent">
           <DoubleArrow color={"darkBgSecondary"} />
           {/* <MorrisonDevOpsIcon color="blue" sx={iconRootStyles} /> */}
         </IconButton>

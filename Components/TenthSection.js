@@ -14,15 +14,17 @@ function TenthSection() {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    minHeight: "65vh",
+    minHeight: "75vh",
     backgroundColor: "darkBg.main",
 
     color: "darkBgPrimary.light",
     position: "relative",
     zIndex: 9,
+    mt: {xs: -10, md: -15,},
+    pt: 10,
 
-    mt: {xs: -20, md: -10},
-    py: 15,
+    // mt: {xs: -20, md: -10},
+    // py: 15,
   };
 
   const headerStyles = {

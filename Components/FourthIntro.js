@@ -2,7 +2,7 @@ import { DoubleArrow } from "@mui/icons-material";
 import { Box, Container, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { clipPathBottom2, companyName } from "../public/Settings/BaseSettings";
-
+ 
 function FourthIntro() {
   const content = {
     text1a: `What can`,
@@ -15,7 +15,8 @@ function FourthIntro() {
     bgcolor: "darkBg.secondary",
     minHeight: "75vh",
     mt: -15,
-    pt: {xs: 10, md: 15,},
+    pt: {xs: 20, sm: 10, md: 30,},
+    gap: 10,
     clipPath: clipPathBottom2,
     zIndex: 9,
     position: "relative",
@@ -23,17 +24,18 @@ function FourthIntro() {
     flexDirection: "column",
     alignItems: "center",
 
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
   };
 
   const containerStyles = {
-    pt: 10,
+    // pt: 10,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
     textAlign: "center",
     color: "darkBgSecondary.main",
+    flexGrow: 1,
   };
 
   const header = { textTransform: "uppercase" };
@@ -72,7 +74,7 @@ function FourthIntro() {
       </Container>
 
       <Box sx={iconButtonBoxStyles}>
-        <IconButton sx={arrowIconStyles}>
+        <IconButton sx={arrowIconStyles} href="#SystemsContent">
           <DoubleArrow color={"darkBgSecondary"} />
           {/* <MorrisonDevOpsIcon color="blue" sx={iconRootStyles} /> */}
         </IconButton>

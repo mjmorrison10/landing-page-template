@@ -184,6 +184,7 @@ export default function Header(props) {
               <DialogContent sx={dialogContentStyles}>
                 {content.pages.map((page) => (
                   <Button
+                    key={page}
                     color="darkBg"
                     variant="contained"
                     href={

@@ -13,29 +13,29 @@ function SixthSection() {
   };
   const sectionStyles = {
     bgcolor: "darkBg.secondary",
-    minHeight: "75vh",
-    mt: -15,
-    pt: 15,
+    minHeight: "100vh",
+    height: 500,
+    // mt: -15,
+    // pt: 15,
     clipPath: clipPathBottom2,
     zIndex: 9,
     position: "relative",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-
     justifyContent: "flex-end",
+    pt: { xs: 20, sm: 20, md: 15 },
   };
 
   const containerStyles = {
     // py: 10,
-    pt: {xs: 20, md: 10},
-    pb: { xs: 20, md: 15 },
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
     textAlign: "center",
     color: "darkBgSecondary.main",
+    flexGrow: 1,
   };
 
   const header = { textTransform: "uppercase" };
@@ -53,7 +53,7 @@ function SixthSection() {
 
   const arrowIconStyles = {
     transform: "rotate(90deg)",
-  };
+  }; 
 
   return (
     <Box component="section" sx={sectionStyles} id="Digital Marketing">
@@ -74,7 +74,7 @@ function SixthSection() {
       </Container>
 
       <Box sx={iconButtonBoxStyles}>
-        <IconButton sx={arrowIconStyles}>
+        <IconButton sx={arrowIconStyles} href="#Digital Marketing Content">
           <DoubleArrow color={"darkBgSecondary"} />
           {/* <MorrisonDevOpsIcon color="blue" sx={iconRootStyles} /> */}
         </IconButton>
