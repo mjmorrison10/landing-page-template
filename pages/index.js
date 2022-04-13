@@ -19,8 +19,8 @@ import ThirteenthSection from "../Components/ThirteenthSection";
 import Footer from "../Components/Footer";
 
 const mainStyles = {
-  maxWidth: '100vw',
-  width: '100%',
+  maxWidth: "100vw",
+  width: "100%",
 };
 
 export default function Home() {
@@ -33,6 +33,17 @@ export default function Home() {
           content="Morrison Develop Operations. A Web Development company. Owned and Operated by Michael Morrison. We specialize in helping personal fitness coaches scale their business."
         />
         <link rel="icon" href="/images/logo.png" />
+        <script id="mcjs">
+          !function(c,h,i,m,p)
+          {
+            ((m = c.createElement(h)),
+            (p = c.getElementsByTagName(h)[0]),
+            (m.async = 1),
+            (m.src = i),
+            p.parentNode.insertBefore(m, p))
+          }
+          (document,"script","https://chimpstatic.com/mcjs-connected/js/users/9a8433dc709968b7f8d20e055/e52af596a7db8638abe3ee826.js");
+        </script>
       </Head>
       <Box component={"main"} sx={mainStyles}>
         <Intro />
