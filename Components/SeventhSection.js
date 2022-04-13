@@ -3,6 +3,17 @@ import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { clipPathBottom2, companyName } from "../public/Settings/BaseSettings";
 
+import FirstIcon from "./icons/FirstIcon";
+import SecondIcon from "./icons/SecondIcon";
+import ThirdIcon from "./icons/ThirdIcon";
+import FourthIcon from "./icons/FourthIcon";
+import FifthIcon from "./icons/FifthIcon";
+import SixthIcon from "./icons/SixthIcon";
+import SeventhIcon from "./icons/SeventhIcon";
+import EighthIcon from "./icons/EighthIcon";
+import NinthIcon from "./icons/NinthIcon";
+import TenthIcon from "./icons/TenthIcon";
+
 function SeventhSection() {
   const content = {
     heading01: `Build an Email List`,
@@ -16,6 +27,17 @@ function SeventhSection() {
 
     heading04: `Increase your value`,
     body04: `Using our proprietary copywriting strategies, we can turn your valuable fitness information and transform them into an excellent copy which attracts clients to subscribe to your newsletter and coaching services.`,
+
+    icon01: <FirstIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon02: <SecondIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon03: <ThirdIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon04: <FourthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon05: <FifthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon06: <SixthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon07: <SeventhIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon08: <EighthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon09: <NinthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon10: <TenthIcon color="purple" sx={{ height: 100, width: 100 }} />,
   };
 
   const sectionStyles = {
@@ -37,6 +59,9 @@ function SeventhSection() {
     color: "info.main",
     fontWeight: "bold",
     textTransform: "capitalize",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
   };
 
   const iconButtonBoxStyles = {
@@ -64,6 +89,7 @@ function SeventhSection() {
               gutterBottom
               sx={headingTypoStyles}
             >
+              {content.icon05}
               {content.heading01}
             </Typography>
             <Typography>{content.body01}</Typography>
@@ -75,6 +101,8 @@ function SeventhSection() {
               gutterBottom
               sx={headingTypoStyles}
             >
+              {content.icon07}
+
               {content.heading02}
             </Typography>
             <Typography>{content.body02}</Typography>
@@ -86,6 +114,7 @@ function SeventhSection() {
               gutterBottom
               sx={headingTypoStyles}
             >
+              {content.icon06}
               {content.heading03}
             </Typography>
             <Typography>{content.body03}</Typography>
@@ -97,6 +126,7 @@ function SeventhSection() {
               gutterBottom
               sx={headingTypoStyles}
             >
+              {content.icon10}
               {content.heading04}
             </Typography>
             <Typography>{content.body04}</Typography>

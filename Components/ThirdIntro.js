@@ -7,6 +7,16 @@ import {
   clipPathBottom4,
   companyName,
 } from "../public/Settings/BaseSettings";
+import FirstIcon from "./icons/FirstIcon";
+import SecondIcon from "./icons/SecondIcon";
+import ThirdIcon from "./icons/ThirdIcon";
+import FourthIcon from "./icons/FourthIcon";
+import FifthIcon from "./icons/FifthIcon";
+import SixthIcon from "./icons/SixthIcon";
+import SeventhIcon from "./icons/SeventhIcon";
+import EighthIcon from "./icons/EighthIcon";
+import NinthIcon from "./icons/NinthIcon";
+import TenthIcon from "./icons/TenthIcon";
 
 function ThirdIntro() {
   const content = {
@@ -18,6 +28,17 @@ function ThirdIntro() {
     body03: `${companyName.main} uses state of the art tools to analyze your website and determine where and how your website can be improved upon! The higher you rank in searches, the more significant your sales conversion will be! We'll work every month to update your website with new up-to-date information.`,
     heading04: `Content Management Systems`,
     body04: `Trust your website in our hands, and we will develop a high converting website using WordPress (other CMS available). Easily set up your website in a day, while maintaining full control over how your website looks and additional upgrades. WordPress makes it easy to blog, and share your blog to other platforms. All without needing to contact your web master (${companyName.full}) `,
+    
+    icon01: <FirstIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon02: <SecondIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon03: <ThirdIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon04: <FourthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon05: <FifthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon06: <SixthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon07: <SeventhIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon08: <EighthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon09: <NinthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    icon10: <TenthIcon color="purple" sx={{ height: 100, width: 100 }} />,
   };
 
   const sectionStyles = {
@@ -41,6 +62,9 @@ function ThirdIntro() {
     color: "info.main",
     fontWeight: "bold",
     textTransform: "capitalize",
+    display: 'flex',
+    alignItems: 'center',
+    gap: 1,
   };
 
   const iconButtonBoxStyles = {
@@ -62,12 +86,14 @@ function ThirdIntro() {
       <Container sx={containerStyles}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
+            {/* <FirstIcon /> */}
             <Typography
               variant="h5"
               component="h2"
               gutterBottom
               sx={headingTypoStyles}
             >
+              {content.icon01}
               {content.heading01}
             </Typography>
             <Typography>{content.body01}</Typography>
@@ -79,6 +105,7 @@ function ThirdIntro() {
               gutterBottom
               sx={headingTypoStyles}
             >
+              {content.icon02}
               {content.heading02}
             </Typography>
             <Typography>{content.body02}</Typography>
@@ -90,6 +117,7 @@ function ThirdIntro() {
               gutterBottom
               sx={headingTypoStyles}
             >
+              {content.icon03}
               {content.heading03}
             </Typography>
             <Typography>{content.body03}</Typography>
@@ -101,6 +129,7 @@ function ThirdIntro() {
               gutterBottom
               sx={headingTypoStyles}
             >
+              {content.icon04}
               {content.heading04}
             </Typography>
             <Typography>{content.body04}</Typography>

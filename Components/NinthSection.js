@@ -52,6 +52,7 @@ function NinthSection() {
     position: "relative",
     zIndex: 60,
     bgcolor: bgColor,
+    p: { xs: 1, md: 0 },
   };
 
   const containerStyles = {

@@ -20,6 +20,7 @@ function EightSection() {
     alignItems: "center",
     position: 'relative',
     zIndex: 15,
+    p: 1,
   };
 
   const header = {
@@ -27,6 +28,7 @@ function EightSection() {
   };
   const subheader = {
     color: "darkBgPrimary.comp.dark",
+    textAlign: 'center',
   };
   const text = {
     color: "darkBgPrimary.light",
