@@ -26,6 +26,7 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
+import Link from "next/link";
 
 // Hide App Bar on Scroll
 function HideOnScroll(props) {
@@ -134,11 +135,11 @@ export default function Header(props) {
   };
 
   const dialogContentStyles = {
-    display: 'flex',
+    display: "flex",
     gap: 1,
-    flexDirection: 'column',
-    bgcolor: 'darkBg.light',
-  }
+    flexDirection: "column",
+    bgcolor: "darkBg.light",
+  };
 
   const AppBarComp = () => {
     return (
@@ -183,8 +184,8 @@ export default function Header(props) {
               <DialogContent sx={dialogContentStyles}>
                 {content.pages.map((page) => (
                   <Button
-                  color="darkBg"
-                  variant="contained"
+                    color="darkBg"
+                    variant="contained"
                     href={
                       page === "Blog"
                         ? "https://mjmorrison10.wordpress.com"
@@ -254,22 +255,24 @@ export default function Header(props) {
             </Box>
 
             {/* Logo Image */}
-            <Box
-              sx={{
-                height: 75,
-                width: 75,
-                borderRadius: "50%",
-                overflow: "hidden",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <MorrisonDevOpsIcon
-                sx={{ height: 75, width: 75 }}
-                color={customColors.icon.blue100}
-              />
-              {/* <Box
+            <Link href="https://mjmorrison.netlify.app/">
+              <Box
+                sx={{
+                  height: 75,
+                  width: 75,
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                }}
+              >
+                <MorrisonDevOpsIcon
+                  sx={{ height: 75, width: 75 }}
+                  color={customColors.icon.blue100}
+                />
+                {/* <Box
                 component={"img"}
                 src={content.logoImg}
                 sx={{
@@ -279,7 +282,8 @@ export default function Header(props) {
                   objectFit: "contain",
                 }}
               /> */}
-            </Box>
+              </Box>
+            </Link>
 
             {/* Right Menu Items */}
             <Box
