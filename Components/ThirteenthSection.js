@@ -40,7 +40,6 @@ function ThirteenthSection() {
   const iconBtnStyles = (icon) => {
     let color;
 
-
     if (icon === "ig") color = "darkBgSecondary.main";
     if (icon === "fb") color = "darkBgSecondary.dark";
     if (icon === "twit") color = "darkBgSecondary.light";
@@ -48,6 +47,9 @@ function ThirteenthSection() {
     if (icon === "gh") color = "darkBgSecondary.main";
     return {
       color: color,
+      "&:hover": {
+        color: "white",
+      },
     };
   };
 

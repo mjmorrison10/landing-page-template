@@ -20,8 +20,8 @@ function SecondaryIntro() {
   const sectionStyles = {
     bgcolor: "darkBg.secondary",
     // minHeight: "75vh",
-    mt: -15,
-    pt: 23,
+    mt: -17,
+    pt: 25,
     // pt: "8%",
     clipPath: clipPathBottom2,
 

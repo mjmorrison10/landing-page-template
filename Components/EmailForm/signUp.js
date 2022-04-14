@@ -63,7 +63,7 @@ function SignUp() {
   const birthdayFieldGroupContainerStyles = {
     display: "flex",
     alignItems: "center",
-    justifyContent: {xs: "center", md: "flex-end"},
+    justifyContent: {xs: "center", md: "flex-start"},
   };
 
   const mmddStyles = {};
