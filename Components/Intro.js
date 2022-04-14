@@ -11,6 +11,7 @@ import MorrisonDevOpsIcon from "./icons/MorrisonDevOpsIcon";
 import { DoubleArrow } from "@mui/icons-material";
 import GetStartedBtn from "./GetStartedBtn";
 import SkeletonComp from "./SkeletonComp";
+import SignUp from "./EmailForm/signUp";
 
 // import { makeStyles } from "@material-ui/core/styles";
 
@@ -57,7 +58,7 @@ const containerStyles = {
   justifyContent: "center",
   textAlign: "center",
   gap: 10,
-  pb: { xs: 30, sm: 15, md: 15 },
+  pb: { xs: 30, sm: 15, md: 20 },
 };
 
 const freeAccessStyles = {
@@ -165,7 +166,8 @@ function Intro() {
             {content.subFreeAccess}
           </Typography>
 
-          <GetStartedBtn />
+          <SignUp />
+          {/* <GetStartedBtn /> */}
 
           {/* <Box component={"form"} sx={formStyles}>
             <TextField
