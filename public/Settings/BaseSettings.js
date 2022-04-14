@@ -40,3 +40,6 @@ export const companyName = {
   full: `Morrison Develop Operations`,
   concat: `MorrisonDevOps`,
 };
+
+export const mailChimpFormActionURL = `https://app.us14.list-manage.com/subscribe/post?u=9a8433dc709968b7f8d20e055&amp;id=c48846442f`
+
