@@ -24,14 +24,14 @@ import SignUp from "./EmailForm/signUp";
 // }));
 
 const content = {
-  intro: `We help personal trainers grow their wealth while dramatically increasing their business`,
-  header: `RECURRING REVENUE + PROFITS`,
+  intro: `We help personal trainers grow their client base while dramatically increasing their business`,
+  header: `Sell your e-book + Offer 1-on-1 coaching`,
   freeAccess1: `get free access to our`,
-  freeAccessSpan: `complimentary training program`,
-  freeAccess2: `to help promote your business.`,
+  freeAccessSpan: `complimentary program`,
+  freeAccess2: `to help promote your business and retain clients.`,
   // freeAccess: `get free access to our email newsletter designed to help promote your business.`,
   // freeAccess: `GET FREE ACCESS TO THE 5-80-5 MULTIPLIER TOOL & TRAINING.`,
-  subFreeAccess: `Use this tool to increase the value of your business, reduce your expenses, and increase your lead flow.`,
+  subFreeAccess: `Use this tool to attract clients, selling your coaching program, and retain 1-on-1 clients.`,
   // subFreeAccess: `Use this tool to 5x the value of your business, reduce your expense by 80% or more and increase your lead flow by up to 500%.`,
 };
 
@@ -166,8 +166,8 @@ function Intro() {
             {content.subFreeAccess}
           </Typography>
 
-          <SignUp />
-          {/* <GetStartedBtn /> */}
+          {/* <SignUp /> */}
+          <GetStartedBtn />
 
           {/* <Box component={"form"} sx={formStyles}>
             <TextField

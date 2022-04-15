@@ -13,6 +13,9 @@ import SeventhIcon from "./icons/SeventhIcon";
 import EighthIcon from "./icons/EighthIcon";
 import NinthIcon from "./icons/NinthIcon";
 import TenthIcon from "./icons/TenthIcon";
+import FitnessIcon01 from "./icons/FitnessIcon01";
+import FitnessIcon02 from "./icons/FitnessIcon02";
+import FitnessIcon03 from "./icons/FitnessIcon03";
 
 function SeventhSection() {
   const content = {
@@ -38,6 +41,15 @@ function SeventhSection() {
     icon08: <EighthIcon color="purple" sx={{ height: 100, width: 100 }} />,
     icon09: <NinthIcon color="purple" sx={{ height: 100, width: 100 }} />,
     icon10: <TenthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+    fitness01: (
+      <FitnessIcon01 color="purple" sx={{ height: 100, width: 100 }} />
+    ),
+    fitness02: (
+      <FitnessIcon02 color="purple" sx={{ height: 100, width: 100 }} />
+    ),
+    fitness03: (
+      <FitnessIcon03 color="purple" sx={{ height: 100, width: 100 }} />
+    ),
   };
 
   const sectionStyles = {
@@ -48,14 +60,13 @@ function SeventhSection() {
     position: "relative",
     zIndex: 18,
     bgcolor: "white",
-
   };
 
   const containerStyles = {
     pt: "8%",
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     flexGrow: 1,
   };
 
@@ -106,7 +117,7 @@ function SeventhSection() {
               gutterBottom
               sx={headingTypoStyles}
             >
-              {content.icon07}
+              {content.fitness01}
 
               {content.heading02}
             </Typography>
@@ -119,7 +130,7 @@ function SeventhSection() {
               gutterBottom
               sx={headingTypoStyles}
             >
-              {content.icon06}
+              {content.fitness03}
               {content.heading03}
             </Typography>
             <Typography>{content.body03}</Typography>

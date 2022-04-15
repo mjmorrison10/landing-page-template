@@ -12,17 +12,17 @@ function NinthSection() {
   const content = {
     heading01: `Want to grow your business?`,
     subheader01: `We make it quick and easy to get your website up, so you can focus on what you do best`,
-    body01: `Get your web app done quickly and with a beautiful, modern design. In order to grow your client base, you need a website that convertss online leads. With our agency, that's exactly what we'll be able to do for you! Let us help you get more clients and spread good health practices around the world!`,
+    body01: `Get your web app done quickly and with a beautiful, modern design. You need a website that converts online leads to grow your client base. With our agency, that's exactly what we'll be able to do for you! Let us help you get more clients and spread good health practices worldwide!`,
     image01: `images/businessScale.jpg`,
 
     heading02: `We do all of the work for you so you can focus on what you love -- Fitness`,
     subheader02: `I'm right in the gym with you, so I know what your potential clients want.`,
-    body02: `I will design a high-converting website to keep more paying clients, and provide the best possible personal training to grow your business. Don't do all this work by yourself. I'll design a website that captures more leads, design workouts for quicker results, and offer personal training for better retention rates. It's all about YOUR business success.`,
+    body02: `I will design a high-converting website to keep more paying clients and provide the best personal training to grow your business. Don't do all this work by yourself. I'll design a website that captures more leads, designs workouts for quicker results and offers personal training for better retention rates. It's all about your business success.`,
     image02: `images/gymEnjoyment.jpg`,
 
-    heading03: `We can save you time and money!`,
-    subheader03: `Do you find yourself spending too much time trying to write a catchy headline or email? We can help.`,
-    body03: `Hire us today to give you the high conversion results that your business needs!`,
+    heading03: `How to generate revenue, and set yourself apart from 80% of the competition with this simple trick!`,
+    subheader03: `The more you give into the world, the more you receive.`,
+    body03: `I know it sounds counterinteruitive, but this trick has been used by the upper echelon of society for centuries. The more value you bring into the world, the better it is for you, and we'll help you!`,
     image03: `images/happyHiking.jpg`,
 
     heading04: `We are selective in whom we work with.`,
