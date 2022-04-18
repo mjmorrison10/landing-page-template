@@ -8,6 +8,7 @@ function TenthSection() {
     header02: `or`,
     headerSpan02: `triple`,
     header03: `the size and value of your business`,
+    image01: `images/pool.jpg`,
   };
 
   const sectionContainer = {
@@ -15,12 +16,18 @@ function TenthSection() {
     alignItems: "center",
     justifyContent: "center",
     minHeight: "75vh",
-    backgroundColor: "darkBg.main",
+
+    // backgroundColor: "darkBg.main",
+    backgroundImage: `url(${content.image01})`,
+    backgroundPosition: { xs: "center" },
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    boxShadow: `inset 0 0 0 1000px hsla(239, 85%, 12%, 0.9)`,
 
     color: "darkBgPrimary.light",
     position: "relative",
     zIndex: 9,
-    mt: {xs: -10, md: -15,},
+    mt: { xs: -10, md: -15 },
     pt: 10,
 
     // mt: {xs: -20, md: -10},

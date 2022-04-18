@@ -15,10 +15,19 @@ function SecondaryIntro() {
     title2: `do for you?`,
     heading: `Generate leads, develop a high-converting sales funnel page to retain clients.`,
     quote: `"I want more customers."`,
+    image01: `images/conversation.jpg`,
   };
 
   const sectionStyles = {
-    bgcolor: "darkBg.secondary",
+    // bgcolor: "darkBg.secondary",
+
+    backgroundImage: `url(${content.image01})`,
+    backgroundPosition: "center",
+    // backgroundPosition: { xs: "75% 50%", sm: "center" },
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.85)`,
+
     // minHeight: "75vh",
     mt: -17,
     pt: 25,

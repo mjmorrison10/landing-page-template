@@ -17,6 +17,8 @@ function ThirteenthSection() {
     github: `https://github.com/mjmorrison10`,
     twitter: `https://twitter.com/MorrisonDevOps`,
     email: `morrisondevops@gmail.com`,
+    image01: `images/connection.jpg`,
+
   };
 
   const sectionStyles = {
@@ -24,7 +26,14 @@ function ThirteenthSection() {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    bgcolor: "darkBg.secondary",
+    // bgcolor: "darkBg.secondary",
+    backgroundImage: `url(${content.image01})`,
+    backgroundPosition: "center",
+    // backgroundPosition: { xs: "75% 50%", sm: "center" },
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.85)`,
+    
     color: "darkBgSecondary.main",
     py: 10,
   };

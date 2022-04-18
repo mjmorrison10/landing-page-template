@@ -21,7 +21,7 @@ function FifthSection() {
 
     heading03: `High Converting Templates at Your Disposal`,
     body03: `Over thousands of A/B testing, and years worth of our best work, we have the best templates and tools for creating high converting websites and generate leads. Focus on your passion and allow us to take your digital marketing to the next level!`,
-    image03: `images/increaseSales.jpg`,
+    image03: `images/computerWithPurpleBg.jpg`,
 
     heading04: `Focus on fitness above all else`,
     body04: `We know that you love helping others achieve their full potential by coaching passionate individuals on their fitness journey. With ${companyName.main}, you can focus your attention on bringing value to your clients, while we handle your digital needs!`,

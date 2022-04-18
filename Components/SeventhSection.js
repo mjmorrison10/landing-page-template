@@ -57,6 +57,7 @@ function SeventhSection() {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    gap: 10,
     position: "relative",
     zIndex: 18,
     bgcolor: "white",

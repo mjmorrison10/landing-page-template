@@ -8,13 +8,14 @@ function TwelvethSection() {
     header01: "What our clients are saying about",
     header02: `${companyName.full}`,
   };
-
+ 
   const sectionStyles = {
     display: "flex",
     textAlign: "center",
     justifyContent: "center",
     flexDirection: "column",
     mt: 10,
+
   };
 
   const headerStyles = {};

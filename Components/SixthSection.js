@@ -10,9 +10,20 @@ function SixthSection() {
     text1c: `do for you?`,
     text2: `Scale your business through digital marketing`,
     text3: `"I want to retain higher paying clients!"`,
+    image01: `images/luxuryCar.jpg`,
+
   };
   const sectionStyles = {
-    bgcolor: "darkBg.secondary",
+    // bgcolor: "darkBg.secondary",
+
+    backgroundImage: `url(${content.image01})`,
+    backgroundPosition: "50% 0%",
+    // backgroundPosition: { xs: "75% 50%", sm: "center" },
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.9)`,
+
+
     minHeight: "100vh",
     height: 500,
     // mt: -15,

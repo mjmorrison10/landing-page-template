@@ -13,7 +13,7 @@ function NinthSection() {
     heading01: `Want to grow your business?`,
     subheader01: `We make it quick and easy to get your website up, so you can focus on what you do best`,
     body01: `Get your web app done quickly and with a beautiful, modern design. You need a website that converts online leads to grow your client base. With our agency, that's exactly what we'll be able to do for you! Let us help you get more clients and spread good health practices worldwide!`,
-    image01: `images/businessScale.jpg`,
+    image01: `images/laptopBg2.jpg`,
 
     heading02: `We do all of the work for you so you can focus on what you love -- Fitness`,
     subheader02: `I'm right in the gym with you, so I know what your potential clients want.`,
@@ -28,7 +28,7 @@ function NinthSection() {
     heading04: `We are selective in whom we work with.`,
     subheader04: `We believe the fastest way to success is by giving as much value as possible!`,
     body04: `If you feel you cannot afford our services, we may still be able to help you out! We'll help you bring in additional income.`,
-    image04: `images/handshake.jpg`,
+    image04: `images/businessHandShake2.jpg`,
 
     heading05: `You deserve a better network. Join me and have access to a platform of entrepreneurs, and let us help you grow your business!`,
     subheader05: `All you need to do is set up a call with us and we'll tackle life's problems together!`,

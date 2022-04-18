@@ -33,11 +33,20 @@ const content = {
   // freeAccess: `GET FREE ACCESS TO THE 5-80-5 MULTIPLIER TOOL & TRAINING.`,
   subFreeAccess: `Use this tool to attract clients, selling your coaching program, and retain 1-on-1 clients.`,
   // subFreeAccess: `Use this tool to 5x the value of your business, reduce your expense by 80% or more and increase your lead flow by up to 500%.`,
+  image01: `images/laptopBg.jpg`,
 };
 
 const sectionStyles = {
   color: "darkBgPrimary.light",
-  backgroundColor: "darkBg.main",
+  // backgroundColor: "darkBg.main",
+
+  backgroundImage: `url(${content.image01})`,
+  backgroundPosition: { xs: "75% 50%", sm: "center" },
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  boxShadow: `inset 0 0 0 1000px hsla(239, 85%, 12%, 0.85)`,
+  // boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.85)`,
+
   clipPath: clipPathBottom,
   // pb: "6%",
   pt: { xs: 20, sm: 15, md: 10 },
@@ -144,7 +153,12 @@ function Intro() {
           sx={morrisonDevOpsIconStyles}
         />
         <Box>
-          <Typography variant="h2" component="h1" sx={introTypoStyles}>
+          <Typography
+            variant="h2"
+            component="h1"
+            sx={introTypoStyles}
+            gutterBottom
+          >
             {content.intro}
           </Typography>
           <Typography variant="h3" component="h2" sx={headerTypoStyles}>

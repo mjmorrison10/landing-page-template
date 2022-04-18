@@ -68,7 +68,8 @@ function EleventhSection() {
     backgroundPosition: "1% 1%",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    boxShadow: `inset 0 0 0 1000px rgba(0,0,0,.5)`,
+    boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.9)`,
+    color: "darkBgSecondary.light",
     py: 1,
   };
 
@@ -84,7 +85,8 @@ function EleventhSection() {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    boxShadow: `inset 0 0 0 1000px rgba(0,0,0,.6)`,
+    boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.9)`,
+    color: "darkBgSecondary.light",
     py: 1,
   };
   let thirdBoxStyles = {
@@ -99,6 +101,8 @@ function EleventhSection() {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    boxShadow: `inset 0 0 0 1000px hsla(239, 85%, 12%, 0.75)`,
+    color: "darkBgPrimary.light",
     py: 1,
     pb: 5,
   };
@@ -165,7 +169,7 @@ function EleventhSection() {
         <Typography variant="h6" component="p" sx={header03}>
           {content.header03a}
         </Typography>
-        <GetStartedBtn label={content.btn01a} sx={btn01} />
+        <GetStartedBtn label={content.btn01a} sx={btn01} clr="darkBgSecondary" />
       </Grid>
 
       <Grid item xs={12} md={6} sx={secondBoxStyles}>
@@ -183,7 +187,7 @@ function EleventhSection() {
         <Typography variant="h6" component="p" sx={header03}>
           {content.header03b}
         </Typography>
-        <GetStartedBtn label={content.btn01b} sx={btn01} />
+        <GetStartedBtn label={content.btn01b} sx={btn01} clr="darkBgSecondary"  />
       </Grid>
 
       <Grid item xs={12} sx={thirdBoxStyles} id="Apply">
@@ -193,7 +197,7 @@ function EleventhSection() {
         <Typography variant="h3" component="h3" sx={header03}>
           {content.header02c}
         </Typography>
-        <GetStartedBtn label={content.btn01c} sx={btn02} />
+        <GetStartedBtn label={content.btn01c} sx={btn02} clr="darkBgPrimary"  />
       </Grid>
     </Grid>
     // {/* </Box> */}

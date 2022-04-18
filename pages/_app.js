@@ -14,7 +14,6 @@ import {
 import { blue, blueGrey, grey, lightGreen, orange } from "@mui/material/colors";
 import { Container } from "@mui/material";
 
-
 let theme = createTheme({
   components: {
     MuiButton: {
@@ -79,7 +78,7 @@ let theme = createTheme({
       light: `hsla(239, 85%, 96%, 1)`,
       main: `hsla(239, 85%, 91%, 1)`,
       dark: `hsla(239, 85%, 86%, 1)`,
-      contrastText: "hsl(239, 85%, 6%)",
+      contrastText: "hsl(239, 85%, 15%)",
       comp: {
         light: `hsla(59, 85%, 96%, 1)`,
         main: `hsla(59, 85%, 91%, 1)`,
@@ -90,6 +89,7 @@ let theme = createTheme({
       light: `hsla(180, 85%, 90%, 1)`,
       main: `hsla(180, 85%, 85%, 1)`,
       dark: `hsla(180, 85%, 80%, 1)`,
+      contrastText: "hsl(180, 85%, 15%)",
       comp: {
         light: `hsl(0, 85%, 90%)`,
         main: `hsl(0, 85%, 85%)`,

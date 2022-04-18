@@ -2,7 +2,7 @@ import { DoubleArrow } from "@mui/icons-material";
 import { Box, Container, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { clipPathBottom2, companyName } from "../public/Settings/BaseSettings";
- 
+
 function FourthIntro() {
   const content = {
     text1a: `What can`,
@@ -10,12 +10,20 @@ function FourthIntro() {
     text1c: `do for you?`,
     text2: `systematize & scale your business`,
     text3: `"Eureka!"`,
+    image01: `images/luxuryLake.jpg`,
   };
   const sectionStyles = {
-    bgcolor: "darkBg.secondary",
+    // bgcolor: "darkBg.secondary",
+    backgroundImage: `url(${content.image01})`,
+    backgroundPosition: "50% 25%",
+    // backgroundPosition: { xs: "75% 50%", sm: "center" },
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.9)`,
+
     minHeight: "75vh",
     mt: -15,
-    pt: {xs: 20, sm: 10, md: 25,},
+    pt: { xs: 20, sm: 10, md: 25 },
     gap: 10,
     clipPath: clipPathBottom2,
     zIndex: 9,

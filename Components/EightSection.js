@@ -7,18 +7,27 @@ function EightSection() {
     header: `Six Reasons to Hire`,
     subheader: `${companyName.full}`,
     text: `Whether your goal is to get more clients, improve client retention, or generate more revenue from the clients you already have, ${companyName.main} is here to help!`,
+    image01: `images/blueRedBoxer.jpg`,
   };
 
   const sectionStyles = {
     minHeight: "45vh",
     color: "darkBgPrimary.light",
-    backgroundColor: "darkBg.main",
+    // backgroundColor: "darkBg.main",
+
+    backgroundImage: `url(${content.image01})`,
+    backgroundPosition: "50% 30%",
+    // backgroundPosition: { xs: "75% 50%", sm: "center" },
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    boxShadow: `inset 0 0 0 1000px hsla(239, 85%, 12%, 0.85)`,
+
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     gap: 4,
     alignItems: "center",
-    position: 'relative',
+    position: "relative",
     zIndex: 15,
     p: 1,
   };
@@ -28,7 +37,7 @@ function EightSection() {
   };
   const subheader = {
     color: "darkBgPrimary.comp.dark",
-    textAlign: 'center',
+    textAlign: "center",
   };
   const text = {
     color: "darkBgPrimary.light",
