@@ -1,5 +1,12 @@
 import { DoubleArrow } from "@mui/icons-material";
-import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Container,
+  Grid,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import {
   clipPathBottom2,
@@ -8,6 +15,7 @@ import {
   clipPathBottom4a,
   companyName,
 } from "../public/Settings/BaseSettings";
+import LazyLoad from "react-lazyload";
 
 function FifthSection() {
   const content = {
@@ -67,7 +75,6 @@ function FifthSection() {
   };
 
   const imageContainerStyles = {
-    bgcolor: "blue",
     height: "100%",
     width: "100%",
     display: "flex",
@@ -114,23 +121,37 @@ function FifthSection() {
           </Grid>
           <Grid item xs={12} md={6}>
             <Box sx={imageContainerStyles}>
-              <Box
-                component="img"
-                src={content.image01}
-                alt={content.heading01}
-                sx={imgStyles}
-              ></Box>
+              <LazyLoad
+                height={"100%"}
+                offset={-200}
+                once={true}
+                placeholder={<CircularProgress />}
+              >
+                <Box
+                  component="img"
+                  src={content.image01}
+                  alt={content.heading01}
+                  sx={imgStyles}
+                ></Box>
+              </LazyLoad>
             </Box>
           </Grid>
 
           <Grid item xs={12} md={6}>
             <Box sx={imageContainerStyles}>
-              <Box
-                component="img"
-                src={content.image02}
-                alt={content.heading02}
-                sx={imgStyles}
-              ></Box>
+              <LazyLoad
+                height={"100%"}
+                offset={-200}
+                once={true}
+                placeholder={<CircularProgress />}
+              >
+                <Box
+                  component="img"
+                  src={content.image02}
+                  alt={content.heading02}
+                  sx={imgStyles}
+                ></Box>
+              </LazyLoad>
             </Box>
           </Grid>
           <Grid item xs={12} md={6} sx={contentContainerStyles}>
@@ -158,23 +179,37 @@ function FifthSection() {
           </Grid>
           <Grid item xs={12} md={6}>
             <Box sx={imageContainerStyles}>
-              <Box
-                component="img"
-                src={content.image03}
-                alt={content.heading03}
-                sx={imgStyles}
-              ></Box>
+              <LazyLoad
+                height={"100%"}
+                offset={-200}
+                once={true}
+                placeholder={<CircularProgress />}
+              >
+                <Box
+                  component="img"
+                  src={content.image03}
+                  alt={content.heading03}
+                  sx={imgStyles}
+                ></Box>
+              </LazyLoad>
             </Box>
           </Grid>
 
           <Grid item xs={12} md={6}>
             <Box sx={imageContainerStyles}>
-              <Box
-                component="img"
-                src={content.image04}
-                alt={content.heading04}
-                sx={imgStyles}
-              ></Box>
+              <LazyLoad
+                height={"100%"}
+                offset={-200}
+                once={true}
+                placeholder={<CircularProgress />}
+              >
+                <Box
+                  component="img"
+                  src={content.image04}
+                  alt={content.heading04}
+                  sx={imgStyles}
+                ></Box>
+              </LazyLoad>
             </Box>
           </Grid>
           <Grid item xs={12} md={6} sx={contentContainerStyles}>

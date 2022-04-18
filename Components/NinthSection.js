@@ -1,5 +1,12 @@
 import { DoubleArrow } from "@mui/icons-material";
-import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Container,
+  Grid,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import {
   clipPathBottom2,
@@ -7,6 +14,7 @@ import {
   clipPathBottom5,
   companyName,
 } from "../public/Settings/BaseSettings";
+import LazyLoad from "react-lazyload";
 
 function NinthSection() {
   const content = {
@@ -120,8 +128,8 @@ function NinthSection() {
   const imageStyles = (area) => {
     return {
       gridArea: area,
-      bgcolor: "blue",
       minHeight: 500,
+      placeItems: 'center',
     };
   };
 
@@ -205,12 +213,18 @@ function NinthSection() {
             <Typography sx={bodyStyles}>{content.body01}</Typography>
           </Grid>
           <Grid item sx={imageStyles("image01")}>
-            <Box
-              component="img"
-              src={content.image01}
-              alt={content.heading01}
-              sx={imgStyles}
-            ></Box>
+            <LazyLoad
+              height={"100%"}
+              offset={-200}
+              placeholder={<CircularProgress />}
+            >
+              <Box
+                component="img"
+                src={content.image01}
+                alt={content.heading01}
+                sx={imgStyles}
+              ></Box>
+            </LazyLoad>
           </Grid>
 
           <Grid item sx={contentStyles("left", "section02")}>
@@ -235,12 +249,18 @@ function NinthSection() {
             <Typography sx={bodyStyles}>{content.body02}</Typography>
           </Grid>
           <Grid item sx={imageStyles("image02")}>
-            <Box
-              component="img"
-              src={content.image02}
-              alt={content.heading02}
-              sx={imgStyles}
-            ></Box>
+            <LazyLoad
+              height={"100%"}
+              offset={-200}
+              placeholder={<CircularProgress />}
+            >
+              <Box
+                component="img"
+                src={content.image02}
+                alt={content.heading02}
+                sx={imgStyles}
+              ></Box>
+            </LazyLoad>
           </Grid>
 
           <Grid item sx={contentStyles("right", "section03")}>
@@ -265,12 +285,18 @@ function NinthSection() {
             <Typography sx={bodyStyles}>{content.body03}</Typography>
           </Grid>
           <Grid item sx={imageStyles("image03")}>
-            <Box
-              component="img"
-              src={content.image03}
-              alt={content.heading03}
-              sx={imgStyles}
-            ></Box>
+            <LazyLoad
+              height={"100%"}
+              offset={-200}
+              placeholder={<CircularProgress />}
+            >
+              <Box
+                component="img"
+                src={content.image03}
+                alt={content.heading03}
+                sx={imgStyles}
+              ></Box>
+            </LazyLoad>
           </Grid>
 
           <Grid item sx={contentStyles("left", "section04")}>
@@ -295,12 +321,18 @@ function NinthSection() {
             <Typography sx={bodyStyles}>{content.body04}</Typography>
           </Grid>
           <Grid item sx={imageStyles("image04")}>
-            <Box
-              component="img"
-              src={content.image04}
-              alt={content.heading04}
-              sx={imgStyles}
-            ></Box>
+            <LazyLoad
+              height={"100%"}
+              offset={-200}
+              placeholder={<CircularProgress />}
+            >
+              <Box
+                component="img"
+                src={content.image04}
+                alt={content.heading04}
+                sx={imgStyles}
+              ></Box>
+            </LazyLoad>
           </Grid>
 
           <Grid item sx={contentStyles("right", "section05")}>
@@ -325,12 +357,18 @@ function NinthSection() {
             <Typography sx={bodyStyles}>{content.body05}</Typography>
           </Grid>
           <Grid item sx={imageStyles("image05")}>
-            <Box
-              component="img"
-              src={content.image05}
-              alt={content.heading05}
-              sx={imgStyles}
-            ></Box>
+            <LazyLoad
+              height={"100%"}
+              offset={-200}
+              placeholder={<CircularProgress />}
+            >
+              <Box
+                component="img"
+                src={content.image05}
+                alt={content.heading05}
+                sx={imgStyles}
+              ></Box>
+            </LazyLoad>
           </Grid>
 
           <Grid item sx={contentStyles("left", "section06")}>
@@ -355,12 +393,18 @@ function NinthSection() {
             <Typography sx={bodyStyles}>{content.body06}</Typography>
           </Grid>
           <Grid item sx={imageStyles("image06")}>
-            <Box
-              component="img"
-              src={content.image06}
-              alt={content.heading06}
-              sx={imgStyles}
-            ></Box>
+            <LazyLoad
+              height={"100%"}
+              offset={-200}
+              placeholder={<CircularProgress />}
+            >
+              <Box
+                component="img"
+                src={content.image06}
+                alt={content.heading06}
+                sx={imgStyles}
+              ></Box>
+            </LazyLoad>
           </Grid>
         </Grid>
 
