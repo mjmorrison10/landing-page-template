@@ -21,6 +21,7 @@ import Footer from "../Components/Footer";
 const mainStyles = {
   maxWidth: "100vw",
   width: "100%",
+  overflowX: "hidden",
 };
 
 export default function Home() {
@@ -32,7 +33,10 @@ export default function Home() {
           name="Morrison Developer Operations"
           content="Morrison Develop Operations. A Web Development company. Owned and Operated by Michael Morrison. We specialize in helping personal fitness coaches scale their business."
         />
-        <meta name="google-site-verification" content="42BSty5U9tBdDZ3GrzylEghrlO548S3re6Xto-z-fB0" />
+        <meta
+          name="google-site-verification"
+          content="42BSty5U9tBdDZ3GrzylEghrlO548S3re6Xto-z-fB0"
+        />
         <link rel="icon" href="/images/logo.png" />
       </Head>
       <Box component={"main"} sx={mainStyles}>

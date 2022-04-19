@@ -5,9 +5,10 @@ import {
   Container,
   Grid,
   IconButton,
+  Slide,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useCallback, useRef } from "react";
 import {
   clipPathBottom2,
   clipPathBottom3,
@@ -15,6 +16,8 @@ import {
   companyName,
 } from "../public/Settings/BaseSettings";
 import LazyLoad from "react-lazyload";
+// import { useInView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
 
 function NinthSection() {
   const content = {
@@ -97,13 +100,18 @@ function NinthSection() {
     return {
       gridArea: area,
       position: "relative",
-      minHeight: 500,
+      minHeight: { xs: 200, md: 500 },
       display: "flex",
       flexDirection: "column",
       textAlign: { xs: "center", md: "inherit" },
       alignItems: { xs: "center", md: "flex-start" },
       justifyContent: "center",
       px: { xs: 0, md: "10% !important" },
+      py: { xs: 2, md: "auto" },
+
+      // ISO Settings
+      // opacity: !iso ? 0 : 100,
+      // bgcolor: iso ? "purple" : "white",
 
       "&::before": {
         content: '""',
@@ -129,7 +137,7 @@ function NinthSection() {
     return {
       gridArea: area,
       minHeight: 500,
-      placeItems: 'center',
+      placeItems: "center",
     };
   };
 
@@ -181,231 +189,283 @@ function NinthSection() {
     // left: "50%",
   };
 
-  // const gridItemContainerStyles = () => {
-  //   return {
-  //     direction: { md: "column" },
-  //   };
-  // };
+  // const { ref, inView, entry } = useInView({
+  //   threshold: 0,
+  //   rootMargin: "-300px",
+  //   // triggerOnce: true,
+  // });
+
+  // const ref = useRef();
+  // const [inViewRef, inView] = useInView({
+  //   threshold: 0,
+  //   rootMargin: "-300px",
+  //   // triggerOnce: true,
+  // });
+
+  // // Use `useCallback` so we don't recreate the function on each render - Could result in infinite loop
+  // const setRefs = useCallback(
+  //   (node) => {
+  //     // Ref's from useRef needs to have the node assigned to `current`
+  //     ref.current = node;
+  //     // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
+  //     inViewRef(node);
+  //   },
+  //   [inViewRef]
+  // );
 
   return (
     <Box component="section" sx={sectionStyles}>
       <Box sx={containerStyles}>
         <Grid container sx={gridContainerStyles}>
-          <Grid item sx={contentStyles("right", "section01")}>
-            <Typography
-              variant="h5"
-              component="h2"
-              gutterBottom
-              sx={headingTypoStyles}
-            >
-              {content.heading01}
-            </Typography>
-            <div>
-              <Typography
-                variant="h6"
-                component="h3"
-                gutterBottom
-                sx={subHeadingTypoStyles}
-              >
-                {content.subheader01}
-              </Typography>
-            </div>
-            <Typography sx={bodyStyles}>{content.body01}</Typography>
-          </Grid>
-          <Grid item sx={imageStyles("image01")}>
-            <LazyLoad
-              height={"100%"}
-              offset={-200}
-              placeholder={<CircularProgress />}
-            >
-              <Box
-                component="img"
-                src={content.image01}
-                alt={content.heading01}
-                sx={imgStyles}
-              ></Box>
-            </LazyLoad>
-          </Grid>
+          <InView threshold={0} rootMargin={"-10%"}>
+            {({ inView, ref, entry }) => (
+              <>
+                <Grid ref={ref} item sx={contentStyles("right", "section01")}>
+                  <Slide in={inView} direction="right">
+                    <Box>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        gutterBottom
+                        sx={headingTypoStyles}
+                      >
+                        {content.heading01} {inView ? "true" : "false"}
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        component="h3"
+                        gutterBottom
+                        sx={subHeadingTypoStyles}
+                      >
+                        {content.subheader01}
+                      </Typography>
+                      <Typography sx={bodyStyles}>{content.body01}</Typography>
+                    </Box>
+                  </Slide>
+                </Grid>
+                <Grid item sx={imageStyles("image01")}>
+                  <Slide in={inView} direction="right">
+                    <Box
+                      component="img"
+                      src={content.image01}
+                      alt={content.heading01}
+                      sx={imgStyles}
+                    ></Box>
+                  </Slide>
+                </Grid>
+              </>
+            )}
+          </InView>
 
-          <Grid item sx={contentStyles("left", "section02")}>
-            <Typography
-              variant="h5"
-              component="h2"
-              gutterBottom
-              sx={headingTypoStyles}
-            >
-              {content.heading02}
-            </Typography>
-            <div>
-              <Typography
-                variant="h6"
-                component="h3"
-                gutterBottom
-                sx={subHeadingTypoStyles}
-              >
-                {content.subheader02}
-              </Typography>
-            </div>
-            <Typography sx={bodyStyles}>{content.body02}</Typography>
-          </Grid>
-          <Grid item sx={imageStyles("image02")}>
-            <LazyLoad
-              height={"100%"}
-              offset={-200}
-              placeholder={<CircularProgress />}
-            >
-              <Box
-                component="img"
-                src={content.image02}
-                alt={content.heading02}
-                sx={imgStyles}
-              ></Box>
-            </LazyLoad>
-          </Grid>
+          <InView threshold={0} rootMargin={"-10%"}>
+            {({ inView, ref, entry }) => (
+              <>
+                <Grid ref={ref} item sx={contentStyles("left", "section02")}>
+                  <Slide in={inView} direction="left">
+                    <Box>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        gutterBottom
+                        sx={headingTypoStyles}
+                      >
+                        {content.heading02}
+                      </Typography>
+                      <div>
+                        <Typography
+                          variant="h6"
+                          component="h3"
+                          gutterBottom
+                          sx={subHeadingTypoStyles}
+                        >
+                          {content.subheader02}
+                        </Typography>
+                      </div>
+                      <Typography sx={bodyStyles}>{content.body02}</Typography>
+                    </Box>
+                  </Slide>
+                </Grid>
+                <Grid item sx={imageStyles("image02")}>
+                  <Slide in={inView} direction="left">
+                    <Box
+                      component="img"
+                      src={content.image02}
+                      alt={content.heading02}
+                      sx={imgStyles}
+                    ></Box>
+                  </Slide>
+                </Grid>
+              </>
+            )}
+          </InView>
 
-          <Grid item sx={contentStyles("right", "section03")}>
-            <Typography
-              variant="h5"
-              component="h2"
-              gutterBottom
-              sx={headingTypoStyles}
-            >
-              {content.heading03}
-            </Typography>
-            <div>
-              <Typography
-                variant="h6"
-                component="h3"
-                gutterBottom
-                sx={subHeadingTypoStyles}
-              >
-                {content.subheader03}
-              </Typography>
-            </div>
-            <Typography sx={bodyStyles}>{content.body03}</Typography>
-          </Grid>
-          <Grid item sx={imageStyles("image03")}>
-            <LazyLoad
-              height={"100%"}
-              offset={-200}
-              placeholder={<CircularProgress />}
-            >
-              <Box
-                component="img"
-                src={content.image03}
-                alt={content.heading03}
-                sx={imgStyles}
-              ></Box>
-            </LazyLoad>
-          </Grid>
+          <InView threshold={0} rootMargin={"-10%"}>
+            {({ inView, ref, entry }) => (
+              <>
+                <Grid ref={ref} item sx={contentStyles("right", "section03")}>
+                  <Slide in={inView} direction="right">
+                    <Box>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        gutterBottom
+                        sx={headingTypoStyles}
+                      >
+                        {content.heading03}
+                      </Typography>
+                      <div>
+                        <Typography
+                          variant="h6"
+                          component="h3"
+                          gutterBottom
+                          sx={subHeadingTypoStyles}
+                        >
+                          {content.subheader03}
+                        </Typography>
+                      </div>
+                      <Typography sx={bodyStyles}>{content.body03}</Typography>
+                    </Box>
+                  </Slide>
+                </Grid>
+                <Grid item sx={imageStyles("image03")}>
+                  <Slide in={inView} direction="right">
+                    <Box
+                      component="img"
+                      src={content.image03}
+                      alt={content.heading03}
+                      sx={imgStyles}
+                    ></Box>
+                  </Slide>
+                </Grid>
+              </>
+            )}
+          </InView>
 
-          <Grid item sx={contentStyles("left", "section04")}>
-            <Typography
-              variant="h5"
-              component="h2"
-              gutterBottom
-              sx={headingTypoStyles}
-            >
-              {content.heading04}
-              <div>
-                <Typography
-                  variant="h6"
-                  component="h3"
-                  gutterBottom
-                  sx={subHeadingTypoStyles}
-                >
-                  {content.subheader04}
-                </Typography>
-              </div>
-            </Typography>
-            <Typography sx={bodyStyles}>{content.body04}</Typography>
-          </Grid>
-          <Grid item sx={imageStyles("image04")}>
-            <LazyLoad
-              height={"100%"}
-              offset={-200}
-              placeholder={<CircularProgress />}
-            >
-              <Box
-                component="img"
-                src={content.image04}
-                alt={content.heading04}
-                sx={imgStyles}
-              ></Box>
-            </LazyLoad>
-          </Grid>
+          <InView threshold={0} rootMargin={"-10%"}>
+            {({ inView, ref, entry }) => (
+              <>
+                <Grid ref={ref} item sx={contentStyles("left", "section04")}>
+                  <Slide in={inView} direction="left">
+                    <Box>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        gutterBottom
+                        sx={headingTypoStyles}
+                      >
+                        {content.heading04}
+                        <div>
+                          <Typography
+                            variant="h6"
+                            component="h3"
+                            gutterBottom
+                            sx={subHeadingTypoStyles}
+                          >
+                            {content.subheader04}
+                          </Typography>
+                        </div>
+                      </Typography>
+                      <Typography sx={bodyStyles}>{content.body04}</Typography>
+                    </Box>
+                  </Slide>
+                </Grid>
+                <Grid item sx={imageStyles("image04")}>
+                  <Slide in={inView} direction="left">
+                    <Box
+                      component="img"
+                      src={content.image04}
+                      alt={content.heading04}
+                      sx={imgStyles}
+                    ></Box>
+                  </Slide>
+                </Grid>
+              </>
+            )}
+          </InView>
 
-          <Grid item sx={contentStyles("right", "section05")}>
-            <Typography
-              variant="h5"
-              component="h2"
-              gutterBottom
-              sx={headingTypoStyles}
-            >
-              {content.heading05}
-            </Typography>
-            <div>
-              <Typography
-                variant="h6"
-                component="h3"
-                gutterBottom
-                sx={subHeadingTypoStyles}
-              >
-                {content.subheader05}
-              </Typography>
-            </div>
-            <Typography sx={bodyStyles}>{content.body05}</Typography>
-          </Grid>
-          <Grid item sx={imageStyles("image05")}>
-            <LazyLoad
-              height={"100%"}
-              offset={-200}
-              placeholder={<CircularProgress />}
-            >
-              <Box
-                component="img"
-                src={content.image05}
-                alt={content.heading05}
-                sx={imgStyles}
-              ></Box>
-            </LazyLoad>
-          </Grid>
+          <InView threshold={0} rootMargin={"-10%"}>
+            {({ inView, ref, entry }) => (
+              <>
+                <Grid ref={ref} item sx={contentStyles("right", "section05")}>
+                  <Slide in={inView} direction="right">
+                    <Box>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        gutterBottom
+                        sx={headingTypoStyles}
+                      >
+                        {content.heading05}
+                      </Typography>
+                      <div>
+                        <Typography
+                          variant="h6"
+                          component="h3"
+                          gutterBottom
+                          sx={subHeadingTypoStyles}
+                        >
+                          {content.subheader05}
+                        </Typography>
+                      </div>
+                      <Typography sx={bodyStyles}>{content.body05}</Typography>
+                    </Box>
+                  </Slide>
+                </Grid>
+                <Grid item sx={imageStyles("image05")}>
+                  <Slide in={inView} direction="right">
+                    <Box
+                      component="img"
+                      src={content.image05}
+                      alt={content.heading05}
+                      sx={imgStyles}
+                    ></Box>
+                  </Slide>
+                </Grid>
+              </>
+            )}
+          </InView>
 
-          <Grid item sx={contentStyles("left", "section06")}>
-            <Typography
-              variant="h5"
-              component="h2"
-              gutterBottom
-              sx={headingTypoStyles}
-            >
-              {content.heading06}
-            </Typography>
-            <div>
-              <Typography
-                variant="h6"
-                component="h3"
-                gutterBottom
-                sx={subHeadingTypoStyles}
-              >
-                {content.subheader06}
-              </Typography>
-            </div>
-            <Typography sx={bodyStyles}>{content.body06}</Typography>
-          </Grid>
-          <Grid item sx={imageStyles("image06")}>
-            <LazyLoad
-              height={"100%"}
-              offset={-200}
-              placeholder={<CircularProgress />}
-            >
-              <Box
-                component="img"
-                src={content.image06}
-                alt={content.heading06}
-                sx={imgStyles}
-              ></Box>
-            </LazyLoad>
-          </Grid>
+          <InView threshold={0} rootMargin={"-10%"}>
+            {({ inView, ref, entry }) => (
+              <>
+                <Grid ref={ref} item sx={contentStyles("left", "section06")}>
+                  <Slide in={inView} direction="left">
+                    <Box>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        gutterBottom
+                        sx={headingTypoStyles}
+                      >
+                        {content.heading06}
+                      </Typography>
+                      <div>
+                        <Typography
+                          variant="h6"
+                          component="h3"
+                          gutterBottom
+                          sx={subHeadingTypoStyles}
+                        >
+                          {content.subheader06}
+                        </Typography>
+                      </div>
+                      <Typography sx={bodyStyles}>{content.body06}</Typography>
+                    </Box>
+                  </Slide>
+                </Grid>
+                <Grid item sx={imageStyles("image06")}>
+                  <Slide in={inView} direction="left">
+                    <Box
+                      component="img"
+                      src={content.image06}
+                      alt={content.heading06}
+                      sx={imgStyles}
+                    ></Box>
+                  </Slide>
+                </Grid>
+              </>
+            )}
+          </InView>
         </Grid>
 
         <Box sx={iconButtonBoxStyles}>
