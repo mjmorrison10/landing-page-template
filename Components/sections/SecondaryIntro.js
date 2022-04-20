@@ -1,14 +1,14 @@
 import { DoubleArrow } from "@mui/icons-material";
-import { Box, Container, IconButton, Typography } from "@mui/material";
+import { Box, Container, IconButton, Typography, Zoom } from "@mui/material";
 import React from "react";
 import {
   clipPathBottom,
   clipPathBottom2,
   clipPathBottom3,
   companyName,
-} from "../public/Settings/BaseSettings";
+} from "../../public/Settings/BaseSettings";
 
-function SecondaryIntro() {
+function SecondaryIntro({ view }) {
   const content = {
     title1: `What can`,
     titleSpan: companyName.full,
@@ -52,6 +52,8 @@ function SecondaryIntro() {
     flexDirection: "column",
     textAlign: "center",
     color: "darkBgSecondary.main",
+    // opacity: view ? 1 : 0,
+    transition: "350ms all ease",
   };
 
   const titleStyles = {};
@@ -71,21 +73,23 @@ function SecondaryIntro() {
 
   return (
     <Box component="section" sx={sectionStyles} id="Services">
-      <Container sx={containerStyles}>
-        <Typography component="h1" variant="h3" sx={titleStyles}>
-          {content.title1}{" "}
-          <Box component="span" sx={spanStyles}>
-            {content.titleSpan}
-          </Box>{" "}
-          {content.title2}
-        </Typography>
-        <Typography component="h2" variant="h2" sx={headingStyles}>
-          {content.heading}
-        </Typography>
-        <Typography component="div" variant="h3" sx={quoteStyles}>
-          {content.quote}
-        </Typography>
-      </Container>
+      <Zoom in={view}>
+        <Container sx={containerStyles}>
+          <Typography component="h1" variant="h3" sx={titleStyles}>
+            {content.title1}{" "}
+            <Box component="span" sx={spanStyles}>
+              {content.titleSpan}
+            </Box>{" "}
+            {content.title2}
+          </Typography>
+          <Typography component="h2" variant="h2" sx={headingStyles}>
+            {content.heading}
+          </Typography>
+          <Typography component="div" variant="h3" sx={quoteStyles}>
+            {content.quote}
+          </Typography>
+        </Container>
+      </Zoom>
 
       <Box sx={iconButtonBoxStyles}>
         <IconButton sx={arrowIconStyles} href="#ServiceContent">

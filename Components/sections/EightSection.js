@@ -1,8 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Slide, Typography } from "@mui/material";
 import React from "react";
-import { companyName } from "../public/Settings/BaseSettings";
+import { companyName } from "../../public/Settings/BaseSettings";
 
-function EightSection() {
+function EightSection({ view }) {
   const content = {
     header: `Six Reasons to Hire`,
     subheader: `${companyName.full}`,
@@ -20,7 +20,7 @@ function EightSection() {
     // backgroundPosition: { xs: "75% 50%", sm: "center" },
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    boxShadow: `inset 0 0 0 1000px hsla(239, 85%, 12%, 0.85)`,
+    boxShadow: `inset 0 0 0 1000px hsla(239, 85%, 12%, 0.75)`,
 
     display: "flex",
     flexDirection: "column",
@@ -30,6 +30,13 @@ function EightSection() {
     position: "relative",
     zIndex: 15,
     p: 1,
+  };
+
+  const containerStyles = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: 'center',
   };
 
   const header = {
@@ -47,15 +54,19 @@ function EightSection() {
 
   return (
     <Box component="section" sx={sectionStyles} id="Six Motivations">
-      <Typography variant="h3" component="h2" sx={header}>
-        {content.header}
-      </Typography>
-      <Typography variant="h3" component="h3" sx={subheader}>
-        {content.subheader}
-      </Typography>
-      <Typography variant="h6" component="h3" sx={text}>
-        {content.text}
-      </Typography>
+      <Slide direction="right" in={view}>
+        <Box sx={containerStyles}>
+          <Typography variant="h3" component="h2" sx={header}>
+            {content.header}
+          </Typography>
+          <Typography variant="h3" component="h3" sx={subheader}>
+            {content.subheader}
+          </Typography>
+          <Typography variant="h6" component="h3" sx={text}>
+            {content.text}
+          </Typography>
+        </Box>
+      </Slide>
     </Box>
   );
 }

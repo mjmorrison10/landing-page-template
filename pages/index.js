@@ -1,22 +1,23 @@
 import { Box } from "@mui/system";
 import Head from "next/head";
 import Image from "next/image";
-import FifthSection from "../Components/FifthSection";
-import FourthIntro from "../Components/FourthIntro";
-import FourthSection from "../Components/SixthSection";
+import FifthSection from "../Components/sections/FifthSection";
+import FourthIntro from "../Components/sections/FourthIntro";
+import FourthSection from "../Components/sections/SixthSection";
 import Header from "../Components/Header";
-import Intro from "../Components/Intro";
-import SecondaryIntro from "../Components/SecondaryIntro";
-import ThirdIntro from "../Components/ThirdIntro";
-import SixthSection from "../Components/SixthSection";
-import SeventhSection from "../Components/SeventhSection";
-import EightSection from "../Components/EightSection";
-import NinthSection from "../Components/NinthSection";
-import TenthSection from "../Components/TenthSection";
-import EleventhSection from "../Components/EleventhSection";
-import TwelvethSection from "../Components/TwelvethSection";
-import ThirteenthSection from "../Components/ThirteenthSection";
+import Intro from "../Components/sections/Intro";
+import SecondaryIntro from "../Components/sections/SecondaryIntro";
+import ThirdIntro from "../Components/sections/ThirdIntro";
+import SixthSection from "../Components/sections/SixthSection";
+import SeventhSection from "../Components/sections/SeventhSection";
+import EightSection from "../Components/sections/EightSection";
+import NinthSection from "../Components/sections/NinthSection";
+import TenthSection from "../Components/sections/TenthSection";
+import EleventhSection from "../Components/sections/EleventhSection";
+import TwelvethSection from "../Components/sections/TwelvethSection";
+import ThirteenthSection from "../Components/sections/ThirteenthSection";
 import Footer from "../Components/Footer";
+import { InView } from "react-intersection-observer";
 
 const mainStyles = {
   maxWidth: "100vw",
@@ -41,17 +42,71 @@ export default function Home() {
       </Head>
       <Box component={"main"} sx={mainStyles}>
         <Intro />
-        <SecondaryIntro />
-        <ThirdIntro />
-        <FourthIntro />
+
+        {/* Generate Leads banner */}
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <div ref={ref}>
+              <SecondaryIntro view={inView} />
+            </div>
+          )}
+        </InView>
+
+        {/* Services */}
+        <InView threshold={0.25}>
+          {({ inView, ref, entry }) => (
+            <div ref={ref}>
+              <ThirdIntro view={inView} />
+            </div>
+          )}
+        </InView>
+
+        {/* Systematize Banner */}
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <div ref={ref}>
+              <FourthIntro view={inView} />
+            </div>
+          )}
+        </InView>
+
+        {/* Free yourself from your business section */}
         <FifthSection />
-        <SixthSection />
+
+        {/* Scale Banner */}
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <div ref={ref}>
+              <SixthSection view={inView} />
+            </div>
+          )}
+        </InView>
+
+        {/* Build Email List Section */}
         <SeventhSection />
-        <EightSection />
+
+        {/* Six Reasons to Hire banner */}
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <div ref={ref}>
+              <EightSection view={inView} />
+            </div>
+          )}
+        </InView>
+
+        {/* Six Reasons */}
         <NinthSection />
+
+        {/* Together we will double or triple banner */}
         <TenthSection />
+
+        {/* Three Part Section */}
         <EleventhSection />
+
+        {/* Testimonials section */}
         <TwelvethSection />
+
+        {/* Social Media section */}
         <ThirteenthSection />
       </Box>
 

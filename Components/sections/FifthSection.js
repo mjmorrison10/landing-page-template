@@ -4,6 +4,7 @@ import {
   CircularProgress,
   Container,
   Grid,
+  Grow,
   IconButton,
   Typography,
 } from "@mui/material";
@@ -14,26 +15,38 @@ import {
   clipPathBottom4,
   clipPathBottom4a,
   companyName,
-} from "../public/Settings/BaseSettings";
-import LazyLoad from "react-lazyload";
+} from "../../public/Settings/BaseSettings";
+import { InView } from "react-intersection-observer";
 
 function FifthSection() {
   const content = {
-    heading01: `free yourself from your business`,
-    body01: `It's easy to think you have to do everything in business, but ${companyName.full} has access to dozens of tools and strategies to help ease your workload and give you the freedom to focus on helping others achieve their fitness potential.`,
-    image01: `images/dinnerParty.jpg`,
+    section01: {
+      area: { text: "section01text", image: "section01image" },
+      heading: `free yourself from your business`,
+      body: `It's easy to think you have to do everything in business, but ${companyName.full} has access to dozens of tools and strategies to help ease your workload and give you the freedom to focus on helping others achieve their fitness potential.`,
+      image: `images/dinnerParty.jpg`,
+    },
 
-    heading02: `Better Systems, Tools, and Network`,
-    body02: `${companyName.main} has access to a unique network and each week members share the systems and tools that they used to accomplish their goals. With over 15k very powerful members, we know how to help your business thrive in an online marketplace.`,
-    image02: `images/globalNetwork.jpg`,
+    section02: {
+      area: { text: "section02text", image: "section02image" },
+      heading: `Better Systems, Tools, and Network`,
+      body: `${companyName.main} has access to a unique network and each week members share the systems and tools that they used to accomplish their goals. With over 15k very powerful members, we know how to help your business thrive in an online marketplace.`,
+      image: `images/globalNetwork.jpg`,
+    },
 
-    heading03: `High Converting Templates at Your Disposal`,
-    body03: `Over thousands of A/B testing, and years worth of our best work, we have the best templates and tools for creating high converting websites and generate leads. Focus on your passion and allow us to take your digital marketing to the next level!`,
-    image03: `images/computerWithPurpleBg.jpg`,
+    section03: {
+      area: { text: "section03text", image: "section03image" },
+      heading: `High Converting Templates at Your Disposal`,
+      body: `Over thousands of A/B testing, and years worth of our best work, we have the best templates and tools for creating high converting websites and generate leads. Focus on your passion and allow us to take your digital marketing to the next level!`,
+      image: `images/computerWithPurpleBg.jpg`,
+    },
 
-    heading04: `Focus on fitness above all else`,
-    body04: `We know that you love helping others achieve their full potential by coaching passionate individuals on their fitness journey. With ${companyName.main}, you can focus your attention on bringing value to your clients, while we handle your digital needs!`,
-    image04: `images/personalTrainer.jpg`,
+    section04: {
+      area: { text: "section04text", image: "section04image" },
+      heading: `Focus on fitness above all else`,
+      body: `We know that you love helping others achieve their full potential by coaching passionate individuals on their fitness journey. With ${companyName.main}, you can focus your attention on bringing value to your clients, while we handle your digital needs!`,
+      image: `images/personalTrainer.jpg`,
+    },
 
     // heading05: ``,
     // body05: ``,
@@ -55,10 +68,32 @@ function FifthSection() {
   const containerStyles = {
     flexGrow: 1,
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     py: { xs: 20, md: 10 },
   };
+
+  const gridContainerStyles = (i) => {
+    return {
+      mb: 5,
+      // display: "grid",
+      // gridTemplateColumns: "1fr 1fr",
+      // gridTemplateRows: "1fr",
+      // gap: `0px 5%`,
+      gridTemplateAreas: "image text",
+    };
+  };
+
+  const contentContainerStyles = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    px: 1,
+  };
+
+  const imageContainerStyles = {};
 
   const headingTypoStyles = {
     textAlign: "center",
@@ -67,27 +102,13 @@ function FifthSection() {
     textTransform: "capitalize",
   };
 
-  const contentContainerStyles = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  };
-
-  const imageContainerStyles = {
-    height: "100%",
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    minHeight: 250,
-  };
-
   const imgStyles = {
     height: "100%",
     width: "100%",
     objectFit: "cover",
     objectPosition: "center",
+    borderRadius: 2,
+    boxShadow: "0px 0px 10px 4px hsl(180deg 85% 15% / 75%)",
   };
 
   const iconButtonBoxStyles = {
@@ -97,47 +118,65 @@ function FifthSection() {
   };
 
   const arrowIconStyles = {
-    // bgcolor: 'blue',
     transform: "rotate(90deg)",
-    // position: "absolute",
-    // bottom: 5,
-    // left: "50%",
   };
 
   return (
     <Box component="section" sx={sectionStyles} id="SystemsContent">
       <Container sx={containerStyles}>
-        <Grid container spacing={2} columnSpacing={10}>
-          <Grid item xs={12} md={6} sx={contentContainerStyles}>
-            <Typography
-              variant="h5"
-              component="h2"
-              gutterBottom
-              sx={headingTypoStyles}
-            >
-              {content.heading01}
-            </Typography>
-            <Typography>{content.body01}</Typography>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Box sx={imageContainerStyles}>
-              <LazyLoad
-                height={"100%"}
-                offset={-200}
-                once={true}
-                placeholder={<CircularProgress />}
-              >
-                <Box
-                  component="img"
-                  src={content.image01}
-                  alt={content.heading01}
-                  sx={imgStyles}
-                ></Box>
-              </LazyLoad>
-            </Box>
-          </Grid>
+        {/* <Grid container spacing={2} columnSpacing={10}> */}
+        {Object.entries(content).map(([key, value], i) => {
+          console.log(key, "-->", value.heading);
+          const text = value.area.text;
+          const image = value.area.image;
 
-          <Grid item xs={12} md={6}>
+          if (key == "icons") return;
+          return (
+            <InView rootMargin="-15%" threshold={0.15}>
+              {({ inView, ref, entry }) => (
+                <div ref={ref} key={i}>
+                  <Grid
+                    container
+                    direction={i % 2 == 0 ? "row" : "row-reverse"}
+                    columnSpacing={10}
+                    sx={gridContainerStyles(i)}
+                  >
+                    <Grow in={inView} style={{ transformOrigin: "0 0 0" }}>
+                      <Grid item xs={12} md={6} sx={contentContainerStyles}>
+                        <Typography
+                          variant="h5"
+                          component="h2"
+                          gutterBottom
+                          sx={headingTypoStyles}
+                        >
+                          {value.heading}
+                        </Typography>
+                        <Typography>{value.body}</Typography>
+                      </Grid>
+                    </Grow>
+
+                    <Grow
+                      in={inView}
+                      style={{ transformOrigin: "0 0 0" }}
+                      timeout={1000}
+                    >
+                      <Grid item xs={12} md={6} sx={imageContainerStyles}>
+                        <Box
+                          component="img"
+                          src={value.image}
+                          alt={value.heading}
+                          sx={imgStyles}
+                        ></Box>
+                      </Grid>
+                    </Grow>
+                  </Grid>
+                </div>
+              )}
+            </InView>
+          );
+        })}
+
+        {/* <Grid item xs={12} md={6}>
             <Box sx={imageContainerStyles}>
               <LazyLoad
                 height={"100%"}
@@ -222,8 +261,8 @@ function FifthSection() {
               {content.heading04}
             </Typography>
             <Typography>{content.body04}</Typography>
-          </Grid>
-        </Grid>
+          </Grid> */}
+        {/* </Grid> */}
 
         {/* <Typography sx={headingTypoStyles}>{content.heading01}</Typography>
           <Typography>{content.body01}</Typography>

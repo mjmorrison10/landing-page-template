@@ -14,7 +14,7 @@ import {
   clipPathBottom3,
   clipPathBottom5,
   companyName,
-} from "../public/Settings/BaseSettings";
+} from "../../public/Settings/BaseSettings";
 import LazyLoad from "react-lazyload";
 // import { useInView } from "react-intersection-observer";
 import { InView } from "react-intersection-observer";
@@ -217,7 +217,7 @@ function NinthSection() {
     <Box component="section" sx={sectionStyles}>
       <Box sx={containerStyles}>
         <Grid container sx={gridContainerStyles}>
-          <InView threshold={0} rootMargin={"-10%"}>
+          <InView threshold={0.10} rootMargin={"-10%"} >
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("right", "section01")}>
@@ -257,7 +257,7 @@ function NinthSection() {
             )}
           </InView>
 
-          <InView threshold={0} rootMargin={"-10%"}>
+          <InView threshold={0.10} rootMargin={"-10%"} >
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("left", "section02")}>
@@ -299,7 +299,7 @@ function NinthSection() {
             )}
           </InView>
 
-          <InView threshold={0} rootMargin={"-10%"}>
+          <InView threshold={0.10} rootMargin={"-10%"} >
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("right", "section03")}>
@@ -341,7 +341,7 @@ function NinthSection() {
             )}
           </InView>
 
-          <InView threshold={0} rootMargin={"-10%"}>
+          <InView threshold={0.10} rootMargin={"-10%"} >
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("left", "section04")}>
@@ -383,7 +383,7 @@ function NinthSection() {
             )}
           </InView>
 
-          <InView threshold={0} rootMargin={"-10%"}>
+          <InView threshold={0.10} rootMargin={"-10%"} >
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("right", "section05")}>
@@ -425,7 +425,7 @@ function NinthSection() {
             )}
           </InView>
 
-          <InView threshold={0} rootMargin={"-10%"}>
+          <InView threshold={0.10} rootMargin={"-10%"} >
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("left", "section06")}>

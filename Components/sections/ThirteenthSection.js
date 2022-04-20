@@ -7,7 +7,7 @@ import {
 } from "@mui/icons-material";
 import { Box, ButtonGroup, IconButton, Typography } from "@mui/material";
 import React from "react";
-import { companyName } from "../public/Settings/BaseSettings";
+import { companyName } from "../../public/Settings/BaseSettings";
 
 function ThirteenthSection() {
   const content = {

@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { companyName } from "../public/Settings/BaseSettings";
-import TestimonialsComp from "./testimonialsComp";
+import { companyName } from "../../public/Settings/BaseSettings";
+import TestimonialsComp from "../testimonialsComp";
 
 function TwelvethSection() {
   const content = {

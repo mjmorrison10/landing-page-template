@@ -1,9 +1,12 @@
 import { DoubleArrow } from "@mui/icons-material";
-import { Box, Container, IconButton, Typography } from "@mui/material";
+import { Box, Container, Fade, IconButton, Typography } from "@mui/material";
 import React from "react";
-import { clipPathBottom2, companyName } from "../public/Settings/BaseSettings";
+import {
+  clipPathBottom2,
+  companyName,
+} from "../../public/Settings/BaseSettings";
 
-function SixthSection() {
+function SixthSection({ view }) {
   const content = {
     text1a: `What can`,
     text1b: `${companyName.main}`,
@@ -11,7 +14,6 @@ function SixthSection() {
     text2: `Scale your business through digital marketing`,
     text3: `"I want to retain higher paying clients!"`,
     image01: `images/luxuryCar.jpg`,
-
   };
   const sectionStyles = {
     // bgcolor: "darkBg.secondary",
@@ -22,7 +24,6 @@ function SixthSection() {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.9)`,
-
 
     minHeight: "100vh",
     height: 500,
@@ -64,25 +65,27 @@ function SixthSection() {
 
   const arrowIconStyles = {
     transform: "rotate(90deg)",
-  }; 
+  };
 
   return (
     <Box component="section" sx={sectionStyles} id="Digital Marketing">
-      <Container sx={containerStyles}>
-        <Typography component="h1" variant="h4" sx={header}>
-          {content.text1a}{" "}
-          <Box component="span" sx={spanStyles}>
-            {content.text1b}
-          </Box>{" "}
-          {content.text1c}
-        </Typography>
-        <Typography component="h2" variant="h2" sx={subheader}>
-          {content.text2}
-        </Typography>
-        <Typography component="div" variant="h5" sx={quote}>
-          {content.text3}
-        </Typography>
-      </Container>
+      <Fade in={view}>
+        <Container sx={containerStyles}>
+          <Typography component="h1" variant="h4" sx={header}>
+            {content.text1a}{" "}
+            <Box component="span" sx={spanStyles}>
+              {content.text1b}
+            </Box>{" "}
+            {content.text1c}
+          </Typography>
+          <Typography component="h2" variant="h2" sx={subheader}>
+            {content.text2}
+          </Typography>
+          <Typography component="div" variant="h5" sx={quote}>
+            {content.text3}
+          </Typography>
+        </Container>
+      </Fade>
 
       <Box sx={iconButtonBoxStyles}>
         <IconButton sx={arrowIconStyles} href="#Digital Marketing Content">

@@ -6,9 +6,9 @@ import {
   clipPathBottom2,
   clipPathBottom3,
   companyName,
-} from "../public/Settings/BaseSettings";
-import GetStartedBtn from "./GetStartedBtn";
-import SkeletonComp from "./SkeletonComp";
+} from "../../public/Settings/BaseSettings";
+import GetStartedBtn from "../GetStartedBtn";
+import SkeletonComp from "../SkeletonComp";
 
 function EleventhSection() {
   const content = {
