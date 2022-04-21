@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Slide, Typography } from "@mui/material";
 import React from "react";
+import { InView } from "react-intersection-observer";
 
 function TenthSection() {
   const content = {
@@ -44,19 +45,25 @@ function TenthSection() {
   };
 
   return (
-    <Box sx={sectionContainer}>
-      <Typography variant="h3" component="h2" sx={headerStyles}>
-        {content.header01}{" "}
-        <Box component="span" sx={spanStyles}>
-          {content.headerSpan01}
-        </Box>{" "}
-        {content.header02}{" "}
-        <Box component="span" sx={spanStyles}>
-          {content.headerSpan02}
-        </Box>{" "}
-        {content.header03}{" "}
-      </Typography>
-    </Box>
+    <InView rootMargin="-20%" threshold={0.2}>
+      {({ inView, ref, entry }) => (
+        <Box ref={ref} sx={sectionContainer}>
+          <Slide in={inView} direction="down">
+            <Typography variant="h3" component="h2" sx={headerStyles}>
+              {content.header01}{" "}
+              <Box component="span" sx={spanStyles}>
+                {content.headerSpan01}
+              </Box>{" "}
+              {content.header02}{" "}
+              <Box component="span" sx={spanStyles}>
+                {content.headerSpan02}
+              </Box>{" "}
+              {content.header03}{" "}
+            </Typography>
+          </Slide>
+        </Box>
+      )}
+    </InView>
   );
 }
 

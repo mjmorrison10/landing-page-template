@@ -109,10 +109,6 @@ function NinthSection() {
       px: { xs: 0, md: "10% !important" },
       py: { xs: 2, md: "auto" },
 
-      // ISO Settings
-      // opacity: !iso ? 0 : 100,
-      // bgcolor: iso ? "purple" : "white",
-
       "&::before": {
         content: '""',
         display: { xs: "none", md: "block" },
@@ -136,7 +132,7 @@ function NinthSection() {
   const imageStyles = (area) => {
     return {
       gridArea: area,
-      minHeight: 500,
+      minHeight: { xs: 200, md: 500 },
       placeItems: "center",
     };
   };
@@ -189,35 +185,11 @@ function NinthSection() {
     // left: "50%",
   };
 
-  // const { ref, inView, entry } = useInView({
-  //   threshold: 0,
-  //   rootMargin: "-300px",
-  //   // triggerOnce: true,
-  // });
-
-  // const ref = useRef();
-  // const [inViewRef, inView] = useInView({
-  //   threshold: 0,
-  //   rootMargin: "-300px",
-  //   // triggerOnce: true,
-  // });
-
-  // // Use `useCallback` so we don't recreate the function on each render - Could result in infinite loop
-  // const setRefs = useCallback(
-  //   (node) => {
-  //     // Ref's from useRef needs to have the node assigned to `current`
-  //     ref.current = node;
-  //     // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
-  //     inViewRef(node);
-  //   },
-  //   [inViewRef]
-  // );
-
   return (
     <Box component="section" sx={sectionStyles}>
       <Box sx={containerStyles}>
         <Grid container sx={gridContainerStyles}>
-          <InView threshold={0.10} rootMargin={"-10%"} >
+          <InView threshold={0.1} rootMargin={"-10%"}>
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("right", "section01")}>
@@ -257,7 +229,7 @@ function NinthSection() {
             )}
           </InView>
 
-          <InView threshold={0.10} rootMargin={"-10%"} >
+          <InView threshold={0.1} rootMargin={"-10%"}>
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("left", "section02")}>
@@ -299,7 +271,7 @@ function NinthSection() {
             )}
           </InView>
 
-          <InView threshold={0.10} rootMargin={"-10%"} >
+          <InView threshold={0.1} rootMargin={"-10%"}>
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("right", "section03")}>
@@ -341,7 +313,7 @@ function NinthSection() {
             )}
           </InView>
 
-          <InView threshold={0.10} rootMargin={"-10%"} >
+          <InView threshold={0.1} rootMargin={"-10%"}>
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("left", "section04")}>
@@ -383,7 +355,7 @@ function NinthSection() {
             )}
           </InView>
 
-          <InView threshold={0.10} rootMargin={"-10%"} >
+          <InView threshold={0.1} rootMargin={"-10%"}>
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("right", "section05")}>
@@ -425,7 +397,7 @@ function NinthSection() {
             )}
           </InView>
 
-          <InView threshold={0.10} rootMargin={"-10%"} >
+          <InView threshold={0.1} rootMargin={"-10%"}>
             {({ inView, ref, entry }) => (
               <>
                 <Grid ref={ref} item sx={contentStyles("left", "section06")}>

@@ -1,5 +1,5 @@
 import { DoubleArrow } from "@mui/icons-material";
-import { Box, Grid, IconButton, Typography } from "@mui/material";
+import { Box, Grid, IconButton, Typography, Zoom } from "@mui/material";
 import React from "react";
 import {
   clipPathBottom,
@@ -9,6 +9,7 @@ import {
 } from "../../public/Settings/BaseSettings";
 import GetStartedBtn from "../GetStartedBtn";
 import SkeletonComp from "../SkeletonComp";
+import { InView } from "react-intersection-observer";
 
 function EleventhSection() {
   const content = {
@@ -150,64 +151,143 @@ function EleventhSection() {
   };
 
   return (
-    // <Box sx={sectionStyles}>
-    // {/* <Box sx={containerStyles}> */}
     <Grid container sx={topSectionStyles} id="Apply Content">
       <Grid item xs={12} md={6} sx={firstBoxStyles}>
-        <Typography variant="h4" component="h2" sx={header01}>
-          {content.header01a}
-        </Typography>
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Typography ref={ref} variant="h4" component="h2" sx={header01}>
+                {content.header01a}
+              </Typography>
+            </Zoom>
+          )}
+        </InView>
 
-        <Box {...skeletonBoxStyles}>
-          <SkeletonComp height={6} width="80%" />
-          <Typography variant="h4" component="h3" sx={header02}>
-            {content.header02a}
-          </Typography>
-          <SkeletonComp height={6} width="80%" />
-        </Box>
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Box ref={ref} {...skeletonBoxStyles}>
+                <SkeletonComp height={6} width="80%" />
+                <Typography variant="h4" component="h3" sx={header02}>
+                  {content.header02a}
+                </Typography>
+                <SkeletonComp height={6} width="80%" />
+              </Box>
+            </Zoom>
+          )}
+        </InView>
 
-        <Typography variant="h6" component="p" sx={header03}>
-          {content.header03a}
-        </Typography>
-        <GetStartedBtn label={content.btn01a} sx={btn01} clr="darkBgSecondary" />
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Typography ref={ref} variant="h6" component="p" sx={header03}>
+                {content.header03a}
+              </Typography>
+            </Zoom>
+          )}
+        </InView>
+
+        <InView rootMargin="-10%" threshold={0.1}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Box ref={ref} sx={{ width: "100%" }}>
+                <GetStartedBtn
+                  label={content.btn01a}
+                  sx={btn01}
+                  clr="darkBgSecondary"
+                />
+              </Box>
+            </Zoom>
+          )}
+        </InView>
       </Grid>
 
       <Grid item xs={12} md={6} sx={secondBoxStyles}>
-        <Box {...skeletonBoxStyles}>
-          <SkeletonComp height={8} width="80%" />
-          <Typography variant="h4" component="h2" sx={header01}>
-            {content.header01b}
-          </Typography>
-          <SkeletonComp height={8} width="80%" />
-        </Box>
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Box ref={ref} {...skeletonBoxStyles}>
+                <SkeletonComp height={8} width="80%" />
+                <Typography variant="h4" component="h2" sx={header01}>
+                  {content.header01b}
+                </Typography>
+                <SkeletonComp height={8} width="80%" />
+              </Box>
+            </Zoom>
+          )}
+        </InView>
 
-        <Typography variant="h4" component="h3" sx={header02}>
-          {content.header02b}
-        </Typography>
-        <Typography variant="h6" component="p" sx={header03}>
-          {content.header03b}
-        </Typography>
-        <GetStartedBtn label={content.btn01b} sx={btn01} clr="darkBgSecondary"  />
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Typography ref={ref} variant="h4" component="h3" sx={header02}>
+                {content.header02b}
+              </Typography>
+            </Zoom>
+          )}
+        </InView>
+
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Typography ref={ref} variant="h6" component="p" sx={header03}>
+                {content.header03b}
+              </Typography>
+            </Zoom>
+          )}
+        </InView>
+
+        <InView rootMargin="-10%" threshold={0.1}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Box ref={ref} sx={{ width: "100%" }}>
+                <GetStartedBtn
+                  label={content.btn01b}
+                  sx={btn01}
+                  clr="darkBgSecondary"
+                />
+              </Box>
+            </Zoom>
+          )}
+        </InView>
       </Grid>
 
       <Grid item xs={12} sx={thirdBoxStyles} id="Apply">
-        <Typography variant="h2" component="h2" sx={header01}>
-          {content.header01c}
-        </Typography>
-        <Typography variant="h3" component="h3" sx={header03}>
-          {content.header02c}
-        </Typography>
-        <GetStartedBtn label={content.btn01c} sx={btn02} clr="darkBgPrimary"  />
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Typography ref={ref} variant="h2" component="h2" sx={header01}>
+                {content.header01c}
+              </Typography>
+            </Zoom>
+          )}
+        </InView>
+
+        <InView rootMargin="-20%" threshold={0.2}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Typography ref={ref} variant="h3" component="h3" sx={header03}>
+                {content.header02c}
+              </Typography>
+            </Zoom>
+          )}
+        </InView>
+
+        <InView rootMargin="-10%" threshold={0.1}>
+          {({ inView, ref, entry }) => (
+            <Zoom in={inView}>
+              <Box ref={ref} sx={{ width: "100%" }}>
+                <GetStartedBtn
+                  label={content.btn01c}
+                  sx={btn02}
+                  clr="darkBgPrimary"
+                />
+              </Box>
+            </Zoom>
+          )}
+        </InView>
       </Grid>
     </Grid>
-    // {/* </Box> */}
-
-    // {/* <Box sx={iconButtonBoxStyles}>
-    //   <IconButton sx={arrowIconStyles}>
-    //     <DoubleArrow />
-    //   </IconButton>
-    // </Box> */}
-    // </Box>
   );
 }
 

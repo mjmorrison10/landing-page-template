@@ -5,9 +5,10 @@ import {
   Instagram,
   Twitter,
 } from "@mui/icons-material";
-import { Box, ButtonGroup, IconButton, Typography } from "@mui/material";
+import { Box, ButtonGroup, Grow, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { companyName } from "../../public/Settings/BaseSettings";
+import { InView } from "react-intersection-observer";
 
 function ThirteenthSection() {
   const content = {
@@ -18,7 +19,6 @@ function ThirteenthSection() {
     twitter: `https://twitter.com/MorrisonDevOps`,
     email: `morrisondevops@gmail.com`,
     image01: `images/connection.jpg`,
-
   };
 
   const sectionStyles = {
@@ -33,7 +33,7 @@ function ThirteenthSection() {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.85)`,
-    
+
     color: "darkBgSecondary.main",
     py: 10,
   };
@@ -64,27 +64,39 @@ function ThirteenthSection() {
 
   return (
     <Box sx={sectionStyles}>
-      <Typography variant="h2" sx={headerStyles}>
-        {content.header01}
-      </Typography>
+      <InView rootMargin="-20%" threshold={0.2}>
+        {({ inView, ref, entry }) => (
+          <Grow in={inView}>
+            <Typography ref={ref} variant="h2" sx={headerStyles}>
+              {content.header01}
+            </Typography>
+          </Grow>
+        )}
+      </InView>
 
-      <ButtonGroup sx={btnGroupStyles}>
-        <IconButton href={content.instagram} sx={iconBtnStyles("ig")}>
-          <Instagram />
-        </IconButton>
-        <IconButton href={content.facebook} sx={iconBtnStyles("fb")}>
-          <Facebook />
-        </IconButton>
-        <IconButton href={content.github} sx={iconBtnStyles("gh")}>
-          <GitHub />
-        </IconButton>
-        <IconButton href={content.twitter} sx={iconBtnStyles("twit")}>
-          <Twitter />
-        </IconButton>
-        <IconButton href={content.email} sx={iconBtnStyles("email")}>
-          <Email />
-        </IconButton>
-      </ButtonGroup>
+      <InView rootMargin="-20%" threshold={0.2}>
+        {({ inView, ref, entry }) => (
+          <Grow in={inView}>
+            <ButtonGroup ref={ref} sx={btnGroupStyles}>
+              <IconButton href={content.instagram} sx={iconBtnStyles("ig")}>
+                <Instagram />
+              </IconButton>
+              <IconButton href={content.facebook} sx={iconBtnStyles("fb")}>
+                <Facebook />
+              </IconButton>
+              <IconButton href={content.github} sx={iconBtnStyles("gh")}>
+                <GitHub />
+              </IconButton>
+              <IconButton href={content.twitter} sx={iconBtnStyles("twit")}>
+                <Twitter />
+              </IconButton>
+              <IconButton href={content.email} sx={iconBtnStyles("email")}>
+                <Email />
+              </IconButton>
+            </ButtonGroup>
+          </Grow>
+        )}
+      </InView>
     </Box>
   );
 }

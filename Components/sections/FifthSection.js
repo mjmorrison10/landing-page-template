@@ -139,6 +139,7 @@ function FifthSection() {
                     container
                     direction={i % 2 == 0 ? "row" : "row-reverse"}
                     columnSpacing={10}
+                    rowSpacing={5}
                     sx={gridContainerStyles(i)}
                   >
                     <Grow in={inView} style={{ transformOrigin: "0 0 0" }}>
