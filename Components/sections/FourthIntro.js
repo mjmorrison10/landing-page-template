@@ -23,7 +23,7 @@ function FourthIntro({ view }) {
 
     minHeight: "75vh",
     mt: -15,
-    pt: { xs: 20, sm: 10, md: 25 },
+    pt: { xs: 20, sm: "25%", md: 25 },
     gap: 10,
     clipPath: clipPathBottom2,
     zIndex: 9,

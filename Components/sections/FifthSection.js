@@ -22,29 +22,39 @@ function FifthSection() {
   const content = {
     section01: {
       area: { text: "section01text", image: "section01image" },
-      heading: `free yourself from your business`,
-      body: `It's easy to think you have to do everything in business, but ${companyName.full} has access to dozens of tools and strategies to help ease your workload and give you the freedom to focus on helping others achieve their fitness potential.`,
+      // heading: `free yourself from your business`,
+      heading: `Do you ever feel like you're doing everything in business?`,
+      body: `Often, it feels like we're expected to do it all. And, let's be honest: there's a lot of that stuff in the fitness business.`,
+      body1: `Fitness professionals work hard to keep their clients healthy and happy, but that can leave little energy left over for maintaining your own business running.`,
+      body2: `And that's where we come in. At ${companyName.main}, we give you access to dozens of tools and strategies that will help you grow your business and make your health a priority while giving you time to focus on what matters most: helping others achieve their own fitness goals.`,
+      // body: `We get it. It can be overwhelming to take on everything from operations to finance to marketing and more, especially when your true passion is helping others build their fitness and health potential. But how can you do that at the same time?`,
+      // body1: `At ${companyName.full}, we can channel all of your efforts into building a thriving business that lets you stay focused on what matters most: your clients. We have a wide range of tools and strategies to make your life easier so you can free up brainpower for the things that matter most—your customers, your family, and your own health.`,
+      // body: `It's easy to think you have to do everything in business, but ${companyName.full} has access to dozens of tools and strategies to help ease your workload and give you the freedom to focus on helping others achieve their fitness potential.`,
       image: `images/dinnerParty.jpg`,
     },
 
     section02: {
       area: { text: "section02text", image: "section02image" },
       heading: `Better Systems, Tools, and Network`,
-      body: `${companyName.main} has access to a unique network and each week members share the systems and tools that they used to accomplish their goals. With over 15k very powerful members, we know how to help your business thrive in an online marketplace.`,
+      // body: `${companyName.main} has access to a unique network and each week members share the systems and tools that they used to accomplish their goals. With over 15k very powerful members, we know how to help your business thrive in an online marketplace.`,
+      body: `${companyName.main} is powered by the belief that good businesses should have access to a network of experts who can help them thrive in an online marketplace. We've spent years cultivating a network of over 15k active members, each with their own unique set of experience and expertise. Every week, our members share the systems and tools they used to accomplish their goals. So we know how to leverage the expertise of our community to help your business succeed.`,
+      body1: `We utilize state-of-the-art technologies such as React framework, which allows us to develop hyper-fast websites for you.`,
       image: `images/globalNetwork.jpg`,
     },
 
     section03: {
       area: { text: "section03text", image: "section03image" },
       heading: `High Converting Templates at Your Disposal`,
-      body: `Over thousands of A/B testing, and years worth of our best work, we have the best templates and tools for creating high converting websites and generate leads. Focus on your passion and allow us to take your digital marketing to the next level!`,
+      body: `We provide A/B testing-proven landing page templates and tools. Focus on your passion, reach a wider audience, and convert those visitors into happy customers! Our templates have helped thousands of entrepreneurs worldwide take their first (or next) step towards digital marketing success. Let us help you reach the next level.`,
+      // body: `Over thousands of A/B testing, and years worth of our best work, we have the best templates and tools for creating high converting websites and generate leads. Focus on your passion and allow us to take your digital marketing to the next level!`,
       image: `images/computerWithPurpleBg.jpg`,
     },
 
     section04: {
       area: { text: "section04text", image: "section04image" },
       heading: `Focus on fitness above all else`,
-      body: `We know that you love helping others achieve their full potential by coaching passionate individuals on their fitness journey. With ${companyName.main}, you can focus your attention on bringing value to your clients, while we handle your digital needs!`,
+      body: ` Morrison DevOps offers one-stop online marketing solutions for personal trainers, gyms and fitness studios. Our unique service helps you do more — build stronger relationships with your local customers and build a stronger brand for yourself. We are here to ensure that your business thrives!`,
+      // body: `We know that you love helping others achieve their full potential by coaching passionate individuals on their fitness journey. With ${companyName.main}, you can focus your attention on bringing value to your clients, while we handle your digital needs!`,
       image: `images/personalTrainer.jpg`,
     },
 
@@ -93,7 +103,10 @@ function FifthSection() {
     px: 1,
   };
 
-  const imageContainerStyles = {};
+  const imageContainerStyles = {
+    display: "flex",
+    justifyContent: "center",
+  };
 
   const headingTypoStyles = {
     textAlign: "center",
@@ -102,9 +115,15 @@ function FifthSection() {
     textTransform: "capitalize",
   };
 
+  const bodyStyles = {
+    maxWidth: "65ch",
+    textAlign: "center",
+  };
+
   const imgStyles = {
     height: "100%",
     width: "100%",
+    maxWidth: "65ch",
     objectFit: "cover",
     objectPosition: "center",
     borderRadius: 2,
@@ -152,7 +171,20 @@ function FifthSection() {
                         >
                           {value.heading}
                         </Typography>
-                        <Typography>{value.body}</Typography>
+                        <Typography gutterBottom sx={bodyStyles}>
+                          {value.body}
+                        </Typography>
+
+                        {value.body1 && (
+                          <Typography variant="subtitle2" gutterBottom sx={bodyStyles}>
+                            {value.body1}
+                          </Typography>
+                        )}
+                        {value.body2 && (
+                          <Typography gutterBottom sx={bodyStyles}>
+                            {value.body2}
+                          </Typography>
+                        )}
                       </Grid>
                     </Grow>
 

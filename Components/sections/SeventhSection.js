@@ -31,26 +31,31 @@ function SeventhSection() {
   const content = {
     section01: {
       heading: `Build an Email List`,
-      body: `${companyName.full} has access to modern, state of the art tools to build your email list. Focus on bringing free value to your potential clients, and they'll return the favor! We'll create daily writings for your clients so you can focus on helping your paying clients.`,
+      body: `If your list is already growing, it's time to take things up a notch. Morrison Development Operations has the tools—and the talent—to build the email list of your dreams.`,
+      body1: `We'll create high-converting copies for your emails to send out every single day, focusing on bringing free value to your potential clients, and they'll return the favor by signing up for your 1-on-1 coaching program!`,
+      // body: `${companyName.full} has access to modern, state of the art tools to build your email list. Focus on bringing free value to your potential clients, and they'll return the favor! We'll create daily writings for your clients so you can focus on helping your paying clients.`,
       icon: <FifthIcon color="purple" sx={{ height: 100, width: 100 }} />,
     },
 
     section02: {
       heading: `Advertising and Marketing`,
-      body: `With our private network of powerful individuals, ${companyName.main} will help scale your business through our top of the line digital marketing strategies. Our network has access to millionaires who specialize in digital marketing, and will thrive to make your business succeed.`,
-      icon: <FifthIcon color="purple" sx={{ height: 100, width: 100 }} />,
+      // body: `With our private network of powerful individuals, ${companyName.main} will help scale your business through our top of the line digital marketing strategies. Our network has access to millionaires who specialize in digital marketing, and will thrive to make your business succeed.`,
+      body: `Morrison DevOps will help scale your business through our top-of-the-line digital marketing strategies with our private network of influential individuals. Our network has access to millionaires specializing in digital marketing and has helped thousands of businesses scale into 6, 7, 8, or even 9-figure businesses. Leverage our network, and discover how we can help advertise your business.`,
+      icon: <FitnessIcon01 color="purple" sx={{ height: 100, width: 100 }} />,
     },
 
     section03: {
-      heading: `High Converting Websites`,
-      body: `Over thousands of testing and years of experience, we know exactly how to develop a high converting website that will last years to come. We'll continue improving your website each month so you can focus on your clients' needs and bringing value into the world.`,
+      heading: `High Converting Landing Page`,
+      body: `When you invest in a landing page website from us, you'll immediately get 5 consulting sessions with a professional who will work closely with you to understand what your business is about, the goals you have and create a strategy for boosting sales. We take all of the worry about your online marketing so you can focus on what matters most, your clients. With us, we'll handle all technical aspects of your site and help bring all of your dreams to reality.`,
+      // body: `Over thousands of testing and years of experience, we know exactly how to develop a high converting website that will last years to come. We'll continue improving your website each month so you can focus on your clients' needs and bringing value into the world.`,
       icon: <FitnessIcon03 color="purple" sx={{ height: 100, width: 100 }} />,
     },
 
     section04: {
-      heading: `Increase your value`,
-      body: `Using our proprietary copywriting strategies, we can turn your valuable fitness information and transform them into an excellent copy which attracts clients to subscribe to your newsletter and coaching services.`,
-      icon: <FitnessIcon01 color="purple" sx={{ height: 100, width: 100 }} />,
+      heading: `Transform your information into attractive copies`,
+      body: `Have you created outstanding fitness articles and health reports that you want to publish in a newsletter? Then it is time that your fitness information be transformed into an excellent copy that attracts your valuable audience. Our copywriting strategies are specifically designed to help you capture your audience's attention and drive sales conversions.`,
+      // body: `Using our proprietary copywriting strategies, we can turn your valuable fitness information and transform them into an excellent copy which attracts clients to subscribe to your newsletter and coaching services.`,
+      icon: <TenthIcon color="purple" sx={{ height: 100, width: 100 }} />,
     },
 
     icons: {
@@ -123,6 +128,7 @@ function SeventhSection() {
     <Box component="section" sx={sectionStyles} id="Digital Marketing Content">
       <Container sx={containerStyles}>
         <Grid container spacing={2}>
+        
           {Object.entries(content).map(([key, value], i) => {
             if (key == "icons") return;
 
@@ -142,7 +148,10 @@ function SeventhSection() {
                         {value.icon}
                         {value.heading}
                       </Typography>
-                      <Typography>{value.body}</Typography>
+                      <Typography gutterBottom={value.body1 ? true : false}>
+                        {value.body}
+                      </Typography>
+                      {value.body1 && <Typography>{value.body1}</Typography>}
                     </Grid>
                   </Fade>
                 )}

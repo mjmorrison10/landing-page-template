@@ -5,6 +5,7 @@ export const clipPathBottom = {
 };
 export const clipPathBottom2 = {
   xs: `polygon(100% 0, 100% 97%, 50% 100%, 0 97%, 0 0)`,
+  sm: `polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0)`,
   md: `polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0)`,
 };
 export const clipPathBottom3 = {
@@ -14,7 +15,8 @@ export const clipPathBottom3 = {
 
 export const clipPathBottom4 = {
   xs: `polygon(100% 0, 100% 98%, 50% 100%, 0 98%, 0 0)`,
-  md: `polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0)`,
+  sm: `polygon(100% 0, 100% 95%, 50% 100%, 0 95%, 0 0)`,
+  md: `polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0)`,
 };
 
 export const clipPathBottom4a = {

@@ -24,14 +24,14 @@ import SignUp from "../EmailForm/signUp";
 // }));
 function Intro() {
   const content = {
-    intro: `We help Health and Fitness Coaches grow their client base while dramatically increasing their business`,
+    intro: `We Help Health And Fitness Coaches Increase Their Client Base While Dramatically Increasing Their Business`,
     header: `Sell your e-book + Meal Plans + Offer 1-on-1 coaching`,
-    freeAccess1: `Why up to`,
+    freeAccess1: `Why do up to`,
     freeAccessSpan: `90% of small businesses`,
-    freeAccess2: `end up failing and how my services are different than the rest!`,
+    freeAccess2: `end up failing, and how are my services different than others!`,
     // freeAccess: `get free access to our email newsletter designed to help promote your business.`,
     // freeAccess: `GET FREE ACCESS TO THE 5-80-5 MULTIPLIER TOOL & TRAINING.`,
-    subFreeAccess: `I know what it takes to scale businesses and turn them into successful corporations. With my powerful network, and we have the tools, resources, and know how on retaining clients and scaling your business!`,
+    subFreeAccess: `I know what it takes to scale businesses and turn them into thriving corporations. We have the tools, resources, and know-how to retain clients and scale your business!`,
     // subFreeAccess: `Use this tool to attract clients, selling your coaching program, and retain 1-on-1 clients.`,
     // subFreeAccess: `Use this tool to 5x the value of your business, reduce your expense by 80% or more and increase your lead flow by up to 500%.`,
     image01: `images/laptopBg.jpg`,

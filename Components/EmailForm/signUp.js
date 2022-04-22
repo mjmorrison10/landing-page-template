@@ -58,12 +58,14 @@ function SignUp() {
     width: "100%",
     padding: "8px 0",
     textIndent: "2%",
+    bgcolor: "darkBg.opacity50",
+    color: "darkBg.contrastText",
   };
 
   const birthdayFieldGroupContainerStyles = {
     display: "flex",
     alignItems: "center",
-    justifyContent: {xs: "center", md: "flex-start"},
+    justifyContent: { xs: "center", md: "flex-start" },
   };
 
   const mmddStyles = {};
@@ -73,6 +75,8 @@ function SignUp() {
     height: 30,
     padding: "2px",
     textIndent: "2%",
+    bgcolor: "darkBg.opacity50",
+    color: "darkBg.contrastText",
   };
 
   const FieldGroupLabelStyles = {

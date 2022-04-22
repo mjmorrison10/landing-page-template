@@ -41,6 +41,7 @@ function EightSection({ view }) {
 
   const header = {
     color: "darkBgPrimary.main",
+    textAlign: 'center',
   };
   const subheader = {
     color: "darkBgPrimary.comp.dark",

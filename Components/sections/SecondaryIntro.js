@@ -13,8 +13,8 @@ function SecondaryIntro({ view }) {
     title1: `What can`,
     titleSpan: companyName.full,
     title2: `do for you?`,
-    heading: `Generate leads, develop a high-converting sales funnel page to retain clients.`,
-    quote: `"I want more customers."`,
+    heading: `Generate leads, and develop a high-converting sales funnel page to retain clients.`,
+    quote: `"I want more clients."`,
     image01: `images/conversation.jpg`,
   };
 
