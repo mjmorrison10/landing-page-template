@@ -251,13 +251,10 @@ function NinthSection() {
         <Grid container sx={gridContainerStyles}>
           {Object.entries(content).map(([key, value], i) => {
             if (key == "icons") return;
-
-            console.log(key, "-->", value.heading);
-
             return (
-              <InView threshold={0.1} rootMargin={"-10%"}>
-                {({ inView, ref, entry }) => (
-                  <>
+              <>
+                <InView threshold={0.5}>
+                  {({ inView, ref, entry }) => (
                     <Grid
                       ref={ref}
                       item
@@ -293,40 +290,60 @@ function NinthSection() {
                           >
                             {value.body}
                           </Typography>
-                          <Typography
-                            gutterBottom={value.body2 ? true : false}
-                            sx={bodyStyles}
-                          >
-                            {value.body1}
-                          </Typography>
-                          <Typography
-                            gutterBottom={value.body3 ? true : false}
-                            sx={bodyStyles}
-                          >
-                            {value.body2}
-                          </Typography>
-                          <Typography
-                            gutterBottom={value.body4 ? true : false}
-                            sx={bodyStyles}
-                          >
-                            {value.body3}
-                          </Typography>
-                          <Typography
-                            gutterBottom={value.body5 ? true : false}
-                            sx={bodyStyles}
-                          >
-                            {value.body4}
-                          </Typography>
-                          <Typography
-                            gutterBottom={value.body6 ? true : false}
-                            sx={bodyStyles}
-                          >
-                            {value.body5}
-                          </Typography>
+                          {value.body1 && (
+                            <Typography
+                              gutterBottom={value.body2 ? true : false}
+                              sx={bodyStyles}
+                            >
+                              {value.body1}
+                            </Typography>
+                          )}
+
+                          {value.body2 && (
+                            <Typography
+                              gutterBottom={value.body3 ? true : false}
+                              sx={bodyStyles}
+                            >
+                              {value.body2}
+                            </Typography>
+                          )}
+
+                          {value.body3 && (
+                            <Typography
+                              gutterBottom={value.body4 ? true : false}
+                              sx={bodyStyles}
+                            >
+                              {value.body3}
+                            </Typography>
+                          )}
+
+                          {value.body4 && (
+                            <Typography
+                              gutterBottom={value.body5 ? true : false}
+                              sx={bodyStyles}
+                            >
+                              {value.body4}
+                            </Typography>
+                          )}
+
+                          {value.body5 && (
+                            <Typography
+                              gutterBottom={value.body6 ? true : false}
+                              sx={bodyStyles}
+                            >
+                              {value.body5}
+                            </Typography>
+                          )}
+                          
                         </Box>
                       </Slide>
                     </Grid>
-                    <Grid item sx={imageStyles(value.area.image)}>
+                  )}
+                </InView>
+
+                <InView threshold={0.5}>
+                  {({ inView, ref, entry }) => (
+                    <Grid ref={ref} item sx={imageStyles(value.area.image)}>
                       <Slide in={inView} direction={i % 2 ? "left" : "right"}>
                         <Box
                           component="img"
@@ -336,9 +353,9 @@ function NinthSection() {
                         ></Box>
                       </Slide>
                     </Grid>
-                  </>
-                )}
-              </InView>
+                  )}
+                </InView>
+              </>
             );
           })}
         </Grid>

@@ -1,7 +1,11 @@
 import { DoubleArrow } from "@mui/icons-material";
 import { Box, Container, IconButton, Typography, Zoom } from "@mui/material";
 import React from "react";
-import { clipPathBottom2, companyName } from "../../public/Settings/BaseSettings";
+import {
+  clipPathBottom2,
+  companyName,
+} from "../../public/Settings/BaseSettings";
+import { InView } from "react-intersection-observer";
 
 function FourthIntro({ view }) {
   const content = {
@@ -65,23 +69,29 @@ function FourthIntro({ view }) {
 
   return (
     <Box component="section" sx={sectionStyles} id="Systems">
-      <Zoom in={view}>
-        <Container sx={containerStyles}>
-          <Typography component="h1" variant="h4" sx={header}>
-            {content.text1a}{" "}
-            <Box component="span" sx={spanStyles}>
-              {content.text1b}
-            </Box>{" "}
-            {content.text1c}
-          </Typography>
-          <Typography component="h2" variant="h2" sx={subheader}>
-            {content.text2}
-          </Typography>
-          <Typography component="div" variant="h3" sx={quote}>
-            {content.text3}
-          </Typography>
-        </Container>
-      </Zoom>
+      <InView rootMargin="-20%" threshold={0.2}>
+        {({ inView, ref, entry }) => (
+          <Container ref={ref} sx={containerStyles}>
+            <Zoom in={inView}>
+              <div>
+                <Typography component="h1" variant="h4" sx={header}>
+                  {content.text1a}{" "}
+                  <Box component="span" sx={spanStyles}>
+                    {content.text1b}
+                  </Box>{" "}
+                  {content.text1c}
+                </Typography>
+                <Typography component="h2" variant="h2" sx={subheader}>
+                  {content.text2}
+                </Typography>
+                <Typography component="div" variant="h3" sx={quote}>
+                  {content.text3}
+                </Typography>
+              </div>
+            </Zoom>
+          </Container>
+        )}
+      </InView>
 
       <Box sx={iconButtonBoxStyles}>
         <IconButton sx={arrowIconStyles} href="#SystemsContent">

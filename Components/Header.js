@@ -69,9 +69,9 @@ const content = {
     "Systems",
     "Blog",
     "Digital Marketing",
-    "Six Motivations",
+    "Six Reasons",
     "Apply",
-    "My Work",
+    // "My Work",
   ],
 };
 

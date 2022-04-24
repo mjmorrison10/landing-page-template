@@ -45,25 +45,27 @@ function TenthSection() {
   };
 
   return (
-    <InView rootMargin="-20%" threshold={0.2}>
-      {({ inView, ref, entry }) => (
-        <Box ref={ref} sx={sectionContainer}>
-          <Slide in={inView} direction="down">
-            <Typography variant="h3" component="h2" sx={headerStyles}>
-              {content.header01}{" "}
-              <Box component="span" sx={spanStyles}>
-                {content.headerSpan01}
-              </Box>{" "}
-              {content.header02}{" "}
-              <Box component="span" sx={spanStyles}>
-                {content.headerSpan02}
-              </Box>{" "}
-              {content.header03}{" "}
-            </Typography>
-          </Slide>
-        </Box>
-      )}
-    </InView>
+    <Box sx={sectionContainer}>
+      <InView threshold={1}>
+        {({ inView, ref, entry }) => (
+          <div ref={ref}>
+            <Slide in={inView} direction="down">
+              <Typography variant="h3" component="h2" sx={headerStyles}>
+                {content.header01}{" "}
+                <Box component="span" sx={spanStyles}>
+                  {content.headerSpan01}
+                </Box>{" "}
+                {content.header02}{" "}
+                <Box component="span" sx={spanStyles}>
+                  {content.headerSpan02}
+                </Box>{" "}
+                {content.header03}{" "}
+              </Typography>
+            </Slide>
+          </div>
+        )}
+      </InView>
+    </Box>
   );
 }
 

@@ -36,6 +36,7 @@ function ThirteenthSection() {
 
     color: "darkBgSecondary.main",
     py: 10,
+    mt: 20,
   };
 
   const headerStyles = {

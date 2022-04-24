@@ -26,8 +26,9 @@ import NinthIcon from "../icons/NinthIcon";
 import TenthIcon from "../icons/TenthIcon";
 import FitnessIcon01 from "../icons/FitnessIcon01";
 import FitnessIcon02 from "../icons/FitnessIcon02";
+import { InView } from "react-intersection-observer";
 
-function ThirdIntro({ view }) {
+function ThirdIntro() {
   const content = {
     one: {
       heading: `Landing Page or Sales Funnel Design and Development`,
@@ -123,24 +124,30 @@ function ThirdIntro({ view }) {
             // console.log(key, "-->", value.heading);
             if (key == "icons") return;
             return (
-              <Zoom
-                in={view}
-                key={key}
-                style={{ transitionDelay: `${i * 500}ms` }}
-              >
-                <Grid item xs={12} md={6}>
-                  <Typography
-                    variant="h5"
-                    component="h2"
-                    gutterBottom
-                    sx={headingTypoStyles}
-                  >
-                    {value.icon}
-                    {value.heading}
-                  </Typography>
-                  <Typography>{value.body}</Typography>
-                </Grid>
-              </Zoom>
+              <InView threshold={1  }>
+                {({ inView, ref, entry }) => (
+                  <Grid ref={ref} item xs={12} md={6}>
+                    <Zoom
+                      in={inView}
+                      key={key}
+                      style={{ transitionDelay: `${i % 2 ? 500 : 0}ms` }}
+                    >
+                      <div>
+                        <Typography
+                          variant="h5"
+                          component="h2"
+                          gutterBottom
+                          sx={headingTypoStyles}
+                        >
+                          {value.icon}
+                          {value.heading}
+                        </Typography>
+                        <Typography>{value.body}</Typography>
+                      </div>
+                    </Zoom>
+                  </Grid>
+                )}
+              </InView>
             );
           })}
         </Grid>

@@ -1,6 +1,7 @@
 import { Box, Slide, Typography } from "@mui/material";
 import React from "react";
 import { companyName } from "../../public/Settings/BaseSettings";
+import { InView } from "react-intersection-observer";
 
 function EightSection({ view }) {
   const content = {
@@ -36,12 +37,12 @@ function EightSection({ view }) {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: 'center',
+    alignItems: "center",
   };
 
   const header = {
     color: "darkBgPrimary.main",
-    textAlign: 'center',
+    textAlign: "center",
   };
   const subheader = {
     color: "darkBgPrimary.comp.dark",
@@ -55,19 +56,25 @@ function EightSection({ view }) {
 
   return (
     <Box component="section" sx={sectionStyles} id="Six Motivations">
-      <Slide direction="right" in={view}>
-        <Box sx={containerStyles}>
-          <Typography variant="h3" component="h2" sx={header}>
-            {content.header}
-          </Typography>
-          <Typography variant="h3" component="h3" sx={subheader}>
-            {content.subheader}
-          </Typography>
-          <Typography variant="h6" component="h3" sx={text}>
-            {content.text}
-          </Typography>
-        </Box>
-      </Slide>
+      <InView threshold={1}>
+        {({ inView, ref, entry }) => (
+          <Box ref={ref} sx={containerStyles}>
+            <Slide direction="right" in={inView}>
+              <div>
+                <Typography variant="h3" component="h2" sx={header}>
+                  {content.header}
+                </Typography>
+                <Typography variant="h3" component="h3" sx={subheader}>
+                  {content.subheader}
+                </Typography>
+                <Typography variant="h6" component="h3" sx={text}>
+                  {content.text}
+                </Typography>
+              </div>
+            </Slide>
+          </Box>
+        )}
+      </InView>
     </Box>
   );
 }

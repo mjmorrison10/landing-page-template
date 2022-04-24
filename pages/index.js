@@ -44,31 +44,13 @@ export default function Home() {
         <Intro />
 
         {/* Generate Leads banner */}
-        <InView rootMargin="-20%" threshold={0.2}>
-          {({ inView, ref, entry }) => (
-            <div ref={ref}>
-              <SecondaryIntro view={inView} />
-            </div>
-          )}
-        </InView>
+        <SecondaryIntro />
 
         {/* Services */}
-        <InView threshold={0.25}>
-          {({ inView, ref, entry }) => (
-            <div ref={ref}>
-              <ThirdIntro view={inView} />
-            </div>
-          )}
-        </InView>
+        <ThirdIntro />
 
         {/* Systematize Banner */}
-        <InView rootMargin="-20%" threshold={0.2}>
-          {({ inView, ref, entry }) => (
-            <div ref={ref}>
-              <FourthIntro view={inView} />
-            </div>
-          )}
-        </InView>
+        <FourthIntro />
 
         {/* Free yourself from your business section */}
         <FifthSection />
@@ -86,13 +68,14 @@ export default function Home() {
         <SeventhSection />
 
         {/* Six Reasons to Hire banner */}
-        <InView rootMargin="-20%" threshold={0.2}>
+        <EightSection />
+        {/* <InView rootMargin="-20%" threshold={0.2}>
           {({ inView, ref, entry }) => (
             <div ref={ref}>
               <EightSection view={inView} />
             </div>
           )}
-        </InView>
+        </InView> */}
 
         {/* Six Reasons */}
         <NinthSection />
@@ -104,7 +87,7 @@ export default function Home() {
         <EleventhSection />
 
         {/* Testimonials section */}
-        <TwelvethSection />
+        {/* <TwelvethSection /> */}
 
         {/* Social Media section */}
         <ThirteenthSection />

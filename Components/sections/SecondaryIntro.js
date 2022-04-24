@@ -7,8 +7,9 @@ import {
   clipPathBottom3,
   companyName,
 } from "../../public/Settings/BaseSettings";
+import { InView } from "react-intersection-observer";
 
-function SecondaryIntro({ view }) {
+function SecondaryIntro() {
   const content = {
     title1: `What can`,
     titleSpan: companyName.full,
@@ -52,7 +53,6 @@ function SecondaryIntro({ view }) {
     flexDirection: "column",
     textAlign: "center",
     color: "darkBgSecondary.main",
-    // opacity: view ? 1 : 0,
     transition: "350ms all ease",
   };
 
@@ -73,23 +73,29 @@ function SecondaryIntro({ view }) {
 
   return (
     <Box component="section" sx={sectionStyles} id="Services">
-      <Zoom in={view}>
-        <Container sx={containerStyles}>
-          <Typography component="h1" variant="h3" sx={titleStyles}>
-            {content.title1}{" "}
-            <Box component="span" sx={spanStyles}>
-              {content.titleSpan}
-            </Box>{" "}
-            {content.title2}
-          </Typography>
-          <Typography component="h2" variant="h2" sx={headingStyles}>
-            {content.heading}
-          </Typography>
-          <Typography component="div" variant="h3" sx={quoteStyles}>
-            {content.quote}
-          </Typography>
-        </Container>
-      </Zoom>
+      <InView threshold={1}>
+        {({ inView, ref, entry }) => (
+          <Container ref={ref} sx={containerStyles}>
+            <Zoom in={inView}>
+              <div>
+                <Typography component="h1" variant="h3" sx={titleStyles}>
+                  {content.title1}{" "}
+                  <Box component="span" sx={spanStyles}>
+                    {content.titleSpan}
+                  </Box>{" "}
+                  {content.title2}
+                </Typography>
+                <Typography component="h2" variant="h2" sx={headingStyles}>
+                  {content.heading}
+                </Typography>
+                <Typography component="div" variant="h3" sx={quoteStyles}>
+                  {content.quote}
+                </Typography>
+              </div>
+            </Zoom>
+          </Container>
+        )}
+      </InView>
 
       <Box sx={iconButtonBoxStyles}>
         <IconButton sx={arrowIconStyles} href="#ServiceContent">

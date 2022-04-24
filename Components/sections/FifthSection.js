@@ -16,7 +16,7 @@ import {
   clipPathBottom4a,
   companyName,
 } from "../../public/Settings/BaseSettings";
-import { InView } from "react-intersection-observer";
+import { useInView, InView } from "react-intersection-observer";
 
 function FifthSection() {
   const content = {
@@ -140,6 +140,11 @@ function FifthSection() {
     transform: "rotate(90deg)",
   };
 
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 1,
+  });
+
   return (
     <Box component="section" sx={sectionStyles} id="SystemsContent">
       <Container sx={containerStyles}>
@@ -151,18 +156,28 @@ function FifthSection() {
 
           if (key == "icons") return;
           return (
-            <InView rootMargin="-15%" threshold={0.15}>
-              {({ inView, ref, entry }) => (
-                <div ref={ref} key={i}>
+            // <InView rootMargin="-15%" threshold={0.15}>
+            //   {({ inView, ref, entry }) => (
+            //     <div ref={ref} key={i}>
+ 
+            <Grid
+              container
+              direction={i % 2 == 0 ? "row" : "row-reverse"}
+              columnSpacing={10}
+              rowSpacing={5}
+              sx={gridContainerStyles(i)}
+            >
+              <InView threshold={0.5}>
+                {({ inView, ref, entry }) => (
                   <Grid
-                    container
-                    direction={i % 2 == 0 ? "row" : "row-reverse"}
-                    columnSpacing={10}
-                    rowSpacing={5}
-                    sx={gridContainerStyles(i)}
+                    ref={ref}
+                    item
+                    xs={12}
+                    md={6}
+                    sx={contentContainerStyles}
                   >
                     <Grow in={inView} style={{ transformOrigin: "0 0 0" }}>
-                      <Grid item xs={12} md={6} sx={contentContainerStyles}>
+                      <div>
                         <Typography
                           variant="h5"
                           component="h2"
@@ -174,9 +189,12 @@ function FifthSection() {
                         <Typography gutterBottom sx={bodyStyles}>
                           {value.body}
                         </Typography>
-
                         {value.body1 && (
-                          <Typography variant="subtitle2" gutterBottom sx={bodyStyles}>
+                          <Typography
+                            variant="subtitle2"
+                            gutterBottom
+                            sx={bodyStyles}
+                          >
                             {value.body1}
                           </Typography>
                         )}
@@ -185,27 +203,35 @@ function FifthSection() {
                             {value.body2}
                           </Typography>
                         )}
-                      </Grid>
+                      </div>
                     </Grow>
+                  </Grid>
+                )}
+              </InView>
 
+              <InView threshold={0.5}>
+                {({ inView, ref, entry }) => (
+                  <Grid ref={ref} item xs={12} md={6} sx={imageContainerStyles}>
                     <Grow
                       in={inView}
                       style={{ transformOrigin: "0 0 0" }}
                       timeout={1000}
                     >
-                      <Grid item xs={12} md={6} sx={imageContainerStyles}>
-                        <Box
-                          component="img"
-                          src={value.image}
-                          alt={value.heading}
-                          sx={imgStyles}
-                        ></Box>
-                      </Grid>
+                      <Box
+                        component="img"
+                        src={value.image}
+                        alt={value.heading}
+                        sx={imgStyles}
+                      ></Box>
                     </Grow>
                   </Grid>
-                </div>
-              )}
-            </InView>
+                )}
+              </InView>
+            </Grid>
+
+            // </div>
+            // )}
+            // </InView>
           );
         })}
 
@@ -314,6 +340,180 @@ function FifthSection() {
         </IconButton>
       </Box>
     </Box>
+
+    // <Box component="section" sx={sectionStyles} id="SystemsContent">
+    //   <Container sx={containerStyles}>
+    //     {/* <Grid container spacing={2} columnSpacing={10}> */}
+    //     {Object.entries(content).map(([key, value], i) => {
+    //       console.log(key, "-->", value.heading);
+    //       const text = value.area.text;
+    //       const image = value.area.image;
+
+    //       if (key == "icons") return;
+    //       return (
+    //         <InView rootMargin="-15%" threshold={0.15}>
+    //           {({ inView, ref, entry }) => (
+    //             <div ref={ref} key={i}>
+    //               <Grid
+    //                 container
+    //                 direction={i % 2 == 0 ? "row" : "row-reverse"}
+    //                 columnSpacing={10}
+    //                 rowSpacing={5}
+    //                 sx={gridContainerStyles(i)}
+    //               >
+    //                 <Grow in={inView} style={{ transformOrigin: "0 0 0" }}>
+    //                   <Grid item xs={12} md={6} sx={contentContainerStyles}>
+    //                     <Typography
+    //                       variant="h5"
+    //                       component="h2"
+    //                       gutterBottom
+    //                       sx={headingTypoStyles}
+    //                     >
+    //                       {value.heading}
+    //                     </Typography>
+    //                     <Typography gutterBottom sx={bodyStyles}>
+    //                       {value.body}
+    //                     </Typography>
+
+    //                     {value.body1 && (
+    //                       <Typography variant="subtitle2" gutterBottom sx={bodyStyles}>
+    //                         {value.body1}
+    //                       </Typography>
+    //                     )}
+    //                     {value.body2 && (
+    //                       <Typography gutterBottom sx={bodyStyles}>
+    //                         {value.body2}
+    //                       </Typography>
+    //                     )}
+    //                   </Grid>
+    //                 </Grow>
+
+    //                 <Grow
+    //                   in={inView}
+    //                   style={{ transformOrigin: "0 0 0" }}
+    //                   timeout={1000}
+    //                 >
+    //                   <Grid item xs={12} md={6} sx={imageContainerStyles}>
+    //                     <Box
+    //                       component="img"
+    //                       src={value.image}
+    //                       alt={value.heading}
+    //                       sx={imgStyles}
+    //                     ></Box>
+    //                   </Grid>
+    //                 </Grow>
+    //               </Grid>
+    //             </div>
+    //           )}
+    //         </InView>
+    //       );
+    //     })}
+
+    //     {/* <Grid item xs={12} md={6}>
+    //         <Box sx={imageContainerStyles}>
+    //           <LazyLoad
+    //             height={"100%"}
+    //             offset={-200}
+    //             once={true}
+    //             placeholder={<CircularProgress />}
+    //           >
+    //             <Box
+    //               component="img"
+    //               src={content.image02}
+    //               alt={content.heading02}
+    //               sx={imgStyles}
+    //             ></Box>
+    //           </LazyLoad>
+    //         </Box>
+    //       </Grid>
+    //       <Grid item xs={12} md={6} sx={contentContainerStyles}>
+    //         <Typography
+    //           variant="h5"
+    //           component="h2"
+    //           gutterBottom
+    //           sx={headingTypoStyles}
+    //         >
+    //           {content.heading02}
+    //         </Typography>
+    //         <Typography>{content.body02}</Typography>
+    //       </Grid>
+
+    //       <Grid item xs={12} md={6} sx={contentContainerStyles}>
+    //         <Typography
+    //           variant="h5"
+    //           component="h2"
+    //           gutterBottom
+    //           sx={headingTypoStyles}
+    //         >
+    //           {content.heading03}
+    //         </Typography>
+    //         <Typography>{content.body03}</Typography>
+    //       </Grid>
+    //       <Grid item xs={12} md={6}>
+    //         <Box sx={imageContainerStyles}>
+    //           <LazyLoad
+    //             height={"100%"}
+    //             offset={-200}
+    //             once={true}
+    //             placeholder={<CircularProgress />}
+    //           >
+    //             <Box
+    //               component="img"
+    //               src={content.image03}
+    //               alt={content.heading03}
+    //               sx={imgStyles}
+    //             ></Box>
+    //           </LazyLoad>
+    //         </Box>
+    //       </Grid>
+
+    //       <Grid item xs={12} md={6}>
+    //         <Box sx={imageContainerStyles}>
+    //           <LazyLoad
+    //             height={"100%"}
+    //             offset={-200}
+    //             once={true}
+    //             placeholder={<CircularProgress />}
+    //           >
+    //             <Box
+    //               component="img"
+    //               src={content.image04}
+    //               alt={content.heading04}
+    //               sx={imgStyles}
+    //             ></Box>
+    //           </LazyLoad>
+    //         </Box>
+    //       </Grid>
+    //       <Grid item xs={12} md={6} sx={contentContainerStyles}>
+    //         <Typography
+    //           variant="h5"
+    //           component="h2"
+    //           gutterBottom
+    //           sx={headingTypoStyles}
+    //         >
+    //           {content.heading04}
+    //         </Typography>
+    //         <Typography>{content.body04}</Typography>
+    //       </Grid> */}
+    //     {/* </Grid> */}
+
+    //     {/* <Typography sx={headingTypoStyles}>{content.heading01}</Typography>
+    //       <Typography>{content.body01}</Typography>
+    //       <Typography sx={headingTypoStyles}>{content.heading02}</Typography>
+    //       <Typography>{content.body02}</Typography>
+    //       <Typography sx={headingTypoStyles}>{content.heading03}</Typography>
+    //       <Typography>{content.body03}</Typography>
+    //       <Typography sx={headingTypoStyles}>{content.heading04}</Typography>
+    //       <Typography>{content.body04}</Typography> */}
+    //   </Container>
+
+    //   <Box sx={iconButtonBoxStyles}>
+    //     <IconButton sx={arrowIconStyles} href="#Digital Marketing">
+    //       <DoubleArrow color={"info"} />
+    //       {/* <MorrisonDevOpsIcon color="blue" sx={iconRootStyles} /> */}
+    //     </IconButton>
+    //   </Box>
+    // </Box>
   );
 }
 
