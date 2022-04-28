@@ -25,7 +25,7 @@ import SignUp from "../EmailForm/signUp";
 function Intro() {
   const content = {
     intro: `We Help Health And Fitness Coaches Increase Their Client Base While Dramatically Increasing Their Business`,
-    header: `Sell your e-book + Meal Plans + Offer 1-on-1 coaching`,
+    header: `Sell your e-book + Meal Plans + 1-on-1 coaching`,
     freeAccess1: `Why do up to`,
     freeAccessSpan: `90% of small businesses`,
     freeAccess2: `end up failing, and how are my services different than others!`,
@@ -130,6 +130,9 @@ function Intro() {
   const morrisonDevOpsIconStyles = {
     height: 250,
     width: 250,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   };
 
   const iconButtonBoxStyles = {

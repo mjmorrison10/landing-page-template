@@ -73,7 +73,7 @@ function SecondaryIntro() {
 
   return (
     <Box component="section" sx={sectionStyles} id="Services">
-      <InView threshold={1}>
+      <InView threshold={0.85}>
         {({ inView, ref, entry }) => (
           <Container ref={ref} sx={containerStyles}>
             <Zoom in={inView}>

@@ -1,4 +1,4 @@
-import { DoubleArrow } from "@mui/icons-material";
+import { ArrowDropDown, DoubleArrow } from "@mui/icons-material";
 import {
   Box,
   Container,
@@ -31,6 +31,7 @@ import { InView } from "react-intersection-observer";
 function ThirdIntro() {
   const content = {
     one: {
+      id: `LandingPage`,
       heading: `Landing Page or Sales Funnel Design and Development`,
       body: `Landing page websites are an effective way to drive traffic and impact the world. This is your opportunity to spread a positive message and build your brand while creating a buzz around the industry. You’ve worked hard to build credibility within the health industry, and you want to leverage that reputation. We don’t just want to take your business to the next level; we want to help you grow and flourish with a landing page website that will surely convert potential leads into clients and purchase your programs!`,
       // body: `Tap into ${companyName.main}'s specialty for developing high converting landing pages in the Fitness Industry. We'll work hard to generate leads for your business by writing sales pages to entice potential clients into signing up for your email list. We know what you need to market your coaching services or courses and attract higher-paying clients! Please give us the pleasure of helping your fitness business thrive!`,
@@ -38,18 +39,21 @@ function ThirdIntro() {
     },
 
     two: {
+      id: `CompleteWebsite`,
       heading: `Complete Website Development and Digital Marketing Package`,
       body: `If you're a health and fitness professional looking to focus on providing your services and not on the power, precision and frustration of developing and marketing a website, we have the perfect solution! Our premium, complete web development package includes everything you need to succeed, including writing all those important emails that get people clicking, Facebook ads and Google display ads, a landing page for converting sales unlike anything else on the market, website optimization for search engines and more.`,
       // body: `This offer is our premium, complete marketing service package! Our digital marketing strategy and our homepage and landing page development are perfect for any fitness professional who wants to focus entirely on their services! We'll write emails, market your business, and even add monthly updates to increase SEO and sales conversation rates.`,
       icon: <FitnessIcon02 color="purple" sx={{ height: 100, width: 100 }} />,
     },
     three: {
+      id: `SEO`,
       heading: `Search Engine Optimization`,
       body: `${companyName.main} uses state-of-the-art tools to analyze your website and determine where and how your website will improve! SEO is a fundamental and core component of digital marketing. Greater online visibility is about more than just high keyword rankings or traffic. It’s about how traffic converts into opportunities for new customers, leads, and sales. Search exponentially increases the number of potential customers who can find you, increasing your ability to earn revenue while decreasing your cost per lead.`,
       // body: `${companyName.main} MorrisonDevOps uses state-of-the-art tools to analyze your website and determine where and how your website will improve! The higher you rank in searches, the more effective your sales conversion will be! We'll work every month to update your website with new up-to-date information.`,
       icon: <ThirdIcon color="purple" sx={{ height: 100, width: 100 }} />,
     },
     four: {
+      id: `CMS`,
       heading: `Content Management Systems`,
       body: `Trust your website in our hands, and we will develop a high converting website using WordPress (other CMS available). Easily set up your website in a day while maintaining complete control over how your website looks and additional upgrades. WordPress makes it easy to blog and share your blog to other platforms without contacting your webmaster. (${companyName.full}) `,
       icon: <FourthIcon color="purple" sx={{ height: 100, width: 100 }} />,
@@ -124,7 +128,7 @@ function ThirdIntro() {
             // console.log(key, "-->", value.heading);
             if (key == "icons") return;
             return (
-              <InView threshold={1  }>
+              <InView threshold={0.75}>
                 {({ inView, ref, entry }) => (
                   <Grid ref={ref} item xs={12} md={6}>
                     <Zoom
@@ -143,6 +147,20 @@ function ThirdIntro() {
                           {value.heading}
                         </Typography>
                         <Typography>{value.body}</Typography>
+                        {i < Object.keys(content).length - 2 && (
+                          <IconButton
+                            color="info"
+                            href={`#ServiceContent0${i}`}
+                            id={`ServiceContent0${i}`}
+                            sx={{
+                              alignSelf: "center",
+                              width: "100%",
+                              display: { xs: "flex", md: "none" },
+                            }}
+                          >
+                            <ArrowDropDown />
+                          </IconButton>
+                        )}
                       </div>
                     </Zoom>
                   </Grid>

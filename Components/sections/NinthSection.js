@@ -109,7 +109,7 @@ function NinthSection() {
     position: "relative",
     zIndex: 60,
     bgcolor: bgColor,
-    px: { xs: 1, md: 0 },
+    // px: {  xs: 1, md: 0 },
   };
 
   const containerStyles = {
@@ -158,34 +158,23 @@ function NinthSection() {
       textAlign: { xs: "center", md: "inherit" },
       alignItems: { xs: "center", md: "flex-start" },
       justifyContent: "center",
-      px: { xs: 0, md: "10% !important" },
+      px: { xs: 1, md: "10% !important" },
       py: { xs: 2, md: "auto" },
-
-      "&::before": {
-        content: '""',
-        display: { xs: "none", md: "block" },
-        position: "absolute",
-        bgcolor: bgColor,
-
-        width: "5%",
-        height: "100%",
-        clipPath:
-          direction === "right"
-            ? `polygon(0 0, 0% 100%, 100% 50%)`
-            : "polygon(0 45%, 100% 100%, 100% 0)",
-
-        top: 0,
-        right: direction === "right" ? "-5%" : null,
-        left: direction === "left" ? "-4.91%" : null,
-      },
     };
   };
 
-  const imageStyles = (area) => {
+  const imageStyles = (area, direction) => {
     return {
       gridArea: area,
-      minHeight: { xs: 200, md: 500 },
+      minHeight: { xs: 300, md: 500 },
       placeItems: "center",
+      clipPath: {
+        xs: `polygon(100% 0, 100% calc(100% - 1rem), 50% 100%, 0 90%, 0 0, 50% calc(0% + 1rem))`,
+        md:
+          direction === "right"
+            ? `polygon(0 0, 100% 0, 100% 100%, 0 100%, calc(0% + 2rem) 51%)`
+            : `polygon(0 0, 100% 0, calc(100% - 2rem) 50%, 100% 100%, 0 100%)`,
+      },
     };
   };
 
@@ -334,7 +323,6 @@ function NinthSection() {
                               {value.body5}
                             </Typography>
                           )}
-                          
                         </Box>
                       </Slide>
                     </Grid>
@@ -343,7 +331,14 @@ function NinthSection() {
 
                 <InView threshold={0.5}>
                   {({ inView, ref, entry }) => (
-                    <Grid ref={ref} item sx={imageStyles(value.area.image)}>
+                    <Grid
+                      ref={ref}
+                      item
+                      sx={imageStyles(
+                        value.area.image,
+                        i % 2 ? "left" : "right"
+                      )}
+                    >
                       <Slide in={inView} direction={i % 2 ? "left" : "right"}>
                         <Box
                           component="img"

@@ -71,7 +71,7 @@ function EleventhSection() {
     backgroundSize: "cover",
     boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.9)`,
     color: "darkBgSecondary.light",
-    py: 1,
+    p: 1,
   };
 
   let secondBoxStyles = {
@@ -88,7 +88,7 @@ function EleventhSection() {
     backgroundSize: "cover",
     boxShadow: `inset 0 0 0 1000px hsla(180, 85%, 15%, 0.9)`,
     color: "darkBgSecondary.light",
-    py: 1,
+    p: 1,
   };
   let thirdBoxStyles = {
     minHeight: "60vh",
@@ -104,7 +104,7 @@ function EleventhSection() {
     backgroundSize: "cover",
     boxShadow: `inset 0 0 0 1000px hsla(239, 85%, 12%, 0.75)`,
     color: "darkBgPrimary.light",
-    py: 1,
+    p: 1,
     pb: 5,
   };
 

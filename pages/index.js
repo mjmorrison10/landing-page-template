@@ -18,11 +18,30 @@ import TwelvethSection from "../Components/sections/TwelvethSection";
 import ThirteenthSection from "../Components/sections/ThirteenthSection";
 import Footer from "../Components/Footer";
 import { InView } from "react-intersection-observer";
+import { Fab } from "@mui/material";
+import { ArrowUpward } from "@mui/icons-material";
 
 const mainStyles = {
   maxWidth: "100vw",
   width: "100%",
   overflowX: "hidden",
+  display: "flex",
+  flexDirection: "column",
+};
+
+const fabStyles = {
+  href: "#Get Started",
+  size: "small",
+  color: "info",
+  position: "sticky",
+  display: "flex",
+  bottom: "1rem",
+  alignItems: "center",
+  alignSelf: "flex-end",
+  mr: 4,
+  bottom: 0,
+  right: 0,
+  justifyContent: "center",
 };
 
 export default function Home() {
@@ -87,7 +106,16 @@ export default function Home() {
         <EleventhSection />
 
         {/* Testimonials section */}
-        {/* <TwelvethSection /> */}
+        <TwelvethSection />
+
+        {/* <Fab
+          color={fabStyles.color}
+          size={fabStyles.size}
+          href={fabStyles.href}
+          sx={fabStyles}
+        >
+          <ArrowUpward size={fabStyles.size} />
+        </Fab> */}
 
         {/* Social Media section */}
         <ThirteenthSection />

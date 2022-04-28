@@ -30,6 +30,7 @@ function TenthSection() {
     zIndex: 9,
     mt: { xs: -10, md: -15 },
     pt: 10,
+    px: 1,
 
     // mt: {xs: -20, md: -10},
     // py: 15,

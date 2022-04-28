@@ -1,31 +1,30 @@
-import { Box } from '@mui/material';
-import React from 'react'
+import { Box } from "@mui/material";
+import React from "react";
 
 function MorrisonDevOpsIcon(props) {
-
-    // const iconRootStyles = {
-    //     display: "flex",
-    //     alignItems: "center",
-    //     justifyContent: "center",
-    //     height: 500,
-    //     width: 500,
-    //     // textAlign: "center",
-    //   };
-
+  // const iconRootStyles = {
+  //     display: "flex",
+  //     alignItems: "center",
+  //     justifyContent: "center",
+  //     height: 500,
+  //     width: 500,
+  //     // textAlign: "center",
+  //   };
 
   return (
-      <Box {...props}
-      display={'flex'}
-      justifyContent={'center'}
-      alignItems={'center'}
-    //    sx={iconRootStyles}
-      >
+    <Box
+      {...props}
+      display={"flex"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      //    sx={iconRootStyles}
+    >
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
-        width="1500.000000pt"
+        width="1350.000000pt"
         height="1500.000000pt"
-        viewBox="0 0 1500.000000 1500.000000"
+        viewBox="0 0 1350.000000 1500.000000"
         preserveAspectRatio="xMidYMid meet"
       >
         <g
@@ -334,8 +333,7 @@ m205 -83 c21 -27 16 -56 -15 -83 -15 -13 -34 -17 -71 -15 l-51 3 -3 49 c-5 75
         </g>
       </svg>
     </Box>
-
-  )
+  );
 }
 
-export default MorrisonDevOpsIcon
+export default MorrisonDevOpsIcon;
